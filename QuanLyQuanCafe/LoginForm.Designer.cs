@@ -1,4 +1,6 @@
-﻿namespace QuanLyQuanCafe
+﻿using System.Windows.Forms;
+
+namespace QuanLyQuanCafe
 {
     partial class LoginForm
     {

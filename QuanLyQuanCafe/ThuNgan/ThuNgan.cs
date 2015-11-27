@@ -11,7 +11,6 @@ namespace QuanLyQuanCafe.ThuNgan
         public ThuNgan(string msnv)
         {       
             InitializeComponent();
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;

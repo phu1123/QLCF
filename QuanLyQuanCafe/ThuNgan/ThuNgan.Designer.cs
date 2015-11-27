@@ -38,9 +38,7 @@ namespace QuanLyQuanCafe.ThuNgan
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.lichLamViec1 = new QuanLyQuanCafe.ThuNgan.LichLamViec();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.quanLyBan1 = new QuanLyQuanCafe.ThuNgan.QuanLyBan();
             this.materialTabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
@@ -65,13 +63,13 @@ namespace QuanLyQuanCafe.ThuNgan
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.quanLyBan1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1258, 520);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Quản lý bàn";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -134,14 +132,6 @@ namespace QuanLyQuanCafe.ThuNgan
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
-            // quanLyBan1
-            // 
-            this.quanLyBan1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.quanLyBan1.Location = new System.Drawing.Point(3, 3);
-            this.quanLyBan1.Name = "quanLyBan1";
-            this.quanLyBan1.Size = new System.Drawing.Size(1252, 514);
-            this.quanLyBan1.TabIndex = 0;
-            // 
             // ThuNgan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,7 +144,6 @@ namespace QuanLyQuanCafe.ThuNgan
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.materialTabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -168,10 +157,9 @@ namespace QuanLyQuanCafe.ThuNgan
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage1;
         private HoaDon hoaDon1;
         private LichLamViec lichLamViec1;
-        private QuanLyBan quanLyBan1;
         private string MSNV;
+        private System.Windows.Forms.TabPage tabPage1;
     }
 }

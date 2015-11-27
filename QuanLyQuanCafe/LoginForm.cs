@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using QuanLyQuanCafe.Properties;
 
 
 namespace QuanLyQuanCafe
@@ -12,6 +15,7 @@ namespace QuanLyQuanCafe
         public LoginForm()
         {
             InitializeComponent();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -25,7 +29,7 @@ namespace QuanLyQuanCafe
                 label1.Text = @"Vui lòng nhập tên đăng nhập và mật khẩu."; return;
             }
 
-            using (var conn = new SqlConnection(@"Server = .\SQLEXPRESS; Database = QLCF; Trusted_Connection = True"))
+            using (var conn = new SqlConnection(Settings.Default.connString))
             {
                 conn.Open();
                 var cmd = new SqlCommand("SELECT * FROM TaiKhoan", conn);
