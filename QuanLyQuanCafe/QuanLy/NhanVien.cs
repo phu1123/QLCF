@@ -12,20 +12,19 @@ namespace QuanLyQuanCafe.QuanLy
         public NhanVien()
         {
             InitializeComponent();
-            
         }
 
         private void Nhanvien_Load(object sender, EventArgs e)
-        { 
+        {
             using (var conn = new SqlConnection(Settings.Default.connString))
             {
                 conn.Open();
-                var cmd = new SqlCommand("SELECT * FROM NhanVien", conn);
-                var r = cmd.ExecuteReader();
-                while (r.Read())
+                var cmdNhanVien = new SqlCommand("SELECT MSNV, TenNV, SoDienThoai FROM NhanVien", conn);
+                var readerNhanVien = cmdNhanVien.ExecuteReader();
+                while (readerNhanVien.Read())
                 {
-                    var per = new SqlCommand($"SELECT PhanQuyen FROM TaiKhoan WHERE MSNV='{r["MSNV"]}'", conn);
-                    dataGridView1.Rows.Add(r["MSNV"], r["TenNV"], r["SoDienThoai"], (bool)per.ExecuteScalar() == false ? "Quản lý" : "Thu Ngân");
+                    var cmdTaiKhoan = new SqlCommand($"SELECT PhanQuyen FROM TaiKhoan WHERE MSNV='{readerNhanVien["MSNV"]}'", conn);
+                    dataGridView1.Rows.Add(readerNhanVien["MSNV"], readerNhanVien["TenNV"], readerNhanVien["SoDienThoai"], (bool)cmdTaiKhoan.ExecuteScalar() == false ? "Quản lý" : "Thu Ngân");
                 }
             }
 
@@ -47,7 +46,7 @@ namespace QuanLyQuanCafe.QuanLy
             }
         }
 
-        
+
         private void raisedButtonDelete_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow == null) return;
@@ -88,17 +87,16 @@ namespace QuanLyQuanCafe.QuanLy
                 using (var conn = new SqlConnection(Settings.Default.connString))
                 {
                     conn.Open();
-                    var cmd = new SqlCommand("INSERT INTO NhanVien(TenNV, GioiTinh, NgaySinh, DiaChi, SoDienThoai, CMND, NgayVaoLam)" +
-                                             $"VALUES('{textboxFullName.Text}', '{radioButtonFemale.Checked}', '{timePickerBirthday.Value.ToString("yyyy-MM-dd")}', '{textboxAddress}', '{textboxPhone}', '{textboxCMND}', '{timePickerFirstDayWorking.Value.ToString("yyyy-MM-dd")}'", conn);
-                    cmd.ExecuteNonQuery();
-                    //cmd = new SqlCommand($"INSERT INTO TaiKhoan VALUES({textboxUsername.Text}, SELECT SCOPE_IDENTITY(), {textboxPassword.Text}, {radioButtonEmployee.Checked})");
-                    //cmd.ExecuteNonQuery();
-
+                    var cmdAddNhanVien = new SqlCommand("INSERT INTO NhanVien(TenNV, GioiTinh, NgaySinh, DiaChi, SoDienThoai, CMND, NgayVaoLam) " +
+                        $"VALUES('{textboxFullName.Text}', '{radioButtonFemale.Checked}', '{timePickerBirthday.Value}', '{textboxAddress.Text}', '{textboxPhone.Text}', '{textboxCMND.Text}', '{timePickerWorkSince.Value.ToString("yyyy-MM-dd")}')", conn);
+                    cmdAddNhanVien.ExecuteNonQuery();
+                    var cmdAddTaiKhoan = new SqlCommand($"INSERT INTO TaiKhoan VALUES('{textboxUsername.Text}', SELECT SCOPE_IDENTITY(), '{textboxPassword.Text}', '{radioButtonEmployee.Checked}')");
+                    cmdAddTaiKhoan.ExecuteNonQuery();
                 }
             }
             else
             {
-                
+
             }
 
 
@@ -118,7 +116,7 @@ namespace QuanLyQuanCafe.QuanLy
         {
             e.Handled = !(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
-        
+
         private void textFieldSearch_TextChanged(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
@@ -126,12 +124,13 @@ namespace QuanLyQuanCafe.QuanLy
             using (var conn = new SqlConnection(Settings.Default.connString))
             {
                 conn.Open();
-                var cmd = new SqlCommand($"SELECT * FROM NhanVien WHERE MSNV LIKE '%{textFieldSearch.Text}%' OR TenNV LIKE '%{textFieldSearch.Text}%'", conn);
-                var r = cmd.ExecuteReader();
-                while (r.Read())
+                var cmdNhanVien = new SqlCommand("SELECT NhanVien.MSNV, TaiKhoan.MSNV, TenNV, SoDienThoai FROM NhanVien, TaiKhoan " +
+                                                 $"WHERE NhanVien.MSNV = TaiKhoan.MSNV AND (NhanVien.MSNV LIKE '%{textFieldSearch.Text}%' OR TenNV LIKE '%{textFieldSearch.Text}%' OR SoDienThoai LIKE '%{textFieldSearch.Text}%')", conn);
+                var readerNhanVien = cmdNhanVien.ExecuteReader();
+                while (readerNhanVien.Read())
                 {
-                    var per = new SqlCommand($"SELECT PhanQuyen FROM TaiKhoan WHERE MSNV='{r["MSNV"]}'", conn);
-                    dataGridView1.Rows.Add(r["MSNV"], r["TenNV"], r["SoDienThoai"], (bool)per.ExecuteScalar() == false ? "Quản lý" : "Thu Ngân");
+                    var cmdTaiKhoan = new SqlCommand($"SELECT PhanQuyen FROM TaiKhoan WHERE MSNV='{readerNhanVien["MSNV"]}'", conn);
+                    dataGridView1.Rows.Add(readerNhanVien["MSNV"], readerNhanVien["TenNV"], readerNhanVien["SoDienThoai"], (bool)cmdTaiKhoan.ExecuteScalar() == false ? "Quản lý" : "Thu Ngân");
                 }
             }
         }
@@ -139,7 +138,7 @@ namespace QuanLyQuanCafe.QuanLy
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.CurrentRow == null) return;
-
+            
             foreach (Control c in panel1.Controls)
                 errorProvider1.SetError(c, string.Empty);
 
@@ -149,22 +148,26 @@ namespace QuanLyQuanCafe.QuanLy
             using (var conn = new SqlConnection(Settings.Default.connString))
             {
                 conn.Open();
-                var cmd = new SqlCommand($"SELECT * FROM NhanVien, TaiKhoan WHERE NhanVien.MSNV = TaiKhoan.MSNV AND NhanVien.MSNV = '{dataGridView1.CurrentRow.Cells[0].Value}'", conn);
-                var r = cmd.ExecuteReader();
-                r.Read();
-                textboxUsername.Text = r["TenDangNhap"].ToString();
-                textboxPassword.Text = r["MatKhau"].ToString();
-                textboxFullName.Text = r["TenNV"].ToString();
-                if ((bool) r["GioiTinh"]) radioButtonFemale.Checked = true;
+                var cmd = new SqlCommand($"SELECT * FROM NhanVien, TaiKhoan WHERE NhanVien.MSNV = TaiKhoan.MSNV AND TaiKhoan.MSNV = '{dataGridView1.CurrentRow.Cells[0].Value}'", conn);
+                var reader = cmd.ExecuteReader();
+                reader.Read();
+                textboxUsername.Text = reader["TenDangNhap"].ToString();
+                textboxPassword.Text = reader["MatKhau"].ToString();
+                textboxFullName.Text = reader["TenNV"].ToString();
+                if ((bool)reader["GioiTinh"]) radioButtonFemale.Checked = true;
                 else radioButtonMale.Checked = true;
-                timePickerBirthday.Value = r.GetDateTime(3);
-                textboxCMND.Text = r["CMND"].ToString();
-                textboxAddress.Text  = r["DiaChi"].ToString();
-                textboxPhone.Text = r["SoDienThoai"].ToString();
-                timePickerFirstDayWorking.Value = r.GetDateTime(7);
-                if ((bool)r["PhanQuyen"]) radioButtonEmployee.Checked = true;
+                timePickerBirthday.Value = reader.GetDateTime(3);
+                textboxCMND.Text = reader["CMND"].ToString();
+                textboxAddress.Text = reader["DiaChi"].ToString();
+                textboxPhone.Text = reader["SoDienThoai"].ToString();
+                timePickerWorkSince.Value = reader.GetDateTime(7);
+                if ((bool)reader["PhanQuyen"]) radioButtonEmployee.Checked = true;
                 else radioButtonAdmin.Checked = true;
             }
-        }    
+
+            
+        }
+
+
     }
 }

@@ -33,15 +33,15 @@ namespace QuanLyQuanCafe
             {
                 conn.Open();
                 var cmd = new SqlCommand("SELECT * FROM TaiKhoan", conn);
-                var r = cmd.ExecuteReader();
+                var reader = cmd.ExecuteReader();
 
-                while (r.Read())
+                while (reader.Read())
                 {
-                    if (r["TenDangNhap"].ToString() != textBoxUsername.Text || r["MatKhau"].ToString() != textBoxPassword.Text)
+                    if (reader["TenDangNhap"].ToString() != textBoxUsername.Text || reader["MatKhau"].ToString() != textBoxPassword.Text)
                         continue;
-                    if ((bool)r["PhanQuyen"] == false)
-                        new QuanLy.QuanLy(r["MSNV"].ToString()).Show();
-                    else new ThuNgan.ThuNgan(r["MSNV"].ToString()).Show();
+                    if ((bool)reader["PhanQuyen"] == false)
+                        new QuanLy.QuanLy(reader["MSNV"].ToString()).Show();
+                    else new ThuNgan.ThuNgan(reader["MSNV"].ToString()).Show();
                     Close();
                 }
 

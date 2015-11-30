@@ -54,7 +54,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.flatButtonCancel = new MaterialSkin.Controls.MaterialFlatButton();
             this.flatButtonAddEdit = new MaterialSkin.Controls.MaterialFlatButton();
             this.textboxFullName = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.timePickerFirstDayWorking = new System.Windows.Forms.DateTimePicker();
+            this.timePickerWorkSince = new System.Windows.Forms.DateTimePicker();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.textboxPhone = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.textboxAddress = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -147,11 +147,10 @@ namespace QuanLyQuanCafe.QuanLy
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "MSNV";
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column1.HeaderText = "MSNV";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 70;
             // 
             // Column2
             // 
@@ -211,7 +210,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.panel1.Controls.Add(this.flatButtonCancel);
             this.panel1.Controls.Add(this.flatButtonAddEdit);
             this.panel1.Controls.Add(this.textboxFullName);
-            this.panel1.Controls.Add(this.timePickerFirstDayWorking);
+            this.panel1.Controls.Add(this.timePickerWorkSince);
             this.panel1.Controls.Add(this.materialLabel3);
             this.panel1.Controls.Add(this.textboxPhone);
             this.panel1.Controls.Add(this.textboxAddress);
@@ -417,17 +416,17 @@ namespace QuanLyQuanCafe.QuanLy
             this.textboxFullName.UseSystemPasswordChar = false;
             this.textboxFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxFullName_KeyPress);
             // 
-            // timePickerFirstDayWorking
+            // timePickerWorkSince
             // 
-            this.timePickerFirstDayWorking.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.timePickerWorkSince.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.timePickerFirstDayWorking.CustomFormat = "dd/MM/yyyy";
-            this.timePickerFirstDayWorking.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePickerFirstDayWorking.Location = new System.Drawing.Point(113, 334);
-            this.timePickerFirstDayWorking.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.timePickerFirstDayWorking.Name = "timePickerFirstDayWorking";
-            this.timePickerFirstDayWorking.Size = new System.Drawing.Size(317, 20);
-            this.timePickerFirstDayWorking.TabIndex = 36;
+            this.timePickerWorkSince.CustomFormat = "dd/MM/yyyy";
+            this.timePickerWorkSince.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timePickerWorkSince.Location = new System.Drawing.Point(113, 334);
+            this.timePickerWorkSince.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.timePickerWorkSince.Name = "timePickerWorkSince";
+            this.timePickerWorkSince.Size = new System.Drawing.Size(317, 20);
+            this.timePickerWorkSince.TabIndex = 36;
             // 
             // materialLabel3
             // 
@@ -649,7 +648,7 @@ namespace QuanLyQuanCafe.QuanLy
         private MaterialSkin.Controls.MaterialFlatButton flatButtonCancel;
         private MaterialSkin.Controls.MaterialFlatButton flatButtonAddEdit;
         private MaterialSkin.Controls.MaterialSingleLineTextField textboxFullName;
-        private System.Windows.Forms.DateTimePicker timePickerFirstDayWorking;
+        private System.Windows.Forms.DateTimePicker timePickerWorkSince;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialSingleLineTextField textboxPhone;
         private MaterialSkin.Controls.MaterialSingleLineTextField textboxAddress;
@@ -663,10 +662,10 @@ namespace QuanLyQuanCafe.QuanLy
         private MaterialSkin.Controls.MaterialSingleLineTextField textFieldSearch;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private ErrorProvider errorProvider1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column9;
-        private ErrorProvider errorProvider1;
     }
 }
