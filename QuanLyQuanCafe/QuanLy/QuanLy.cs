@@ -1,9 +1,11 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Net.Mime;
 using System.Threading;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+
 
 namespace QuanLyQuanCafe.QuanLy
 {
@@ -22,7 +24,9 @@ namespace QuanLyQuanCafe.QuanLy
 
         private void QuanLy_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
+
+   
     }
 }

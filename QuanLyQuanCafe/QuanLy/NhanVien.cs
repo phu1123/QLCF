@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
@@ -51,11 +52,18 @@ namespace QuanLyQuanCafe.QuanLy
         {
             if (dataGridView1.CurrentRow == null) return;
 
-            using (var conn = new SqlConnection(Settings.Default.connString))
+            try
             {
-                conn.Open();
-                var cmd = new SqlCommand($"DELETE FROM NhanVien WHERE MSNV='{dataGridView1.CurrentRow.Cells[0].Value}'", conn);
-                cmd.ExecuteNonQuery();
+                using (var conn = new SqlConnection(Settings.Default.connString))
+                {
+                    conn.Open();
+                    var cmd = new SqlCommand($"DELETE FROM NhanVien WHERE MSNV='{dataGridView1.CurrentRow.Cells[0].Value}'", conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+                // ignored
             }
         }
 
@@ -84,19 +92,60 @@ namespace QuanLyQuanCafe.QuanLy
 
             if (flatButtonAddEdit.Text == @"Thêm")
             {
-                using (var conn = new SqlConnection(Settings.Default.connString))
+                try
                 {
-                    conn.Open();
-                    var cmdAddNhanVien = new SqlCommand("INSERT INTO NhanVien(TenNV, GioiTinh, NgaySinh, DiaChi, SoDienThoai, CMND, NgayVaoLam) " +
-                        $"VALUES('{textboxFullName.Text}', '{radioButtonFemale.Checked}', '{timePickerBirthday.Value}', '{textboxAddress.Text}', '{textboxPhone.Text}', '{textboxCMND.Text}', '{timePickerWorkSince.Value.ToString("yyyy-MM-dd")}')", conn);
-                    cmdAddNhanVien.ExecuteNonQuery();
-                    var cmdAddTaiKhoan = new SqlCommand($"INSERT INTO TaiKhoan VALUES('{textboxUsername.Text}', SELECT SCOPE_IDENTITY(), '{textboxPassword.Text}', '{radioButtonEmployee.Checked}')");
-                    cmdAddTaiKhoan.ExecuteNonQuery();
+                    using (var conn = new SqlConnection(Settings.Default.connString))
+                    {
+                        conn.Open();
+                        var cmd = new SqlCommand("INSERT INTO NhanVien(TenNV, GioiTinh, NgaySinh, DiaChi, SoDienThoai, CMND, NgayVaoLam) " +
+                            "VALUES(@TenNV, @GioiTinh, @NgaySinh, @DiaChi, @SoDienThoai, @CMND, @NgayVaoLam); SELECT SCOPE_IDENTITY()", conn);
+                        cmd.Parameters.Add("@TenNV", SqlDbType.NVarChar).Value = textBoxFullName.Text.Trim();
+                        cmd.Parameters.Add("@GioiTinh", SqlDbType.Bit).Value = radioButtonFemale.Checked;
+                        cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = timePickerBirthday.Value;
+                        cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = textBoxAddress.Text.Trim();
+                        cmd.Parameters.Add("@SoDienThoai", SqlDbType.NVarChar).Value = textBoxPhone.Text.Trim();
+                        cmd.Parameters.Add("@CMND", SqlDbType.NVarChar).Value = textBoxCMND.Text.Trim();
+                        cmd.Parameters.Add("@NgayVaoLam", SqlDbType.Date).Value = timePickerWorkSince.Value.ToString("yyyy-MM-dd");
+                        var msnv = cmd.ExecuteScalar().ToString();
+                        cmd = new SqlCommand($"INSERT INTO TaiKhoan VALUES(@TenDangNhap, '{msnv}', @MatKhau, @PhanQuyen)", conn);
+                        cmd.Parameters.Add("@TenDangNhap", SqlDbType.NVarChar).Value = textBoxUsername.Text;
+                        cmd.Parameters.Add("@MatKhau", SqlDbType.NVarChar).Value = textBoxPassword.Text;
+                        cmd.Parameters.Add("@PhanQuyen", SqlDbType.Bit).Value = radioButtonEmployee.Checked;
+                        cmd.ExecuteNonQuery();
+                    }
                 }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
             }
             else
             {
+                if (dataGridView1.CurrentRow == null) return;
 
+                using (var conn = new SqlConnection(Settings.Default.connString))
+                {
+                    conn.Open();
+                    var cmd = new SqlCommand("UPDATE NhanVien SET TenNV=@TenNV, GioiTinh=@GioiTinh, NgaySinh=@NgaySinh, DiaChi=@DiaChi, " +
+                                             "SoDienThoai=@SoDienThoai, CMND=@CMND, NgayVaoLam=@NgayVaoLam " +
+                                             $"WHERE MSNV={dataGridView1.CurrentRow.Cells[0].Value}", conn);
+                    cmd.Parameters.Add("@TenNV", SqlDbType.NVarChar).Value = textBoxFullName.Text.Trim();
+                    cmd.Parameters.Add("@GioiTinh", SqlDbType.Bit).Value = radioButtonFemale.Checked;
+                    cmd.Parameters.Add("@NgaySinh", SqlDbType.Date).Value = timePickerBirthday.Value;
+                    cmd.Parameters.Add("@DiaChi", SqlDbType.NVarChar).Value = textBoxAddress.Text.Trim();
+                    cmd.Parameters.Add("@SoDienThoai", SqlDbType.NVarChar).Value = textBoxPhone.Text.Trim();
+                    cmd.Parameters.Add("@CMND", SqlDbType.NVarChar).Value = textBoxCMND.Text.Trim();
+                    cmd.Parameters.Add("@NgayVaoLam", SqlDbType.Date).Value = timePickerWorkSince.Value.ToString("yyyy-MM-dd");
+                    cmd.ExecuteNonQuery();
+                    cmd = new SqlCommand("UPDATE TaiKhoan SET TenDangNhap=@TenDangNhap, MatKhau=@MatKhau, PhanQuyen=@PhanQuyen " +
+                        $"WHERE MSNV={dataGridView1.CurrentRow.Cells[0].Value}", conn);
+                    cmd.Parameters.Add("@TenDangNhap", SqlDbType.NVarChar).Value = textBoxUsername.Text;
+                    cmd.Parameters.Add("@MatKhau", SqlDbType.NVarChar).Value = textBoxPassword.Text;
+                    cmd.Parameters.Add("@PhanQuyen", SqlDbType.Bit).Value = radioButtonEmployee.Checked;
+                    cmd.ExecuteNonQuery();
+                }
             }
 
 
@@ -105,6 +154,7 @@ namespace QuanLyQuanCafe.QuanLy
         private void flatButtonCancel_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
+            dataGridView1.ClearSelection();
         }
 
         private void textboxFullName_KeyPress(object sender, KeyPressEventArgs e)
@@ -133,12 +183,14 @@ namespace QuanLyQuanCafe.QuanLy
                     dataGridView1.Rows.Add(readerNhanVien["MSNV"], readerNhanVien["TenNV"], readerNhanVien["SoDienThoai"], (bool)cmdTaiKhoan.ExecuteScalar() == false ? "Quản lý" : "Thu Ngân");
                 }
             }
+
+            flatButtonCancel_Click(sender, e);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.CurrentRow == null) return;
-            
+
             foreach (Control c in panel1.Controls)
                 errorProvider1.SetError(c, string.Empty);
 
@@ -151,21 +203,21 @@ namespace QuanLyQuanCafe.QuanLy
                 var cmd = new SqlCommand($"SELECT * FROM NhanVien, TaiKhoan WHERE NhanVien.MSNV = TaiKhoan.MSNV AND TaiKhoan.MSNV = '{dataGridView1.CurrentRow.Cells[0].Value}'", conn);
                 var reader = cmd.ExecuteReader();
                 reader.Read();
-                textboxUsername.Text = reader["TenDangNhap"].ToString();
-                textboxPassword.Text = reader["MatKhau"].ToString();
-                textboxFullName.Text = reader["TenNV"].ToString();
+                textBoxUsername.Text = reader["TenDangNhap"].ToString();
+                textBoxPassword.Text = reader["MatKhau"].ToString();
+                textBoxFullName.Text = reader["TenNV"].ToString();
                 if ((bool)reader["GioiTinh"]) radioButtonFemale.Checked = true;
                 else radioButtonMale.Checked = true;
                 timePickerBirthday.Value = reader.GetDateTime(3);
-                textboxCMND.Text = reader["CMND"].ToString();
-                textboxAddress.Text = reader["DiaChi"].ToString();
-                textboxPhone.Text = reader["SoDienThoai"].ToString();
+                textBoxCMND.Text = reader["CMND"].ToString();
+                textBoxAddress.Text = reader["DiaChi"].ToString();
+                textBoxPhone.Text = reader["SoDienThoai"].ToString();
                 timePickerWorkSince.Value = reader.GetDateTime(7);
                 if ((bool)reader["PhanQuyen"]) radioButtonEmployee.Checked = true;
                 else radioButtonAdmin.Checked = true;
             }
 
-            
+
         }
 
 

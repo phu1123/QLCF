@@ -53,16 +53,16 @@ namespace QuanLyQuanCafe.QuanLy
             this.radioButtonFemale = new MaterialSkin.Controls.MaterialRadioButton();
             this.flatButtonCancel = new MaterialSkin.Controls.MaterialFlatButton();
             this.flatButtonAddEdit = new MaterialSkin.Controls.MaterialFlatButton();
-            this.textboxFullName = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.textBoxFullName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.timePickerWorkSince = new System.Windows.Forms.DateTimePicker();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.textboxPhone = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textboxAddress = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.textBoxPhone = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.textBoxAddress = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.timePickerBirthday = new System.Windows.Forms.DateTimePicker();
-            this.textboxCMND = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textboxPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textboxUsername = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.textBoxCMND = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.textBoxPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.textBoxUsername = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.raisedButtonAdd = new MaterialSkin.Controls.MaterialRaisedButton();
             this.raisedButtonDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -209,16 +209,16 @@ namespace QuanLyQuanCafe.QuanLy
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.flatButtonCancel);
             this.panel1.Controls.Add(this.flatButtonAddEdit);
-            this.panel1.Controls.Add(this.textboxFullName);
+            this.panel1.Controls.Add(this.textBoxFullName);
             this.panel1.Controls.Add(this.timePickerWorkSince);
             this.panel1.Controls.Add(this.materialLabel3);
-            this.panel1.Controls.Add(this.textboxPhone);
-            this.panel1.Controls.Add(this.textboxAddress);
+            this.panel1.Controls.Add(this.textBoxPhone);
+            this.panel1.Controls.Add(this.textBoxAddress);
             this.panel1.Controls.Add(this.materialLabel1);
             this.panel1.Controls.Add(this.timePickerBirthday);
-            this.panel1.Controls.Add(this.textboxCMND);
-            this.panel1.Controls.Add(this.textboxPassword);
-            this.panel1.Controls.Add(this.textboxUsername);
+            this.panel1.Controls.Add(this.textBoxCMND);
+            this.panel1.Controls.Add(this.textBoxPassword);
+            this.panel1.Controls.Add(this.textBoxUsername);
             this.panel1.Location = new System.Drawing.Point(0, 73);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.panel1.Name = "panel1";
@@ -395,26 +395,26 @@ namespace QuanLyQuanCafe.QuanLy
             this.flatButtonAddEdit.UseVisualStyleBackColor = true;
             this.flatButtonAddEdit.Click += new System.EventHandler(this.flatButtonAddEdit_Click);
             // 
-            // textboxFullName
+            // textBoxFullName
             // 
-            this.textboxFullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxFullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textboxFullName.Depth = 0;
-            this.textboxFullName.Hint = "Họ tên";
-            this.textboxFullName.Location = new System.Drawing.Point(7, 101);
-            this.textboxFullName.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.textboxFullName.MaxLength = 50;
-            this.textboxFullName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textboxFullName.Name = "textboxFullName";
-            this.textboxFullName.PasswordChar = '\0';
-            this.textboxFullName.SelectedText = "";
-            this.textboxFullName.SelectionLength = 0;
-            this.textboxFullName.SelectionStart = 0;
-            this.textboxFullName.Size = new System.Drawing.Size(423, 23);
-            this.textboxFullName.TabIndex = 38;
-            this.textboxFullName.TabStop = false;
-            this.textboxFullName.UseSystemPasswordChar = false;
-            this.textboxFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxFullName_KeyPress);
+            this.textBoxFullName.Depth = 0;
+            this.textBoxFullName.Hint = "Họ tên";
+            this.textBoxFullName.Location = new System.Drawing.Point(7, 101);
+            this.textBoxFullName.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.textBoxFullName.MaxLength = 50;
+            this.textBoxFullName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textBoxFullName.Name = "textBoxFullName";
+            this.textBoxFullName.PasswordChar = '\0';
+            this.textBoxFullName.SelectedText = "";
+            this.textBoxFullName.SelectionLength = 0;
+            this.textBoxFullName.SelectionStart = 0;
+            this.textBoxFullName.Size = new System.Drawing.Size(423, 23);
+            this.textBoxFullName.TabIndex = 38;
+            this.textBoxFullName.TabStop = false;
+            this.textBoxFullName.UseSystemPasswordChar = false;
+            this.textBoxFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxFullName_KeyPress);
             // 
             // timePickerWorkSince
             // 
@@ -444,46 +444,46 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel3.TabIndex = 37;
             this.materialLabel3.Text = "Ngày vào làm:";
             // 
-            // textboxPhone
+            // textBoxPhone
             // 
-            this.textboxPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textboxPhone.Depth = 0;
-            this.textboxPhone.Hint = "Số điện thoại";
-            this.textboxPhone.Location = new System.Drawing.Point(7, 293);
-            this.textboxPhone.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.textboxPhone.MaxLength = 12;
-            this.textboxPhone.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textboxPhone.Name = "textboxPhone";
-            this.textboxPhone.PasswordChar = '\0';
-            this.textboxPhone.SelectedText = "";
-            this.textboxPhone.SelectionLength = 0;
-            this.textboxPhone.SelectionStart = 0;
-            this.textboxPhone.Size = new System.Drawing.Size(423, 23);
-            this.textboxPhone.TabIndex = 31;
-            this.textboxPhone.TabStop = false;
-            this.textboxPhone.UseSystemPasswordChar = false;
-            this.textboxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxIDCardNumber_KeyPress);
+            this.textBoxPhone.Depth = 0;
+            this.textBoxPhone.Hint = "Số điện thoại";
+            this.textBoxPhone.Location = new System.Drawing.Point(7, 293);
+            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.textBoxPhone.MaxLength = 12;
+            this.textBoxPhone.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.PasswordChar = '\0';
+            this.textBoxPhone.SelectedText = "";
+            this.textBoxPhone.SelectionLength = 0;
+            this.textBoxPhone.SelectionStart = 0;
+            this.textBoxPhone.Size = new System.Drawing.Size(423, 23);
+            this.textBoxPhone.TabIndex = 31;
+            this.textBoxPhone.TabStop = false;
+            this.textBoxPhone.UseSystemPasswordChar = false;
+            this.textBoxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxIDCardNumber_KeyPress);
             // 
-            // textboxAddress
+            // textBoxAddress
             // 
-            this.textboxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textboxAddress.Depth = 0;
-            this.textboxAddress.Hint = "Địa chỉ";
-            this.textboxAddress.Location = new System.Drawing.Point(7, 252);
-            this.textboxAddress.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.textboxAddress.MaxLength = 100;
-            this.textboxAddress.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textboxAddress.Name = "textboxAddress";
-            this.textboxAddress.PasswordChar = '\0';
-            this.textboxAddress.SelectedText = "";
-            this.textboxAddress.SelectionLength = 0;
-            this.textboxAddress.SelectionStart = 0;
-            this.textboxAddress.Size = new System.Drawing.Size(423, 23);
-            this.textboxAddress.TabIndex = 30;
-            this.textboxAddress.TabStop = false;
-            this.textboxAddress.UseSystemPasswordChar = false;
+            this.textBoxAddress.Depth = 0;
+            this.textBoxAddress.Hint = "Địa chỉ";
+            this.textBoxAddress.Location = new System.Drawing.Point(7, 252);
+            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.textBoxAddress.MaxLength = 100;
+            this.textBoxAddress.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.PasswordChar = '\0';
+            this.textBoxAddress.SelectedText = "";
+            this.textBoxAddress.SelectionLength = 0;
+            this.textBoxAddress.SelectionStart = 0;
+            this.textBoxAddress.Size = new System.Drawing.Size(423, 23);
+            this.textBoxAddress.TabIndex = 30;
+            this.textBoxAddress.TabStop = false;
+            this.textBoxAddress.UseSystemPasswordChar = false;
             // 
             // materialLabel1
             // 
@@ -513,65 +513,65 @@ namespace QuanLyQuanCafe.QuanLy
             this.timePickerBirthday.Size = new System.Drawing.Size(317, 20);
             this.timePickerBirthday.TabIndex = 28;
             // 
-            // textboxCMND
+            // textBoxCMND
             // 
-            this.textboxCMND.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxCMND.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textboxCMND.Depth = 0;
-            this.textboxCMND.Hint = "Số CMND";
-            this.textboxCMND.Location = new System.Drawing.Point(7, 211);
-            this.textboxCMND.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.textboxCMND.MaxLength = 12;
-            this.textboxCMND.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textboxCMND.Name = "textboxCMND";
-            this.textboxCMND.PasswordChar = '\0';
-            this.textboxCMND.SelectedText = "";
-            this.textboxCMND.SelectionLength = 0;
-            this.textboxCMND.SelectionStart = 0;
-            this.textboxCMND.Size = new System.Drawing.Size(423, 23);
-            this.textboxCMND.TabIndex = 25;
-            this.textboxCMND.TabStop = false;
-            this.textboxCMND.UseSystemPasswordChar = false;
-            this.textboxCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxIDCardNumber_KeyPress);
+            this.textBoxCMND.Depth = 0;
+            this.textBoxCMND.Hint = "Số CMND";
+            this.textBoxCMND.Location = new System.Drawing.Point(7, 211);
+            this.textBoxCMND.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.textBoxCMND.MaxLength = 12;
+            this.textBoxCMND.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textBoxCMND.Name = "textBoxCMND";
+            this.textBoxCMND.PasswordChar = '\0';
+            this.textBoxCMND.SelectedText = "";
+            this.textBoxCMND.SelectionLength = 0;
+            this.textBoxCMND.SelectionStart = 0;
+            this.textBoxCMND.Size = new System.Drawing.Size(423, 23);
+            this.textBoxCMND.TabIndex = 25;
+            this.textBoxCMND.TabStop = false;
+            this.textBoxCMND.UseSystemPasswordChar = false;
+            this.textBoxCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxIDCardNumber_KeyPress);
             // 
-            // textboxPassword
+            // textBoxPassword
             // 
-            this.textboxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textboxPassword.Depth = 0;
-            this.textboxPassword.Hint = "Mật khẩu";
-            this.textboxPassword.Location = new System.Drawing.Point(7, 60);
-            this.textboxPassword.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.textboxPassword.MaxLength = 20;
-            this.textboxPassword.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textboxPassword.Name = "textboxPassword";
-            this.textboxPassword.PasswordChar = '\0';
-            this.textboxPassword.SelectedText = "";
-            this.textboxPassword.SelectionLength = 0;
-            this.textboxPassword.SelectionStart = 0;
-            this.textboxPassword.Size = new System.Drawing.Size(423, 23);
-            this.textboxPassword.TabIndex = 24;
-            this.textboxPassword.TabStop = false;
-            this.textboxPassword.UseSystemPasswordChar = true;
+            this.textBoxPassword.Depth = 0;
+            this.textBoxPassword.Hint = "Mật khẩu";
+            this.textBoxPassword.Location = new System.Drawing.Point(7, 60);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.textBoxPassword.MaxLength = 20;
+            this.textBoxPassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '\0';
+            this.textBoxPassword.SelectedText = "";
+            this.textBoxPassword.SelectionLength = 0;
+            this.textBoxPassword.SelectionStart = 0;
+            this.textBoxPassword.Size = new System.Drawing.Size(423, 23);
+            this.textBoxPassword.TabIndex = 24;
+            this.textBoxPassword.TabStop = false;
+            this.textBoxPassword.UseSystemPasswordChar = true;
             // 
-            // textboxUsername
+            // textBoxUsername
             // 
-            this.textboxUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textboxUsername.Depth = 0;
-            this.textboxUsername.Hint = "Tên đăng nhập";
-            this.textboxUsername.Location = new System.Drawing.Point(7, 19);
-            this.textboxUsername.MaxLength = 20;
-            this.textboxUsername.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textboxUsername.Name = "textboxUsername";
-            this.textboxUsername.PasswordChar = '\0';
-            this.textboxUsername.SelectedText = "";
-            this.textboxUsername.SelectionLength = 0;
-            this.textboxUsername.SelectionStart = 0;
-            this.textboxUsername.Size = new System.Drawing.Size(423, 23);
-            this.textboxUsername.TabIndex = 23;
-            this.textboxUsername.TabStop = false;
-            this.textboxUsername.UseSystemPasswordChar = false;
+            this.textBoxUsername.Depth = 0;
+            this.textBoxUsername.Hint = "Tên đăng nhập";
+            this.textBoxUsername.Location = new System.Drawing.Point(7, 19);
+            this.textBoxUsername.MaxLength = 20;
+            this.textBoxUsername.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.PasswordChar = '\0';
+            this.textBoxUsername.SelectedText = "";
+            this.textBoxUsername.SelectionLength = 0;
+            this.textBoxUsername.SelectionStart = 0;
+            this.textBoxUsername.Size = new System.Drawing.Size(423, 23);
+            this.textBoxUsername.TabIndex = 23;
+            this.textBoxUsername.TabStop = false;
+            this.textBoxUsername.UseSystemPasswordChar = false;
             // 
             // raisedButtonAdd
             // 
@@ -647,16 +647,16 @@ namespace QuanLyQuanCafe.QuanLy
         private MaterialSkin.Controls.MaterialRadioButton radioButtonFemale;
         private MaterialSkin.Controls.MaterialFlatButton flatButtonCancel;
         private MaterialSkin.Controls.MaterialFlatButton flatButtonAddEdit;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textboxFullName;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxFullName;
         private System.Windows.Forms.DateTimePicker timePickerWorkSince;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textboxPhone;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textboxAddress;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxPhone;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxAddress;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.DateTimePicker timePickerBirthday;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textboxCMND;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textboxPassword;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textboxUsername;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxCMND;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxPassword;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxUsername;
         private MaterialSkin.Controls.MaterialRaisedButton raisedButtonAdd;
         private MaterialSkin.Controls.MaterialRaisedButton raisedButtonDelete;
         private MaterialSkin.Controls.MaterialSingleLineTextField textFieldSearch;

@@ -38,6 +38,7 @@
             this.khuVuc1 = new QuanLyQuanCafe.QuanLy.KhuVuc();
             this.tabPageReport = new System.Windows.Forms.TabPage();
             this.baoCao1 = new QuanLyQuanCafe.QuanLy.BaoCao();
+            this.hangHoa2 = new QuanLyQuanCafe.QuanLy.HangHoa();
             this.materialTabControl1.SuspendLayout();
             this.tabPageEmployee.SuspendLayout();
             this.tabPageMenu.SuspendLayout();
@@ -97,6 +98,7 @@
             // 
             // tabPageMenu
             // 
+            this.tabPageMenu.Controls.Add(this.hangHoa2);
             this.tabPageMenu.Controls.Add(this.hangHoa1);
             this.tabPageMenu.Location = new System.Drawing.Point(4, 22);
             this.tabPageMenu.Name = "tabPageMenu";
@@ -151,6 +153,14 @@
             this.baoCao1.Size = new System.Drawing.Size(1261, 514);
             this.baoCao1.TabIndex = 0;
             // 
+            // hangHoa2
+            // 
+            this.hangHoa2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hangHoa2.Location = new System.Drawing.Point(3, 3);
+            this.hangHoa2.Name = "hangHoa2";
+            this.hangHoa2.Size = new System.Drawing.Size(1261, 514);
+            this.hangHoa2.TabIndex = 1;
+            // 
             // QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,5 +194,6 @@
         private System.Windows.Forms.TabPage tabPageEmployee;
         private NhanVien nhanVien1;
         private string MSNV;
+        private HangHoa hangHoa2;
     }
 }

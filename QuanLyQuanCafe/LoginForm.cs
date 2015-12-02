@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Globalization;
-using System.Threading;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -15,7 +13,6 @@ namespace QuanLyQuanCafe
         public LoginForm()
         {
             InitializeComponent();
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
