@@ -18,26 +18,26 @@ namespace QuanLyQuanCafe.ThuNgan
             {
                 conn.Open();
                 var cmd = new SqlCommand("SELECT * FROM KhuVuc", conn);
-                var r = cmd.ExecuteReader();
+                var reader = cmd.ExecuteReader();
 
-                while (r.Read())
+                while (reader.Read())
                 {
-                    var group = new ListViewGroup(r["TenKhuVuc"].ToString());
+                    var group = new ListViewGroup(reader["TenKhuVuc"].ToString());
                     listView1.Groups.Add(group);
 
-                    for (var i = 1; i <= Convert.ToInt32(r["SoBan"]); i = i + 1)
+                    for (var i = 1; i <= Convert.ToInt32(reader["SoBan"]); i = i + 1)
                     {
                         listView1.Items.Add(new ListViewItem("Bàn" + i, 0, group));
                     }
                 }
 
-                r.Close();
+                reader.Close();
                 cmd = new SqlCommand("SELECT * FROM HangHoa", conn);
-                r = cmd.ExecuteReader();
+                reader = cmd.ExecuteReader();
 
-                while (r.Read())
+                while (reader.Read())
                 {
-                    dataGridViewMenu.Rows.Add(r["TenHH"], r["DonViTinh"], r["GiaBan"]);
+                    dataGridViewMenu.Rows.Add(reader["TenHH"], reader["DonViTinh"], reader["GiaBan"]);
                 }
             }
         }
