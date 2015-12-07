@@ -7,7 +7,7 @@ namespace APP
     {
         private SqlCommand _command;
         private SqlConnection _connection;
-        public static string ConnectionString { get; set; }
+        public static string ConnectionString { private get; set; }
 
         public void OpenConnection()
         {
