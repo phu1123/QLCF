@@ -159,7 +159,6 @@ namespace QuanLyQuanCafe.ThuNgan
         private System.Windows.Forms.TabPage tabPage4;
         private HoaDon hoaDon1;
         private LichLamViec lichLamViec1;
-        private string MSNV;
         private System.Windows.Forms.TabPage tabPage1;
     }
 }

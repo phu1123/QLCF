@@ -33,20 +33,21 @@ namespace QuanLyQuanCafe.QuanLy
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.textFieldSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.radioButtonAdmin = new MaterialSkin.Controls.MaterialRadioButton();
-            this.radioButtonEmployee = new MaterialSkin.Controls.MaterialRadioButton();
+            this.radioButtonManager = new MaterialSkin.Controls.MaterialRadioButton();
+            this.radioButtonCashier = new MaterialSkin.Controls.MaterialRadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.radioButtonMale = new MaterialSkin.Controls.MaterialRadioButton();
@@ -62,7 +63,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.timePickerBirthday = new System.Windows.Forms.DateTimePicker();
             this.textBoxCMND = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.textBoxPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textBoxUsername = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.textBoxUserName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.raisedButtonAdd = new MaterialSkin.Controls.MaterialRaisedButton();
             this.raisedButtonDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -133,8 +134,16 @@ namespace QuanLyQuanCafe.QuanLy
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column7,
-            this.Column9});
+            this.Column3,
+            this.Column4});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(0, 43);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -143,11 +152,13 @@ namespace QuanLyQuanCafe.QuanLy
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(620, 491);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "MSNV";
             this.Column1.HeaderText = "MSNV";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -155,23 +166,26 @@ namespace QuanLyQuanCafe.QuanLy
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "TenNV";
             this.Column2.HeaderText = "Họ tên";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
-            // Column7
+            // Column3
             // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column7.HeaderText = "SĐT";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "SoDienThoai";
+            this.Column3.HeaderText = "SĐT";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
-            // Column9
+            // Column4
             // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column9.HeaderText = "Chức vụ";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "PhanQuyen";
+            this.Column4.HeaderText = "Chức vụ";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // materialRaisedButton2
             // 
@@ -218,12 +232,12 @@ namespace QuanLyQuanCafe.QuanLy
             this.panel1.Controls.Add(this.timePickerBirthday);
             this.panel1.Controls.Add(this.textBoxCMND);
             this.panel1.Controls.Add(this.textBoxPassword);
-            this.panel1.Controls.Add(this.textBoxUsername);
+            this.panel1.Controls.Add(this.textBoxUserName);
             this.panel1.Location = new System.Drawing.Point(0, 73);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(447, 461);
-            this.panel1.TabIndex = 23;
+            this.panel1.TabIndex = 6;
             this.panel1.Visible = false;
             // 
             // panel3
@@ -231,8 +245,8 @@ namespace QuanLyQuanCafe.QuanLy
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.materialLabel4);
-            this.panel3.Controls.Add(this.radioButtonAdmin);
-            this.panel3.Controls.Add(this.radioButtonEmployee);
+            this.panel3.Controls.Add(this.radioButtonManager);
+            this.panel3.Controls.Add(this.radioButtonCashier);
             this.panel3.Location = new System.Drawing.Point(0, 366);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(430, 24);
@@ -252,45 +266,45 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel4.TabIndex = 32;
             this.materialLabel4.Text = "Chức vụ:";
             // 
-            // radioButtonAdmin
+            // radioButtonManager
             // 
-            this.radioButtonAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.radioButtonManager.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonAdmin.AutoSize = true;
-            this.radioButtonAdmin.Depth = 0;
-            this.radioButtonAdmin.Font = new System.Drawing.Font("Roboto", 10F);
-            this.radioButtonAdmin.Location = new System.Drawing.Point(95, -1);
-            this.radioButtonAdmin.Margin = new System.Windows.Forms.Padding(0);
-            this.radioButtonAdmin.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.radioButtonAdmin.MouseState = MaterialSkin.MouseState.HOVER;
-            this.radioButtonAdmin.Name = "radioButtonAdmin";
-            this.radioButtonAdmin.Ripple = true;
-            this.radioButtonAdmin.Size = new System.Drawing.Size(75, 30);
-            this.radioButtonAdmin.TabIndex = 26;
-            this.radioButtonAdmin.TabStop = true;
-            this.radioButtonAdmin.Text = "Quản lý";
-            this.radioButtonAdmin.UseVisualStyleBackColor = true;
+            this.radioButtonManager.AutoSize = true;
+            this.radioButtonManager.Depth = 0;
+            this.radioButtonManager.Font = new System.Drawing.Font("Roboto", 10F);
+            this.radioButtonManager.Location = new System.Drawing.Point(95, -1);
+            this.radioButtonManager.Margin = new System.Windows.Forms.Padding(0);
+            this.radioButtonManager.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.radioButtonManager.MouseState = MaterialSkin.MouseState.HOVER;
+            this.radioButtonManager.Name = "radioButtonManager";
+            this.radioButtonManager.Ripple = true;
+            this.radioButtonManager.Size = new System.Drawing.Size(75, 30);
+            this.radioButtonManager.TabIndex = 26;
+            this.radioButtonManager.TabStop = true;
+            this.radioButtonManager.Text = "Quản lý";
+            this.radioButtonManager.UseVisualStyleBackColor = true;
             // 
-            // radioButtonEmployee
+            // radioButtonCashier
             // 
-            this.radioButtonEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.radioButtonCashier.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonEmployee.AutoSize = true;
-            this.radioButtonEmployee.Depth = 0;
-            this.radioButtonEmployee.Font = new System.Drawing.Font("Roboto", 10F);
-            this.radioButtonEmployee.Location = new System.Drawing.Point(198, -1);
-            this.radioButtonEmployee.Margin = new System.Windows.Forms.Padding(0);
-            this.radioButtonEmployee.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.radioButtonEmployee.MouseState = MaterialSkin.MouseState.HOVER;
-            this.radioButtonEmployee.Name = "radioButtonEmployee";
-            this.radioButtonEmployee.Ripple = true;
-            this.radioButtonEmployee.Size = new System.Drawing.Size(89, 30);
-            this.radioButtonEmployee.TabIndex = 27;
-            this.radioButtonEmployee.TabStop = true;
-            this.radioButtonEmployee.Text = "Thu Ngân";
-            this.radioButtonEmployee.UseVisualStyleBackColor = true;
+            this.radioButtonCashier.AutoSize = true;
+            this.radioButtonCashier.Depth = 0;
+            this.radioButtonCashier.Font = new System.Drawing.Font("Roboto", 10F);
+            this.radioButtonCashier.Location = new System.Drawing.Point(198, -1);
+            this.radioButtonCashier.Margin = new System.Windows.Forms.Padding(0);
+            this.radioButtonCashier.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.radioButtonCashier.MouseState = MaterialSkin.MouseState.HOVER;
+            this.radioButtonCashier.Name = "radioButtonCashier";
+            this.radioButtonCashier.Ripple = true;
+            this.radioButtonCashier.Size = new System.Drawing.Size(89, 30);
+            this.radioButtonCashier.TabIndex = 27;
+            this.radioButtonCashier.TabStop = true;
+            this.radioButtonCashier.Text = "Thu Ngân";
+            this.radioButtonCashier.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -411,7 +425,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.textBoxFullName.SelectionLength = 0;
             this.textBoxFullName.SelectionStart = 0;
             this.textBoxFullName.Size = new System.Drawing.Size(423, 23);
-            this.textBoxFullName.TabIndex = 38;
+            this.textBoxFullName.TabIndex = 2;
             this.textBoxFullName.TabStop = false;
             this.textBoxFullName.UseSystemPasswordChar = false;
             this.textBoxFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxFullName_KeyPress);
@@ -426,7 +440,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.timePickerWorkSince.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.timePickerWorkSince.Name = "timePickerWorkSince";
             this.timePickerWorkSince.Size = new System.Drawing.Size(317, 20);
-            this.timePickerWorkSince.TabIndex = 36;
+            this.timePickerWorkSince.TabIndex = 8;
             // 
             // materialLabel3
             // 
@@ -460,7 +474,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.textBoxPhone.SelectionLength = 0;
             this.textBoxPhone.SelectionStart = 0;
             this.textBoxPhone.Size = new System.Drawing.Size(423, 23);
-            this.textBoxPhone.TabIndex = 31;
+            this.textBoxPhone.TabIndex = 7;
             this.textBoxPhone.TabStop = false;
             this.textBoxPhone.UseSystemPasswordChar = false;
             this.textBoxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxIDCardNumber_KeyPress);
@@ -481,7 +495,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.textBoxAddress.SelectionLength = 0;
             this.textBoxAddress.SelectionStart = 0;
             this.textBoxAddress.Size = new System.Drawing.Size(423, 23);
-            this.textBoxAddress.TabIndex = 30;
+            this.textBoxAddress.TabIndex = 5;
             this.textBoxAddress.TabStop = false;
             this.textBoxAddress.UseSystemPasswordChar = false;
             // 
@@ -511,7 +525,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.timePickerBirthday.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.timePickerBirthday.Name = "timePickerBirthday";
             this.timePickerBirthday.Size = new System.Drawing.Size(317, 20);
-            this.timePickerBirthday.TabIndex = 28;
+            this.timePickerBirthday.TabIndex = 3;
             // 
             // textBoxCMND
             // 
@@ -529,7 +543,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.textBoxCMND.SelectionLength = 0;
             this.textBoxCMND.SelectionStart = 0;
             this.textBoxCMND.Size = new System.Drawing.Size(423, 23);
-            this.textBoxCMND.TabIndex = 25;
+            this.textBoxCMND.TabIndex = 4;
             this.textBoxCMND.TabStop = false;
             this.textBoxCMND.UseSystemPasswordChar = false;
             this.textBoxCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxIDCardNumber_KeyPress);
@@ -550,28 +564,28 @@ namespace QuanLyQuanCafe.QuanLy
             this.textBoxPassword.SelectionLength = 0;
             this.textBoxPassword.SelectionStart = 0;
             this.textBoxPassword.Size = new System.Drawing.Size(423, 23);
-            this.textBoxPassword.TabIndex = 24;
+            this.textBoxPassword.TabIndex = 1;
             this.textBoxPassword.TabStop = false;
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
-            // textBoxUsername
+            // textBoxUserName
             // 
-            this.textBoxUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxUsername.Depth = 0;
-            this.textBoxUsername.Hint = "Tên đăng nhập";
-            this.textBoxUsername.Location = new System.Drawing.Point(7, 19);
-            this.textBoxUsername.MaxLength = 20;
-            this.textBoxUsername.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.PasswordChar = '\0';
-            this.textBoxUsername.SelectedText = "";
-            this.textBoxUsername.SelectionLength = 0;
-            this.textBoxUsername.SelectionStart = 0;
-            this.textBoxUsername.Size = new System.Drawing.Size(423, 23);
-            this.textBoxUsername.TabIndex = 23;
-            this.textBoxUsername.TabStop = false;
-            this.textBoxUsername.UseSystemPasswordChar = false;
+            this.textBoxUserName.Depth = 0;
+            this.textBoxUserName.Hint = "Tên đăng nhập";
+            this.textBoxUserName.Location = new System.Drawing.Point(7, 19);
+            this.textBoxUserName.MaxLength = 20;
+            this.textBoxUserName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textBoxUserName.Name = "textBoxUserName";
+            this.textBoxUserName.PasswordChar = '\0';
+            this.textBoxUserName.SelectedText = "";
+            this.textBoxUserName.SelectionLength = 0;
+            this.textBoxUserName.SelectionStart = 0;
+            this.textBoxUserName.Size = new System.Drawing.Size(423, 23);
+            this.textBoxUserName.TabIndex = 0;
+            this.textBoxUserName.TabStop = false;
+            this.textBoxUserName.UseSystemPasswordChar = false;
             // 
             // raisedButtonAdd
             // 
@@ -615,7 +629,6 @@ namespace QuanLyQuanCafe.QuanLy
             this.Controls.Add(this.splitContainer1);
             this.Name = "NhanVien";
             this.Size = new System.Drawing.Size(1075, 536);
-            this.Load += new System.EventHandler(this.Nhanvien_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -639,8 +652,8 @@ namespace QuanLyQuanCafe.QuanLy
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialRadioButton radioButtonAdmin;
-        private MaterialSkin.Controls.MaterialRadioButton radioButtonEmployee;
+        private MaterialSkin.Controls.MaterialRadioButton radioButtonManager;
+        private MaterialSkin.Controls.MaterialRadioButton radioButtonCashier;
         private System.Windows.Forms.Panel panel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialRadioButton radioButtonMale;
@@ -656,7 +669,7 @@ namespace QuanLyQuanCafe.QuanLy
         private System.Windows.Forms.DateTimePicker timePickerBirthday;
         private MaterialSkin.Controls.MaterialSingleLineTextField textBoxCMND;
         private MaterialSkin.Controls.MaterialSingleLineTextField textBoxPassword;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxUsername;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxUserName;
         private MaterialSkin.Controls.MaterialRaisedButton raisedButtonAdd;
         private MaterialSkin.Controls.MaterialRaisedButton raisedButtonDelete;
         private MaterialSkin.Controls.MaterialSingleLineTextField textFieldSearch;
@@ -665,7 +678,7 @@ namespace QuanLyQuanCafe.QuanLy
         private ErrorProvider errorProvider1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
     }
 }

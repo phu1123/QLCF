@@ -22,18 +22,5 @@ namespace QuanLyQuanCafe.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=.\\SQLEXPRESS; Database=QLCF; Integrated Security=SSPI; MultipleActiveResul" +
-            "tSets=true")]
-        public string connString {
-            get {
-                return ((string)(this["connString"]));
-            }
-            set {
-                this["connString"] = value;
-            }
-        }
     }
 }

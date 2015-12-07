@@ -116,8 +116,7 @@ namespace QuanLyQuanCafe.QuanLy
             //    pdfDoc.Close();
             //    stream.Close();
             //}
-            Crytal a = new Crytal();
-            a.Show();
+         
         }
     }
     
