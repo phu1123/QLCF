@@ -24,8 +24,8 @@ namespace QuanLyQuanCafe.QuanLy
 
         private void raisedButtonAdd_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
             dataGridView1.ClearSelection();
+            panel1.Visible = true;
             flatButtonAddEdit.Text = @"Thêm";
 
             foreach (Control c in panel1.Controls)
@@ -117,9 +117,9 @@ namespace QuanLyQuanCafe.QuanLy
         {
             if (!dataGridView1.Focused)
             {
-                dataGridView1.ClearSelection();
-                panel1.Visible = false;
-                return;
+                //dataGridView1.ClearSelection();
+                //panel1.Visible = false;
+                //return;
             }
 
             foreach (Control c in panel1.Controls)

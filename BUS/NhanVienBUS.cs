@@ -3,12 +3,16 @@ using System.Data;
 using DAO;
 using DTO;
 
-
 namespace BUS
 {
     public class NhanVienBUS : IDisposable
     {
-        readonly NhanVienDAO _nhanvienDAO = new NhanVienDAO();
+        private readonly NhanVienDAO _nhanvienDAO = new NhanVienDAO();
+
+        public void Dispose()
+        {
+            _nhanvienDAO.CloseConnection();
+        }
 
         public DataTable ListNhanVien()
         {
@@ -43,11 +47,6 @@ namespace BUS
         public void EditNhanVien(NhanVienDTO info, string msnv)
         {
             _nhanvienDAO.EditNhanVien(info, msnv);
-        }
-
-        public void Dispose()
-        {
-            _nhanvienDAO.CloseConnection(); 
         }
     }
 }

@@ -7,7 +7,7 @@ namespace DAO
 {
     public class NhanVienDAO
     {
-        readonly DbConnection _dbconnection = new DbConnection();
+        private readonly DbConnection _dbconnection = new DbConnection();
 
         public NhanVienDAO()
         {
