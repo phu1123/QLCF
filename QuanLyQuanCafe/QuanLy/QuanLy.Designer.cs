@@ -34,6 +34,10 @@
             this.tabPageMenu = new System.Windows.Forms.TabPage();
             this.tabPageArea = new System.Windows.Forms.TabPage();
             this.tabPageReport = new System.Windows.Forms.TabPage();
+            this.hangHoa2 = new QuanLyQuanCafe.QuanLy.HangHoa();
+            this.hangHoa1 = new QuanLyQuanCafe.QuanLy.HangHoa();
+            this.khuVuc1 = new QuanLyQuanCafe.QuanLy.KhuVuc();
+            this.baoCao1 = new QuanLyQuanCafe.QuanLy.BaoCao();
             this.materialTabControl1.SuspendLayout();
             this.tabPageMenu.SuspendLayout();
             this.tabPageArea.SuspendLayout();
@@ -83,6 +87,8 @@
             // 
             // tabPageMenu
             // 
+            this.tabPageMenu.Controls.Add(this.hangHoa2);
+            this.tabPageMenu.Controls.Add(this.hangHoa1);
             this.tabPageMenu.Location = new System.Drawing.Point(4, 22);
             this.tabPageMenu.Name = "tabPageMenu";
             this.tabPageMenu.Padding = new System.Windows.Forms.Padding(3);
@@ -93,6 +99,7 @@
             // tabPageArea
             // 
             this.tabPageArea.BackColor = System.Drawing.Color.White;
+            this.tabPageArea.Controls.Add(this.khuVuc1);
             this.tabPageArea.Location = new System.Drawing.Point(4, 22);
             this.tabPageArea.Name = "tabPageArea";
             this.tabPageArea.Padding = new System.Windows.Forms.Padding(3);
@@ -102,6 +109,7 @@
             // 
             // tabPageReport
             // 
+            this.tabPageReport.Controls.Add(this.baoCao1);
             this.tabPageReport.Location = new System.Drawing.Point(4, 22);
             this.tabPageReport.Name = "tabPageReport";
             this.tabPageReport.Padding = new System.Windows.Forms.Padding(3);
@@ -109,6 +117,38 @@
             this.tabPageReport.TabIndex = 3;
             this.tabPageReport.Text = "Báo cáo";
             this.tabPageReport.UseVisualStyleBackColor = true;
+            // 
+            // hangHoa2
+            // 
+            this.hangHoa2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hangHoa2.Location = new System.Drawing.Point(3, 3);
+            this.hangHoa2.Name = "hangHoa2";
+            this.hangHoa2.Size = new System.Drawing.Size(1261, 514);
+            this.hangHoa2.TabIndex = 1;
+            // 
+            // hangHoa1
+            // 
+            this.hangHoa1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hangHoa1.Location = new System.Drawing.Point(3, 3);
+            this.hangHoa1.Name = "hangHoa1";
+            this.hangHoa1.Size = new System.Drawing.Size(1261, 514);
+            this.hangHoa1.TabIndex = 0;
+            // 
+            // khuVuc1
+            // 
+            this.khuVuc1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.khuVuc1.Location = new System.Drawing.Point(3, 3);
+            this.khuVuc1.Name = "khuVuc1";
+            this.khuVuc1.Size = new System.Drawing.Size(1261, 514);
+            this.khuVuc1.TabIndex = 0;
+            // 
+            // baoCao1
+            // 
+            this.baoCao1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.baoCao1.Location = new System.Drawing.Point(3, 3);
+            this.baoCao1.Name = "baoCao1";
+            this.baoCao1.Size = new System.Drawing.Size(1261, 514);
+            this.baoCao1.TabIndex = 0;
             // 
             // QuanLy
             // 
@@ -136,7 +176,11 @@
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage tabPageMenu;
         private System.Windows.Forms.TabPage tabPageArea;
+        private HangHoa hangHoa1;
+        private KhuVuc khuVuc1;
         private System.Windows.Forms.TabPage tabPageReport;
+        private BaoCao baoCao1;
         private System.Windows.Forms.TabPage tabPageEmployee;
+        private HangHoa hangHoa2;
     }
 }

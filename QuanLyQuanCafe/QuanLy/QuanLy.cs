@@ -19,8 +19,8 @@ namespace QuanLyQuanCafe.QuanLy
 
         private void QuanLy_Load(object sender, EventArgs e)
         {
-            NhanVien nhanvien = new NhanVien { Dock = DockStyle.Fill };
-            tabPageEmployee.Controls.Add(nhanvien);
+            NhanVien nhanVien = new NhanVien { Dock = DockStyle.Fill };
+            tabPageEmployee.Controls.Add(nhanVien);
         }
 
         private void QuanLy_FormClosing(object sender, FormClosingEventArgs e)

@@ -4,15 +4,15 @@ namespace DTO
 {
     public class NhanVienDTO
     {
-        public string TenDangNhap { get; set; }
-        public string MatKhau { get; set; }
-        public string TenNv { get; set; }
-        public bool GioiTinh { get; set; }
-        public DateTime NgaySinh { get; set; }
-        public string Cmnd { get; set; }
-        public string DiaChi { get; set; }
-        public string SoDienThoai { get; set; }
-        public DateTime NgayLamViec { get; set; }
-        public bool PhanQuyen { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string FullName { get; set; }
+        public bool Gender { get; set; }
+        public DateTime Birthday { get; set; }
+        public string CMND { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
+        public DateTime WorkSince { get; set; }
+        public bool Position { get; set; }
     }
 }

@@ -1,9 +1,0 @@
-C:\Users\Q\Desktop\QLCF\DAO\bin\Debug\DAO.dll
-C:\Users\Q\Desktop\QLCF\DAO\bin\Debug\DAO.pdb
-C:\Users\Q\Desktop\QLCF\DAO\bin\Debug\APP.dll
-C:\Users\Q\Desktop\QLCF\DAO\bin\Debug\DTO.dll
-C:\Users\Q\Desktop\QLCF\DAO\bin\Debug\APP.pdb
-C:\Users\Q\Desktop\QLCF\DAO\bin\Debug\DTO.pdb
-C:\Users\Q\Desktop\QLCF\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
-C:\Users\Q\Desktop\QLCF\DAO\obj\Debug\DAO.dll
-C:\Users\Q\Desktop\QLCF\DAO\obj\Debug\DAO.pdb
