@@ -39,16 +39,16 @@ namespace DAO
 
             return new NhanVienDTO
             {
-                TenDangNhap = infoTable.Rows[0]["TenDangNhap"].ToString(),
-                MatKhau = infoTable.Rows[0]["MatKhau"].ToString(),
-                TenNv = infoTable.Rows[0]["TenNV"].ToString(),
-                GioiTinh = (bool)infoTable.Rows[0]["GioiTinh"],
-                NgaySinh = Convert.ToDateTime(infoTable.Rows[0]["NgaySinh"]),
-                Cmnd = infoTable.Rows[0]["CMND"].ToString(),
-                DiaChi = infoTable.Rows[0]["DiaChi"].ToString(),
-                SoDienThoai = infoTable.Rows[0]["SoDienThoai"].ToString(),
-                NgayLamViec = Convert.ToDateTime(infoTable.Rows[0]["NgayVaoLam"]),
-                PhanQuyen = (bool)infoTable.Rows[0]["PhanQuyen"]
+                UserName = infoTable.Rows[0]["TenDangNhap"].ToString(),
+                Password = infoTable.Rows[0]["MatKhau"].ToString(),
+                FullName = infoTable.Rows[0]["TenNV"].ToString(),
+                Gender = (bool)infoTable.Rows[0]["GioiTinh"],
+                Birthday = Convert.ToDateTime(infoTable.Rows[0]["NgaySinh"]),
+                CMND = infoTable.Rows[0]["CMND"].ToString(),
+                Address = infoTable.Rows[0]["DiaChi"].ToString(),
+                Phone = infoTable.Rows[0]["SoDienThoai"].ToString(),
+                WorkSince = Convert.ToDateTime(infoTable.Rows[0]["NgayVaoLam"]),
+                Position = (bool)infoTable.Rows[0]["PhanQuyen"]
             };
         }
 
@@ -67,17 +67,17 @@ namespace DAO
         public void InsertNhanVien(NhanVienDTO info)
         {
             string sql = "INSERT INTO NhanVien(TenNV, GioiTinh, NgaySinh, DiaChi, SoDienThoai, CMND, NgayVaoLam) " +
-                        $"VALUES(N'{info.TenNv}', '{info.GioiTinh}', '{info.NgaySinh}', N'{info.DiaChi}', '{info.SoDienThoai}', '{info.Cmnd}', '{info.NgayLamViec}'); SELECT SCOPE_IDENTITY()";
+                        $"VALUES(N'{info.FullName}', '{info.Gender}', '{info.Birthday}', N'{info.Address}', '{info.Phone}', '{info.CMND}', '{info.WorkSince}'); SELECT SCOPE_IDENTITY()";
             string msnv = _dbconnection.ExecuteScalar(sql).ToString();
-            _dbconnection.ExcuteNonQuery($"INSERT INTO TaiKhoan VALUES('{info.TenDangNhap}', '{msnv}', '{info.MatKhau}', '{info.PhanQuyen}')");
+            _dbconnection.ExcuteNonQuery($"INSERT INTO TaiKhoan VALUES('{info.UserName}', '{msnv}', '{info.Password}', '{info.Position}')");
         }
 
         public void EditNhanVien(NhanVienDTO info, string msnv)
         {
-            string sql = $"UPDATE NhanVien SET TenNV=N'{info.TenNv}', GioiTinh='{info.GioiTinh}', NgaySinh='{info.NgaySinh}', DiaChi=N'{info.DiaChi}', SoDienThoai='{info.SoDienThoai}', CMND='{info.Cmnd}', NgayVaoLam='{info.NgayLamViec}' " +
+            string sql = $"UPDATE NhanVien SET TenNV=N'{info.FullName}', GioiTinh='{info.Gender}', NgaySinh='{info.Birthday}', DiaChi=N'{info.Address}', SoDienThoai='{info.Phone}', CMND='{info.CMND}', NgayVaoLam='{info.WorkSince}' " +
                          $"WHERE MSNV='{msnv}'";
             _dbconnection.ExcuteNonQuery(sql);
-            _dbconnection.ExcuteNonQuery($"UPDATE TaiKhoan SET TenDangNhap='{info.TenDangNhap}', MatKhau='{info.MatKhau}', PhanQuyen='{info.PhanQuyen}' WHERE MSNV='{msnv}'");
+            _dbconnection.ExcuteNonQuery($"UPDATE TaiKhoan SET TenDangNhap='{info.UserName}', MatKhau='{info.Password}', PhanQuyen='{info.Position}' WHERE MSNV='{msnv}'");
         }
     }
 }
