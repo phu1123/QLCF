@@ -85,6 +85,9 @@
     <Compile Include="QuanLy\QuanLy.Designer.cs">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabNoHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ThuNgan\BaoCaoHangNgay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,11 +112,11 @@
     <Compile Include="ThuNgan\QuanLyBan.Designer.cs">
       <DependentUpon>QuanLyBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="ThuNgan\ThuNgan.cs">
       <SubType>Form</SubType>
@@ -153,8 +156,8 @@
     <EmbeddedResource Include="ThuNgan\QuanLyBan.resx">
       <DependentUpon>QuanLyBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThuNgan\ThuNgan.resx">
       <DependentUpon>ThuNgan.cs</DependentUpon>

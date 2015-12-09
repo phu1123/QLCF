@@ -9,9 +9,9 @@ using APP;
 
 namespace QuanLyQuanCafe
 {
-    public partial class LoginForm : MaterialForm
+    public partial class DangNhap : MaterialForm
     {
-        public LoginForm()
+        public DangNhap()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -40,7 +40,7 @@ namespace QuanLyQuanCafe
                 if (row != null)
                 {
                     if (row.Field<bool>("PhanQuyen") == false)
-                        new QuanLy.QuanLy().Show();
+                        new QuanLy.QuanLy(row.Field<int>("MSNV")).Show();
                     else new ThuNgan.ThuNgan().Show();
                     Close();
                 }

@@ -16,17 +16,17 @@ namespace QuanLyQuanCafe.QuanLy
             RefreshNhanVien();
         }
 
-        public void RefreshNhanVien()
+        private void RefreshNhanVien()
         {
             using (NhanVienBUS nhanvienBUS = new NhanVienBUS())
                 dataGridView1.DataSource = nhanvienBUS.ListNhanVien();
         }
 
-        private void raisedButtonAdd_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
             dataGridView1.ClearSelection();
             panel1.Visible = true;
-            flatButtonAddEdit.Text = @"Thêm";
+            btnYes.Text = @"Thêm";
 
             foreach (Control c in panel1.Controls)
             {
@@ -38,7 +38,7 @@ namespace QuanLyQuanCafe.QuanLy
         }
 
 
-        private void raisedButtonDelete_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow == null) return;
 
@@ -51,7 +51,7 @@ namespace QuanLyQuanCafe.QuanLy
             RefreshNhanVien();
         }
 
-        private void flatButtonAddEdit_Click(object sender, EventArgs e)
+        private void btnYes_Click(object sender, EventArgs e)
         {
             foreach (Control c in panel1.Controls)
             {
@@ -62,12 +62,12 @@ namespace QuanLyQuanCafe.QuanLy
                     errorProvider1.SetError(c, c.Controls.OfType<MaterialRadioButton>().All(chk => chk.Checked == false) ? "Bạn không được để trống thông tin này" : string.Empty);
             }
 
-            if (flatButtonAddEdit.Text == @"Thêm")
+            if (btnYes.Text == @"Thêm")
             {
                 using (NhanVienBUS nhanvienBUS = new NhanVienBUS())
                 {
-                    if(nhanvienBUS.IsUserNameExist(textBoxUserName.Text))
-                        errorProvider1.SetError(textBoxUserName, "Tên đăng nhập đã tồn tại");
+                    if (nhanvienBUS.IsUserNameExist(txtTenDangNhap.Text))
+                        errorProvider1.SetError(txtTenDangNhap, "Tên đăng nhập đã tồn tại");
                 }
             }
 
@@ -77,16 +77,16 @@ namespace QuanLyQuanCafe.QuanLy
             {
                 NhanVienDTO info = new NhanVienDTO
                 {
-                    UserName = textBoxUserName.Text,
-                    Password = textBoxPassword.Text,
-                    FullName = textBoxFullName.Text,
-                    Gender = radioButtonFemale.Checked,
-                    Birthday = timePickerBirthday.Value,
-                    CMND = textBoxCMND.Text,
-                    Address = textBoxAddress.Text,
-                    Phone = textBoxPhone.Text,
-                    WorkSince = timePickerWorkSince.Value,
-                    Position = radioButtonCashier.Checked
+                    TenDangNhap = txtTenDangNhap.Text,
+                    MatKhau = txtMatKhau.Text,
+                    TenNv = txtTenNV.Text,
+                    GioiTinh = rbtnNu.Checked,
+                    NgaySinh = dtpNgaySinh.Value,
+                    Cmnd = txtCmnd.Text,
+                    DiaChi = txtDiaChi.Text,
+                    SoDienThoai = txtSoDienThoai.Text,
+                    NgayLamViec = dtpNgayVaoLam.Value,
+                    PhanQuyen = rbtnThuNgan.Checked
                 };
 
                 if (dataGridView1.SelectedRows.Count == 0)
@@ -101,9 +101,9 @@ namespace QuanLyQuanCafe.QuanLy
             RefreshNhanVien();
         }
 
-        private void textFieldSearch_TextChanged(object sender, EventArgs e)
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = $"TenNV LIKE '%{textFieldSearch.Text}%' OR MSNV + '' LIKE '%{textFieldSearch.Text}%' OR SoDienThoai LIKE '%{textFieldSearch.Text}%'";
+            ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = $"TenNV LIKE '%{txtTimKiem.Text}%' OR MSNV + '' LIKE '%{txtTimKiem.Text}%' OR SoDienThoai LIKE '%{txtTimKiem.Text}%'";
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -117,16 +117,16 @@ namespace QuanLyQuanCafe.QuanLy
         {
             if (!dataGridView1.Focused)
             {
-                //dataGridView1.ClearSelection();
-                //panel1.Visible = false;
-                //return;
+                dataGridView1.ClearSelection();
+                panel1.Visible = false;
+                return;
             }
 
             foreach (Control c in panel1.Controls)
                 errorProvider1.SetError(c, string.Empty);
 
             panel1.Visible = true;
-            flatButtonAddEdit.Text = @"Sửa";
+            btnYes.Text = @"Sửa";
 
             using (NhanVienBUS nhanvienBUS = new NhanVienBUS())
             {
@@ -134,33 +134,33 @@ namespace QuanLyQuanCafe.QuanLy
 
                 string msnv = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 NhanVienDTO info = nhanvienBUS.LoadNhanVien(msnv);
-                textBoxUserName.Text = info.UserName;
-                textBoxPassword.Text = info.Password;
-                textBoxFullName.Text = info.FullName;
-                if (info.Gender) radioButtonFemale.Checked = true;
-                else radioButtonMale.Checked = true;
-                timePickerBirthday.Value = info.Birthday;
-                textBoxCMND.Text = info.CMND;
-                textBoxAddress.Text = info.Address;
-                textBoxPhone.Text = info.Phone;
-                timePickerWorkSince.Value = Convert.ToDateTime(info.WorkSince);
-                if (info.Position) radioButtonCashier.Checked = true;
-                else radioButtonManager.Checked = true;
+                txtTenDangNhap.Text = info.TenDangNhap;
+                txtMatKhau.Text = info.MatKhau;
+                txtTenNV.Text = info.TenNv;
+                if (info.GioiTinh) rbtnNu.Checked = true;
+                else rbtnNam.Checked = true;
+                dtpNgaySinh.Value = info.NgaySinh;
+                txtCmnd.Text = info.Cmnd;
+                txtDiaChi.Text = info.DiaChi;
+                txtSoDienThoai.Text = info.SoDienThoai;
+                dtpNgayVaoLam.Value = Convert.ToDateTime(info.NgayLamViec);
+                if (info.PhanQuyen) rbtnThuNgan.Checked = true;
+                else rbtnQuanLy.Checked = true;
             }
         }
 
-        private void flatButtonCancel_Click(object sender, EventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
             dataGridView1.ClearSelection();
         }
 
-        private void textboxFullName_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtTenDangNhap_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
         }
 
-        private void textboxIDCardNumber_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtCMND_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
