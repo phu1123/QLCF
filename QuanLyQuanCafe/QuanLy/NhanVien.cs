@@ -22,7 +22,7 @@ namespace QuanLyQuanCafe.QuanLy
                 dataGridView1.DataSource = nhanvienBUS.ListNhanVien();
         }
 
-        private void raisedButtonAdd_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
             dataGridView1.ClearSelection();
             panel1.Visible = true;
@@ -38,7 +38,7 @@ namespace QuanLyQuanCafe.QuanLy
         }
 
 
-        private void raisedButtonDelete_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow == null) return;
 
@@ -51,7 +51,7 @@ namespace QuanLyQuanCafe.QuanLy
             RefreshNhanVien();
         }
 
-        private void flatButtonAddEdit_Click(object sender, EventArgs e)
+        private void btnYes_Click(object sender, EventArgs e)
         {
             foreach (Control c in panel1.Controls)
             {
@@ -66,7 +66,7 @@ namespace QuanLyQuanCafe.QuanLy
             {
                 using (NhanVienBUS nhanvienBUS = new NhanVienBUS())
                 {
-                    if(nhanvienBUS.IsUserNameExist(txtTenDangNhap.Text))
+                    if (nhanvienBUS.IsUserNameExist(txtTenDangNhap.Text))
                         errorProvider1.SetError(txtTenDangNhap, "Tên đăng nhập đã tồn tại");
                 }
             }
@@ -101,7 +101,7 @@ namespace QuanLyQuanCafe.QuanLy
             RefreshNhanVien();
         }
 
-        private void textFieldSearch_TextChanged(object sender, EventArgs e)
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = $"TenNV LIKE '%{txtTimKiem.Text}%' OR MSNV + '' LIKE '%{txtTimKiem.Text}%' OR SoDienThoai LIKE '%{txtTimKiem.Text}%'";
         }
@@ -149,18 +149,18 @@ namespace QuanLyQuanCafe.QuanLy
             }
         }
 
-        private void flatButtonCancel_Click(object sender, EventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
             dataGridView1.ClearSelection();
         }
 
-        private void textboxFullName_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtTenDangNhap_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
         }
 
-        private void textboxIDCardNumber_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtCMND_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }

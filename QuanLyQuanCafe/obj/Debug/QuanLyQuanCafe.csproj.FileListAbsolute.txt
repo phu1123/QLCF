@@ -46,7 +46,3 @@ C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.Properties.Resou
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.csproj.GenerateResource.Cache
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.exe
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.pdb
-C:\Users\Q\Desktop\QLCF - Copy\QuanLyQuanCafe\bin\Debug\QuanLyQuanCafe.exe.config
-C:\Users\Q\Desktop\QLCF - Copy\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.csproj.ResolveComReference.cache
-C:\Users\Q\Desktop\QLCF - Copy\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.exe
-C:\Users\Q\Desktop\QLCF - Copy\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.pdb

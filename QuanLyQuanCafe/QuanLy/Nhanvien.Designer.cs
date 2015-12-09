@@ -33,7 +33,7 @@ namespace QuanLyQuanCafe.QuanLy
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txtTimKiem = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -41,8 +41,6 @@ namespace QuanLyQuanCafe.QuanLy
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
@@ -93,14 +91,12 @@ namespace QuanLyQuanCafe.QuanLy
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.materialRaisedButton2);
-            this.splitContainer1.Panel2.Controls.Add(this.materialRaisedButton1);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Panel2.Controls.Add(this.btnThem);
             this.splitContainer1.Panel2.Controls.Add(this.btnXoa);
             this.splitContainer1.Panel2MinSize = 320;
             this.splitContainer1.Size = new System.Drawing.Size(1075, 536);
-            this.splitContainer1.SplitterDistance = 622;
+            this.splitContainer1.SplitterDistance = 600;
             this.splitContainer1.TabIndex = 2;
             // 
             // txtTimKiem
@@ -108,7 +104,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTimKiem.Depth = 0;
             this.txtTimKiem.Hint = "Tìm kiếm";
-            this.txtTimKiem.Location = new System.Drawing.Point(371, 14);
+            this.txtTimKiem.Location = new System.Drawing.Point(349, 14);
             this.txtTimKiem.MaxLength = 32767;
             this.txtTimKiem.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTimKiem.Name = "txtTimKiem";
@@ -120,7 +116,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtTimKiem.TabIndex = 1;
             this.txtTimKiem.TabStop = false;
             this.txtTimKiem.UseSystemPasswordChar = false;
-            this.txtTimKiem.TextChanged += new System.EventHandler(this.textFieldSearch_TextChanged);
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // dataGridView1
             // 
@@ -136,21 +132,21 @@ namespace QuanLyQuanCafe.QuanLy
             this.Column2,
             this.Column3,
             this.Column4});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(0, 43);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(620, 491);
+            this.dataGridView1.Size = new System.Drawing.Size(598, 491);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -187,34 +183,6 @@ namespace QuanLyQuanCafe.QuanLy
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // materialRaisedButton2
-            // 
-            this.materialRaisedButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(15, 15);
-            this.materialRaisedButton2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(99, 35);
-            this.materialRaisedButton2.TabIndex = 25;
-            this.materialRaisedButton2.Text = "Phân ca";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(137, 15);
-            this.materialRaisedButton1.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(99, 35);
-            this.materialRaisedButton1.TabIndex = 24;
-            this.materialRaisedButton1.Text = "Điểm danh";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -236,7 +204,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.panel1.Location = new System.Drawing.Point(0, 73);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(447, 461);
+            this.panel1.Size = new System.Drawing.Size(469, 461);
             this.panel1.TabIndex = 6;
             this.panel1.Visible = false;
             // 
@@ -249,7 +217,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.panel3.Controls.Add(this.rbtnThuNgan);
             this.panel3.Location = new System.Drawing.Point(0, 366);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(430, 24);
+            this.panel3.Size = new System.Drawing.Size(449, 24);
             this.panel3.TabIndex = 42;
             // 
             // materialLabel4
@@ -258,7 +226,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(3, 4);
+            this.materialLabel4.Location = new System.Drawing.Point(11, 4);
             this.materialLabel4.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
@@ -315,7 +283,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.panel2.Controls.Add(this.rbtnNu);
             this.panel2.Location = new System.Drawing.Point(0, 138);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(430, 24);
+            this.panel2.Size = new System.Drawing.Size(449, 24);
             this.panel2.TabIndex = 41;
             // 
             // materialLabel2
@@ -327,7 +295,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(3, 4);
+            this.materialLabel2.Location = new System.Drawing.Point(11, 4);
             this.materialLabel2.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
@@ -381,7 +349,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.btnHuy.AutoSize = true;
             this.btnHuy.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnHuy.Depth = 0;
-            this.btnHuy.Location = new System.Drawing.Point(391, 415);
+            this.btnHuy.Location = new System.Drawing.Point(410, 413);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 20, 4, 6);
             this.btnHuy.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnHuy.Name = "btnHuy";
@@ -390,7 +358,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.btnHuy.TabIndex = 40;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.flatButtonCancel_Click);
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnYes
             // 
@@ -398,7 +366,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.btnYes.AutoSize = true;
             this.btnYes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnYes.Depth = 0;
-            this.btnYes.Location = new System.Drawing.Point(333, 415);
+            this.btnYes.Location = new System.Drawing.Point(352, 413);
             this.btnYes.Margin = new System.Windows.Forms.Padding(4, 20, 4, 6);
             this.btnYes.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnYes.Name = "btnYes";
@@ -407,7 +375,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.btnYes.TabIndex = 39;
             this.btnYes.Text = "Thêm";
             this.btnYes.UseVisualStyleBackColor = true;
-            this.btnYes.Click += new System.EventHandler(this.flatButtonAddEdit_Click);
+            this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
             // txtTenNV
             // 
@@ -415,7 +383,7 @@ namespace QuanLyQuanCafe.QuanLy
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenNV.Depth = 0;
             this.txtTenNV.Hint = "Họ tên";
-            this.txtTenNV.Location = new System.Drawing.Point(7, 101);
+            this.txtTenNV.Location = new System.Drawing.Point(15, 101);
             this.txtTenNV.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.txtTenNV.MaxLength = 50;
             this.txtTenNV.MouseState = MaterialSkin.MouseState.HOVER;
@@ -424,11 +392,11 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtTenNV.SelectedText = "";
             this.txtTenNV.SelectionLength = 0;
             this.txtTenNV.SelectionStart = 0;
-            this.txtTenNV.Size = new System.Drawing.Size(423, 23);
+            this.txtTenNV.Size = new System.Drawing.Size(434, 23);
             this.txtTenNV.TabIndex = 2;
             this.txtTenNV.TabStop = false;
             this.txtTenNV.UseSystemPasswordChar = false;
-            this.txtTenNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxFullName_KeyPress);
+            this.txtTenNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDangNhap_KeyPress);
             // 
             // dtpNgayVaoLam
             // 
@@ -436,10 +404,10 @@ namespace QuanLyQuanCafe.QuanLy
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgayVaoLam.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayVaoLam.Location = new System.Drawing.Point(113, 334);
+            this.dtpNgayVaoLam.Location = new System.Drawing.Point(121, 334);
             this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
-            this.dtpNgayVaoLam.Size = new System.Drawing.Size(317, 20);
+            this.dtpNgayVaoLam.Size = new System.Drawing.Size(328, 20);
             this.dtpNgayVaoLam.TabIndex = 8;
             // 
             // materialLabel3
@@ -450,7 +418,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(3, 334);
+            this.materialLabel3.Location = new System.Drawing.Point(11, 334);
             this.materialLabel3.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
@@ -464,7 +432,7 @@ namespace QuanLyQuanCafe.QuanLy
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSoDienThoai.Depth = 0;
             this.txtSoDienThoai.Hint = "Số điện thoại";
-            this.txtSoDienThoai.Location = new System.Drawing.Point(7, 293);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(15, 293);
             this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.txtSoDienThoai.MaxLength = 12;
             this.txtSoDienThoai.MouseState = MaterialSkin.MouseState.HOVER;
@@ -473,11 +441,11 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtSoDienThoai.SelectedText = "";
             this.txtSoDienThoai.SelectionLength = 0;
             this.txtSoDienThoai.SelectionStart = 0;
-            this.txtSoDienThoai.Size = new System.Drawing.Size(423, 23);
+            this.txtSoDienThoai.Size = new System.Drawing.Size(434, 23);
             this.txtSoDienThoai.TabIndex = 7;
             this.txtSoDienThoai.TabStop = false;
             this.txtSoDienThoai.UseSystemPasswordChar = false;
-            this.txtSoDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxIDCardNumber_KeyPress);
+            this.txtSoDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
             // 
             // txtDiaChi
             // 
@@ -485,7 +453,7 @@ namespace QuanLyQuanCafe.QuanLy
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDiaChi.Depth = 0;
             this.txtDiaChi.Hint = "Địa chỉ";
-            this.txtDiaChi.Location = new System.Drawing.Point(7, 252);
+            this.txtDiaChi.Location = new System.Drawing.Point(15, 252);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.txtDiaChi.MaxLength = 100;
             this.txtDiaChi.MouseState = MaterialSkin.MouseState.HOVER;
@@ -494,7 +462,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtDiaChi.SelectedText = "";
             this.txtDiaChi.SelectionLength = 0;
             this.txtDiaChi.SelectionStart = 0;
-            this.txtDiaChi.Size = new System.Drawing.Size(423, 23);
+            this.txtDiaChi.Size = new System.Drawing.Size(434, 23);
             this.txtDiaChi.TabIndex = 5;
             this.txtDiaChi.TabStop = false;
             this.txtDiaChi.UseSystemPasswordChar = false;
@@ -507,7 +475,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(3, 177);
+            this.materialLabel1.Location = new System.Drawing.Point(11, 177);
             this.materialLabel1.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
@@ -521,10 +489,10 @@ namespace QuanLyQuanCafe.QuanLy
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(113, 177);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(121, 177);
             this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(317, 20);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(328, 20);
             this.dtpNgaySinh.TabIndex = 3;
             // 
             // txtCmnd
@@ -533,7 +501,7 @@ namespace QuanLyQuanCafe.QuanLy
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCmnd.Depth = 0;
             this.txtCmnd.Hint = "Số CMND";
-            this.txtCmnd.Location = new System.Drawing.Point(7, 211);
+            this.txtCmnd.Location = new System.Drawing.Point(15, 211);
             this.txtCmnd.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.txtCmnd.MaxLength = 12;
             this.txtCmnd.MouseState = MaterialSkin.MouseState.HOVER;
@@ -542,11 +510,11 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtCmnd.SelectedText = "";
             this.txtCmnd.SelectionLength = 0;
             this.txtCmnd.SelectionStart = 0;
-            this.txtCmnd.Size = new System.Drawing.Size(423, 23);
+            this.txtCmnd.Size = new System.Drawing.Size(434, 23);
             this.txtCmnd.TabIndex = 4;
             this.txtCmnd.TabStop = false;
             this.txtCmnd.UseSystemPasswordChar = false;
-            this.txtCmnd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxIDCardNumber_KeyPress);
+            this.txtCmnd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
             // 
             // txtMatKhau
             // 
@@ -554,8 +522,8 @@ namespace QuanLyQuanCafe.QuanLy
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMatKhau.Depth = 0;
             this.txtMatKhau.Hint = "Mật khẩu";
-            this.txtMatKhau.Location = new System.Drawing.Point(7, 60);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.txtMatKhau.Location = new System.Drawing.Point(15, 60);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(15, 15, 20, 3);
             this.txtMatKhau.MaxLength = 20;
             this.txtMatKhau.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtMatKhau.Name = "txtMatKhau";
@@ -563,7 +531,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtMatKhau.SelectedText = "";
             this.txtMatKhau.SelectionLength = 0;
             this.txtMatKhau.SelectionStart = 0;
-            this.txtMatKhau.Size = new System.Drawing.Size(423, 23);
+            this.txtMatKhau.Size = new System.Drawing.Size(434, 23);
             this.txtMatKhau.TabIndex = 1;
             this.txtMatKhau.TabStop = false;
             this.txtMatKhau.UseSystemPasswordChar = true;
@@ -574,7 +542,7 @@ namespace QuanLyQuanCafe.QuanLy
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenDangNhap.Depth = 0;
             this.txtTenDangNhap.Hint = "Tên đăng nhập";
-            this.txtTenDangNhap.Location = new System.Drawing.Point(7, 19);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(15, 19);
             this.txtTenDangNhap.MaxLength = 20;
             this.txtTenDangNhap.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTenDangNhap.Name = "txtTenDangNhap";
@@ -582,7 +550,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtTenDangNhap.SelectedText = "";
             this.txtTenDangNhap.SelectionLength = 0;
             this.txtTenDangNhap.SelectionStart = 0;
-            this.txtTenDangNhap.Size = new System.Drawing.Size(423, 23);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(434, 23);
             this.txtTenDangNhap.TabIndex = 0;
             this.txtTenDangNhap.TabStop = false;
             this.txtTenDangNhap.UseSystemPasswordChar = false;
@@ -591,7 +559,7 @@ namespace QuanLyQuanCafe.QuanLy
             // 
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.Depth = 0;
-            this.btnThem.Location = new System.Drawing.Point(259, 15);
+            this.btnThem.Location = new System.Drawing.Point(276, 15);
             this.btnThem.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnThem.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnThem.Name = "btnThem";
@@ -600,14 +568,14 @@ namespace QuanLyQuanCafe.QuanLy
             this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.raisedButtonAdd_Click);
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.Depth = 0;
-            this.btnXoa.Location = new System.Drawing.Point(357, 15);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(20, 15, 15, 3);
+            this.btnXoa.Location = new System.Drawing.Point(374, 15);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(20, 15, 20, 3);
             this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Primary = true;
@@ -615,7 +583,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.raisedButtonDelete_Click);
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // errorProvider1
             // 
@@ -673,8 +641,6 @@ namespace QuanLyQuanCafe.QuanLy
         private MaterialSkin.Controls.MaterialRaisedButton btnThem;
         private MaterialSkin.Controls.MaterialRaisedButton btnXoa;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTimKiem;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private ErrorProvider errorProvider1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;

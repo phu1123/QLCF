@@ -30,14 +30,11 @@
         {
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            this.tabPageEmployee = new System.Windows.Forms.TabPage();
-            this.tabPageMenu = new System.Windows.Forms.TabPage();
-            this.tabPageArea = new System.Windows.Forms.TabPage();
-            this.tabPageReport = new System.Windows.Forms.TabPage();
+            this.tabNhanVien = new System.Windows.Forms.TabPage();
+            this.tabHangHoa = new System.Windows.Forms.TabPage();
+            this.tabKhuVuc = new System.Windows.Forms.TabPage();
+            this.tabBaoCao = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
-            this.tabPageMenu.SuspendLayout();
-            this.tabPageArea.SuspendLayout();
-            this.tabPageReport.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabSelector1
@@ -58,10 +55,10 @@
             this.materialTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTabControl1.Controls.Add(this.tabPageEmployee);
-            this.materialTabControl1.Controls.Add(this.tabPageMenu);
-            this.materialTabControl1.Controls.Add(this.tabPageArea);
-            this.materialTabControl1.Controls.Add(this.tabPageReport);
+            this.materialTabControl1.Controls.Add(this.tabNhanVien);
+            this.materialTabControl1.Controls.Add(this.tabHangHoa);
+            this.materialTabControl1.Controls.Add(this.tabKhuVuc);
+            this.materialTabControl1.Controls.Add(this.tabBaoCao);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Location = new System.Drawing.Point(0, 104);
             this.materialTabControl1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -71,44 +68,44 @@
             this.materialTabControl1.Size = new System.Drawing.Size(1275, 546);
             this.materialTabControl1.TabIndex = 2;
             // 
-            // tabPageEmployee
+            // tabNhanVien
             // 
-            this.tabPageEmployee.BackColor = System.Drawing.Color.White;
-            this.tabPageEmployee.Location = new System.Drawing.Point(4, 22);
-            this.tabPageEmployee.Name = "tabPageEmployee";
-            this.tabPageEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEmployee.Size = new System.Drawing.Size(1267, 520);
-            this.tabPageEmployee.TabIndex = 0;
-            this.tabPageEmployee.Text = "Nhân viên";
+            this.tabNhanVien.BackColor = System.Drawing.Color.White;
+            this.tabNhanVien.Location = new System.Drawing.Point(4, 22);
+            this.tabNhanVien.Name = "tabNhanVien";
+            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNhanVien.Size = new System.Drawing.Size(1267, 520);
+            this.tabNhanVien.TabIndex = 0;
+            this.tabNhanVien.Text = "Nhân viên";
             // 
-            // tabPageMenu
+            // tabHangHoa
             // 
-            this.tabPageMenu.Location = new System.Drawing.Point(4, 22);
-            this.tabPageMenu.Name = "tabPageMenu";
-            this.tabPageMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMenu.Size = new System.Drawing.Size(1267, 520);
-            this.tabPageMenu.TabIndex = 1;
-            this.tabPageMenu.Text = "Hàng hóa";
+            this.tabHangHoa.Location = new System.Drawing.Point(4, 22);
+            this.tabHangHoa.Name = "tabHangHoa";
+            this.tabHangHoa.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHangHoa.Size = new System.Drawing.Size(1267, 520);
+            this.tabHangHoa.TabIndex = 1;
+            this.tabHangHoa.Text = "Hàng hóa";
             // 
-            // tabPageArea
+            // tabKhuVuc
             // 
-            this.tabPageArea.BackColor = System.Drawing.Color.White;
-            this.tabPageArea.Location = new System.Drawing.Point(4, 22);
-            this.tabPageArea.Name = "tabPageArea";
-            this.tabPageArea.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageArea.Size = new System.Drawing.Size(1267, 520);
-            this.tabPageArea.TabIndex = 2;
-            this.tabPageArea.Text = "Khu vực";
+            this.tabKhuVuc.BackColor = System.Drawing.Color.White;
+            this.tabKhuVuc.Location = new System.Drawing.Point(4, 22);
+            this.tabKhuVuc.Name = "tabKhuVuc";
+            this.tabKhuVuc.Padding = new System.Windows.Forms.Padding(3);
+            this.tabKhuVuc.Size = new System.Drawing.Size(1267, 520);
+            this.tabKhuVuc.TabIndex = 2;
+            this.tabKhuVuc.Text = "Khu vực";
             // 
-            // tabPageReport
+            // tabBaoCao
             // 
-            this.tabPageReport.Location = new System.Drawing.Point(4, 22);
-            this.tabPageReport.Name = "tabPageReport";
-            this.tabPageReport.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageReport.Size = new System.Drawing.Size(1267, 520);
-            this.tabPageReport.TabIndex = 3;
-            this.tabPageReport.Text = "Báo cáo";
-            this.tabPageReport.UseVisualStyleBackColor = true;
+            this.tabBaoCao.Location = new System.Drawing.Point(4, 22);
+            this.tabBaoCao.Name = "tabBaoCao";
+            this.tabBaoCao.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBaoCao.Size = new System.Drawing.Size(1267, 520);
+            this.tabBaoCao.TabIndex = 3;
+            this.tabBaoCao.Text = "Báo cáo";
+            this.tabBaoCao.UseVisualStyleBackColor = true;
             // 
             // QuanLy
             // 
@@ -123,9 +120,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QuanLy_FormClosing);
             this.Load += new System.EventHandler(this.QuanLy_Load);
             this.materialTabControl1.ResumeLayout(false);
-            this.tabPageMenu.ResumeLayout(false);
-            this.tabPageArea.ResumeLayout(false);
-            this.tabPageReport.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -134,9 +128,9 @@
 
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
-        private System.Windows.Forms.TabPage tabPageMenu;
-        private System.Windows.Forms.TabPage tabPageArea;
-        private System.Windows.Forms.TabPage tabPageReport;
-        private System.Windows.Forms.TabPage tabPageEmployee;
+        private System.Windows.Forms.TabPage tabHangHoa;
+        private System.Windows.Forms.TabPage tabKhuVuc;
+        private System.Windows.Forms.TabPage tabBaoCao;
+        private System.Windows.Forms.TabPage tabNhanVien;
     }
 }

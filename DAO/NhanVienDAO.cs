@@ -34,7 +34,7 @@ namespace DAO
 
         public NhanVienDTO LoadNhanVien(string msnv)
         {
-            string sql = $"SELECT * FROM NhanVien, TaiKhoan WHERE NhanVien.MSNV = TaiKhoan.MSNV AND TaiKhoan.MSNV = '{msnv}'";
+            string sql = $"SELECT * FROM NhanVien, TaiKhoan WHERE NhanVien.MSNV = TaiKhoan.MSNV AND TaiKhoan.MSNV = N'{msnv}'";
             DataTable infoTable = _dbconnection.ExcuteReader(sql);
 
             return new NhanVienDTO
@@ -54,30 +54,30 @@ namespace DAO
 
         public void DeleteNhanVien(string msnv)
         {
-            string sql = $"DELETE FROM NhanVien WHERE MSNV='{msnv}'";
+            string sql = $"DELETE FROM NhanVien WHERE MSNV=N'{msnv}'";
             _dbconnection.ExcuteNonQuery(sql);
         }
 
         public bool IsUserNameExist(string username)
         {
-            string sql = $"SELECT TenDangNhap FROM TaiKhoan WHERE TenDangNhap='{username}'";
+            string sql = $"SELECT TenDangNhap FROM TaiKhoan WHERE TenDangNhap=N'{username}'";
             return _dbconnection.ExecuteScalar(sql) != null;
         }
 
         public void InsertNhanVien(NhanVienDTO info)
         {
             string sql = "INSERT INTO NhanVien(TenNV, GioiTinh, NgaySinh, DiaChi, SoDienThoai, CMND, NgayVaoLam) " +
-                        $"VALUES(N'{info.TenNv}', '{info.GioiTinh}', '{info.NgaySinh}', N'{info.DiaChi}', '{info.SoDienThoai}', '{info.Cmnd}', '{info.NgayLamViec}'); SELECT SCOPE_IDENTITY()";
+                        $"VALUES(N'{info.TenNv}', N'{info.GioiTinh}', N'{info.NgaySinh}', N'{info.DiaChi}', N'{info.SoDienThoai}', N'{info.Cmnd}', N'{info.NgayLamViec}'); SELECT SCOPE_IDENTITY()";
             string msnv = _dbconnection.ExecuteScalar(sql).ToString();
-            _dbconnection.ExcuteNonQuery($"INSERT INTO TaiKhoan VALUES('{info.TenDangNhap}', '{msnv}', '{info.MatKhau}', '{info.PhanQuyen}')");
+            _dbconnection.ExcuteNonQuery($"INSERT INTO TaiKhoan VALUES(N'{info.TenDangNhap}', N'{msnv}', N'{info.MatKhau}', N'{info.PhanQuyen}')");
         }
 
         public void EditNhanVien(NhanVienDTO info, string msnv)
         {
-            string sql = $"UPDATE NhanVien SET TenNV=N'{info.TenNv}', GioiTinh='{info.GioiTinh}', NgaySinh='{info.NgaySinh}', DiaChi=N'{info.DiaChi}', SoDienThoai='{info.SoDienThoai}', CMND='{info.Cmnd}', NgayVaoLam='{info.NgayLamViec}' " +
-                         $"WHERE MSNV='{msnv}'";
+            string sql = $"UPDATE NhanVien SET TenNV=N'{info.TenNv}', GioiTinh=N'{info.GioiTinh}', NgaySinh=N'{info.NgaySinh}', DiaChi=N'{info.DiaChi}', SoDienThoai=N'{info.SoDienThoai}', CMND=N'{info.Cmnd}', NgayVaoLam=N'{info.NgayLamViec}' " +
+                         $"WHERE MSNV=N'{msnv}'";
             _dbconnection.ExcuteNonQuery(sql);
-            _dbconnection.ExcuteNonQuery($"UPDATE TaiKhoan SET TenDangNhap='{info.TenDangNhap}', MatKhau='{info.MatKhau}', PhanQuyen='{info.PhanQuyen}' WHERE MSNV='{msnv}'");
+            _dbconnection.ExcuteNonQuery($"UPDATE TaiKhoan SET TenDangNhap=N'{info.TenDangNhap}', MatKhau=N'{info.MatKhau}', PhanQuyen=N'{info.PhanQuyen}' WHERE MSNV=N'{msnv}'");
         }
     }
 }
