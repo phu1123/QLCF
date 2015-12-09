@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using APP;
 using MaterialSkin.Controls;
 using BUS;
 using DTO;
@@ -62,40 +64,40 @@ namespace QuanLyQuanCafe.QuanLy
                     errorProvider1.SetError(c, c.Controls.OfType<MaterialRadioButton>().All(chk => chk.Checked == false) ? "Bạn không được để trống thông tin này" : string.Empty);
             }
 
-            if (btnYes.Text == @"Thêm")
+            if (panel1.Controls.Cast<Control>().Any(c => errorProvider1.GetError(c) != string.Empty)) return;
+
+            try
             {
                 using (NhanVienBUS nhanvienBUS = new NhanVienBUS())
                 {
-                    if (nhanvienBUS.IsUserNameExist(txtTenDangNhap.Text))
-                        errorProvider1.SetError(txtTenDangNhap, "Tên đăng nhập đã tồn tại");
+                    NhanVienDTO info = new NhanVienDTO
+                    {
+                        TenDangNhap = txtTenDangNhap.Text,
+                        MatKhau = txtMatKhau.Text,
+                        TenNv = txtTenNV.Text,
+                        GioiTinh = rbtnNu.Checked,
+                        NgaySinh = dtpNgaySinh.Value,
+                        Cmnd = txtCmnd.Text,
+                        DiaChi = txtDiaChi.Text,
+                        SoDienThoai = txtSoDienThoai.Text,
+                        NgayLamViec = dtpNgayVaoLam.Value,
+                        PhanQuyen = rbtnThuNgan.Checked
+                    };
+
+                    if (dataGridView1.SelectedRows.Count == 0)
+                        nhanvienBUS.InsertNhanVien(info);
+                    else
+                    {
+                        string msnv = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                        nhanvienBUS.EditNhanVien(info, msnv);
+                    }
                 }
             }
-
-            if (panel1.Controls.Cast<Control>().Any(c => errorProvider1.GetError(c) != string.Empty)) return;
-
-            using (NhanVienBUS nhanvienBUS = new NhanVienBUS())
+            catch (SqlException ex)
             {
-                NhanVienDTO info = new NhanVienDTO
-                {
-                    TenDangNhap = txtTenDangNhap.Text,
-                    MatKhau = txtMatKhau.Text,
-                    TenNv = txtTenNV.Text,
-                    GioiTinh = rbtnNu.Checked,
-                    NgaySinh = dtpNgaySinh.Value,
-                    Cmnd = txtCmnd.Text,
-                    DiaChi = txtDiaChi.Text,
-                    SoDienThoai = txtSoDienThoai.Text,
-                    NgayLamViec = dtpNgayVaoLam.Value,
-                    PhanQuyen = rbtnThuNgan.Checked
-                };
-
-                if (dataGridView1.SelectedRows.Count == 0)
-                    nhanvienBUS.InsertNhanVien(info);
-                else
-                {
-                    string msnv = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                    nhanvienBUS.EditNhanVien(info, msnv);              
-                }
+                if (ex.Number == DbConnection.MssqlEng002627)
+                    errorProvider1.SetError(txtTenDangNhap, "Tên đăng nhập đã tồn tại");
+                else throw;
             }
 
             RefreshNhanVien();
