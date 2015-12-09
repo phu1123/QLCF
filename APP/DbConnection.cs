@@ -7,8 +7,10 @@ namespace APP
     {
         private SqlCommand _command;
         private SqlConnection _connection;
-        public static string ConnectionString { get; set; }
+        public static string ConnectionString { private get; set; }
 
+        public const int MssqlEng002627 = 2627; //Violation of %ls constraint '%.*ls'. Cannot insert duplicate key in object '%.*ls'.
+        
         public void OpenConnection()
         {
             _connection = new SqlConnection(ConnectionString);

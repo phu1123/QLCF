@@ -2,7 +2,7 @@
 
 namespace QuanLyQuanCafe
 {
-    partial class LoginForm
+    partial class DangNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace QuanLyQuanCafe
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.textBoxUsername = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.textBoxPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.flatButtonLogin = new MaterialSkin.Controls.MaterialFlatButton();

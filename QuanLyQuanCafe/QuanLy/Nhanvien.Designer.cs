@@ -35,37 +35,35 @@ namespace QuanLyQuanCafe.QuanLy
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.textFieldSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtTimKiem = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.radioButtonManager = new MaterialSkin.Controls.MaterialRadioButton();
-            this.radioButtonCashier = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbtnQuanLy = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbtnThuNgan = new MaterialSkin.Controls.MaterialRadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.radioButtonMale = new MaterialSkin.Controls.MaterialRadioButton();
-            this.radioButtonFemale = new MaterialSkin.Controls.MaterialRadioButton();
-            this.flatButtonCancel = new MaterialSkin.Controls.MaterialFlatButton();
-            this.flatButtonAddEdit = new MaterialSkin.Controls.MaterialFlatButton();
-            this.textBoxFullName = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.timePickerWorkSince = new System.Windows.Forms.DateTimePicker();
+            this.rbtnNam = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbtnNu = new MaterialSkin.Controls.MaterialRadioButton();
+            this.btnHuy = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnYes = new MaterialSkin.Controls.MaterialFlatButton();
+            this.txtTenNV = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.textBoxPhone = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textBoxAddress = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtSoDienThoai = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtDiaChi = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.timePickerBirthday = new System.Windows.Forms.DateTimePicker();
-            this.textBoxCMND = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textBoxPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textBoxUserName = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.raisedButtonAdd = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.raisedButtonDelete = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.txtCmnd = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtMatKhau = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtTenDangNhap = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnThem = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnXoa = new MaterialSkin.Controls.MaterialRaisedButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -88,39 +86,37 @@ namespace QuanLyQuanCafe.QuanLy
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.textFieldSearch);
+            this.splitContainer1.Panel1.Controls.Add(this.txtTimKiem);
             this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.materialRaisedButton2);
-            this.splitContainer1.Panel2.Controls.Add(this.materialRaisedButton1);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Panel2.Controls.Add(this.raisedButtonAdd);
-            this.splitContainer1.Panel2.Controls.Add(this.raisedButtonDelete);
+            this.splitContainer1.Panel2.Controls.Add(this.btnThem);
+            this.splitContainer1.Panel2.Controls.Add(this.btnXoa);
             this.splitContainer1.Panel2MinSize = 320;
             this.splitContainer1.Size = new System.Drawing.Size(1075, 536);
-            this.splitContainer1.SplitterDistance = 622;
+            this.splitContainer1.SplitterDistance = 600;
             this.splitContainer1.TabIndex = 2;
             // 
-            // textFieldSearch
+            // txtTimKiem
             // 
-            this.textFieldSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textFieldSearch.Depth = 0;
-            this.textFieldSearch.Hint = "Tìm kiếm";
-            this.textFieldSearch.Location = new System.Drawing.Point(371, 14);
-            this.textFieldSearch.MaxLength = 32767;
-            this.textFieldSearch.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textFieldSearch.Name = "textFieldSearch";
-            this.textFieldSearch.PasswordChar = '\0';
-            this.textFieldSearch.SelectedText = "";
-            this.textFieldSearch.SelectionLength = 0;
-            this.textFieldSearch.SelectionStart = 0;
-            this.textFieldSearch.Size = new System.Drawing.Size(246, 23);
-            this.textFieldSearch.TabIndex = 1;
-            this.textFieldSearch.TabStop = false;
-            this.textFieldSearch.UseSystemPasswordChar = false;
-            this.textFieldSearch.TextChanged += new System.EventHandler(this.textFieldSearch_TextChanged);
+            this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTimKiem.Depth = 0;
+            this.txtTimKiem.Hint = "Tìm kiếm";
+            this.txtTimKiem.Location = new System.Drawing.Point(349, 14);
+            this.txtTimKiem.MaxLength = 32767;
+            this.txtTimKiem.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.PasswordChar = '\0';
+            this.txtTimKiem.SelectedText = "";
+            this.txtTimKiem.SelectionLength = 0;
+            this.txtTimKiem.SelectionStart = 0;
+            this.txtTimKiem.Size = new System.Drawing.Size(246, 23);
+            this.txtTimKiem.TabIndex = 1;
+            this.txtTimKiem.TabStop = false;
+            this.txtTimKiem.UseSystemPasswordChar = false;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // dataGridView1
             // 
@@ -150,7 +146,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(620, 491);
+            this.dataGridView1.Size = new System.Drawing.Size(598, 491);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -187,56 +183,28 @@ namespace QuanLyQuanCafe.QuanLy
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // materialRaisedButton2
-            // 
-            this.materialRaisedButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(15, 15);
-            this.materialRaisedButton2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(99, 35);
-            this.materialRaisedButton2.TabIndex = 25;
-            this.materialRaisedButton2.Text = "Phân ca";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(137, 15);
-            this.materialRaisedButton1.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(99, 35);
-            this.materialRaisedButton1.TabIndex = 24;
-            this.materialRaisedButton1.Text = "Điểm danh";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.flatButtonCancel);
-            this.panel1.Controls.Add(this.flatButtonAddEdit);
-            this.panel1.Controls.Add(this.textBoxFullName);
-            this.panel1.Controls.Add(this.timePickerWorkSince);
+            this.panel1.Controls.Add(this.btnHuy);
+            this.panel1.Controls.Add(this.btnYes);
+            this.panel1.Controls.Add(this.txtTenNV);
+            this.panel1.Controls.Add(this.dtpNgayVaoLam);
             this.panel1.Controls.Add(this.materialLabel3);
-            this.panel1.Controls.Add(this.textBoxPhone);
-            this.panel1.Controls.Add(this.textBoxAddress);
+            this.panel1.Controls.Add(this.txtSoDienThoai);
+            this.panel1.Controls.Add(this.txtDiaChi);
             this.panel1.Controls.Add(this.materialLabel1);
-            this.panel1.Controls.Add(this.timePickerBirthday);
-            this.panel1.Controls.Add(this.textBoxCMND);
-            this.panel1.Controls.Add(this.textBoxPassword);
-            this.panel1.Controls.Add(this.textBoxUserName);
+            this.panel1.Controls.Add(this.dtpNgaySinh);
+            this.panel1.Controls.Add(this.txtCmnd);
+            this.panel1.Controls.Add(this.txtMatKhau);
+            this.panel1.Controls.Add(this.txtTenDangNhap);
             this.panel1.Location = new System.Drawing.Point(0, 73);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(447, 461);
+            this.panel1.Size = new System.Drawing.Size(469, 461);
             this.panel1.TabIndex = 6;
             this.panel1.Visible = false;
             // 
@@ -245,11 +213,11 @@ namespace QuanLyQuanCafe.QuanLy
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.materialLabel4);
-            this.panel3.Controls.Add(this.radioButtonManager);
-            this.panel3.Controls.Add(this.radioButtonCashier);
+            this.panel3.Controls.Add(this.rbtnQuanLy);
+            this.panel3.Controls.Add(this.rbtnThuNgan);
             this.panel3.Location = new System.Drawing.Point(0, 366);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(430, 24);
+            this.panel3.Size = new System.Drawing.Size(449, 24);
             this.panel3.TabIndex = 42;
             // 
             // materialLabel4
@@ -258,7 +226,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(3, 4);
+            this.materialLabel4.Location = new System.Drawing.Point(11, 4);
             this.materialLabel4.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
@@ -266,56 +234,56 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel4.TabIndex = 32;
             this.materialLabel4.Text = "Chức vụ:";
             // 
-            // radioButtonManager
+            // rbtnQuanLy
             // 
-            this.radioButtonManager.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtnQuanLy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonManager.AutoSize = true;
-            this.radioButtonManager.Depth = 0;
-            this.radioButtonManager.Font = new System.Drawing.Font("Roboto", 10F);
-            this.radioButtonManager.Location = new System.Drawing.Point(95, -1);
-            this.radioButtonManager.Margin = new System.Windows.Forms.Padding(0);
-            this.radioButtonManager.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.radioButtonManager.MouseState = MaterialSkin.MouseState.HOVER;
-            this.radioButtonManager.Name = "radioButtonManager";
-            this.radioButtonManager.Ripple = true;
-            this.radioButtonManager.Size = new System.Drawing.Size(75, 30);
-            this.radioButtonManager.TabIndex = 26;
-            this.radioButtonManager.TabStop = true;
-            this.radioButtonManager.Text = "Quản lý";
-            this.radioButtonManager.UseVisualStyleBackColor = true;
+            this.rbtnQuanLy.AutoSize = true;
+            this.rbtnQuanLy.Depth = 0;
+            this.rbtnQuanLy.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnQuanLy.Location = new System.Drawing.Point(95, -1);
+            this.rbtnQuanLy.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtnQuanLy.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtnQuanLy.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtnQuanLy.Name = "rbtnQuanLy";
+            this.rbtnQuanLy.Ripple = true;
+            this.rbtnQuanLy.Size = new System.Drawing.Size(75, 30);
+            this.rbtnQuanLy.TabIndex = 26;
+            this.rbtnQuanLy.TabStop = true;
+            this.rbtnQuanLy.Text = "Quản lý";
+            this.rbtnQuanLy.UseVisualStyleBackColor = true;
             // 
-            // radioButtonCashier
+            // rbtnThuNgan
             // 
-            this.radioButtonCashier.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtnThuNgan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonCashier.AutoSize = true;
-            this.radioButtonCashier.Depth = 0;
-            this.radioButtonCashier.Font = new System.Drawing.Font("Roboto", 10F);
-            this.radioButtonCashier.Location = new System.Drawing.Point(198, -1);
-            this.radioButtonCashier.Margin = new System.Windows.Forms.Padding(0);
-            this.radioButtonCashier.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.radioButtonCashier.MouseState = MaterialSkin.MouseState.HOVER;
-            this.radioButtonCashier.Name = "radioButtonCashier";
-            this.radioButtonCashier.Ripple = true;
-            this.radioButtonCashier.Size = new System.Drawing.Size(89, 30);
-            this.radioButtonCashier.TabIndex = 27;
-            this.radioButtonCashier.TabStop = true;
-            this.radioButtonCashier.Text = "Thu Ngân";
-            this.radioButtonCashier.UseVisualStyleBackColor = true;
+            this.rbtnThuNgan.AutoSize = true;
+            this.rbtnThuNgan.Depth = 0;
+            this.rbtnThuNgan.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnThuNgan.Location = new System.Drawing.Point(198, -1);
+            this.rbtnThuNgan.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtnThuNgan.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtnThuNgan.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtnThuNgan.Name = "rbtnThuNgan";
+            this.rbtnThuNgan.Ripple = true;
+            this.rbtnThuNgan.Size = new System.Drawing.Size(89, 30);
+            this.rbtnThuNgan.TabIndex = 27;
+            this.rbtnThuNgan.TabStop = true;
+            this.rbtnThuNgan.Text = "Thu Ngân";
+            this.rbtnThuNgan.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.materialLabel2);
-            this.panel2.Controls.Add(this.radioButtonMale);
-            this.panel2.Controls.Add(this.radioButtonFemale);
+            this.panel2.Controls.Add(this.rbtnNam);
+            this.panel2.Controls.Add(this.rbtnNu);
             this.panel2.Location = new System.Drawing.Point(0, 138);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(430, 24);
+            this.panel2.Size = new System.Drawing.Size(449, 24);
             this.panel2.TabIndex = 41;
             // 
             // materialLabel2
@@ -327,7 +295,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(3, 4);
+            this.materialLabel2.Location = new System.Drawing.Point(11, 4);
             this.materialLabel2.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
@@ -335,112 +303,112 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel2.TabIndex = 32;
             this.materialLabel2.Text = "Giới tính:";
             // 
-            // radioButtonMale
+            // rbtnNam
             // 
-            this.radioButtonMale.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtnNam.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonMale.AutoSize = true;
-            this.radioButtonMale.Depth = 0;
-            this.radioButtonMale.Font = new System.Drawing.Font("Roboto", 10F);
-            this.radioButtonMale.Location = new System.Drawing.Point(95, -1);
-            this.radioButtonMale.Margin = new System.Windows.Forms.Padding(0);
-            this.radioButtonMale.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.radioButtonMale.MouseState = MaterialSkin.MouseState.HOVER;
-            this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Ripple = true;
-            this.radioButtonMale.Size = new System.Drawing.Size(58, 30);
-            this.radioButtonMale.TabIndex = 26;
-            this.radioButtonMale.TabStop = true;
-            this.radioButtonMale.Text = "Nam";
-            this.radioButtonMale.UseVisualStyleBackColor = true;
+            this.rbtnNam.AutoSize = true;
+            this.rbtnNam.Depth = 0;
+            this.rbtnNam.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnNam.Location = new System.Drawing.Point(95, -1);
+            this.rbtnNam.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtnNam.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtnNam.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtnNam.Name = "rbtnNam";
+            this.rbtnNam.Ripple = true;
+            this.rbtnNam.Size = new System.Drawing.Size(58, 30);
+            this.rbtnNam.TabIndex = 26;
+            this.rbtnNam.TabStop = true;
+            this.rbtnNam.Text = "Nam";
+            this.rbtnNam.UseVisualStyleBackColor = true;
             // 
-            // radioButtonFemale
+            // rbtnNu
             // 
-            this.radioButtonFemale.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtnNu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.Depth = 0;
-            this.radioButtonFemale.Font = new System.Drawing.Font("Roboto", 10F);
-            this.radioButtonFemale.Location = new System.Drawing.Point(198, -1);
-            this.radioButtonFemale.Margin = new System.Windows.Forms.Padding(0);
-            this.radioButtonFemale.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.radioButtonFemale.MouseState = MaterialSkin.MouseState.HOVER;
-            this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Ripple = true;
-            this.radioButtonFemale.Size = new System.Drawing.Size(47, 30);
-            this.radioButtonFemale.TabIndex = 27;
-            this.radioButtonFemale.TabStop = true;
-            this.radioButtonFemale.Text = "Nữ";
-            this.radioButtonFemale.UseVisualStyleBackColor = true;
+            this.rbtnNu.AutoSize = true;
+            this.rbtnNu.Depth = 0;
+            this.rbtnNu.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbtnNu.Location = new System.Drawing.Point(198, -1);
+            this.rbtnNu.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtnNu.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtnNu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtnNu.Name = "rbtnNu";
+            this.rbtnNu.Ripple = true;
+            this.rbtnNu.Size = new System.Drawing.Size(47, 30);
+            this.rbtnNu.TabIndex = 27;
+            this.rbtnNu.TabStop = true;
+            this.rbtnNu.Text = "Nữ";
+            this.rbtnNu.UseVisualStyleBackColor = true;
             // 
-            // flatButtonCancel
+            // btnHuy
             // 
-            this.flatButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flatButtonCancel.AutoSize = true;
-            this.flatButtonCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flatButtonCancel.Depth = 0;
-            this.flatButtonCancel.Location = new System.Drawing.Point(391, 415);
-            this.flatButtonCancel.Margin = new System.Windows.Forms.Padding(4, 20, 4, 6);
-            this.flatButtonCancel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.flatButtonCancel.Name = "flatButtonCancel";
-            this.flatButtonCancel.Primary = false;
-            this.flatButtonCancel.Size = new System.Drawing.Size(39, 36);
-            this.flatButtonCancel.TabIndex = 40;
-            this.flatButtonCancel.Text = "Hủy";
-            this.flatButtonCancel.UseVisualStyleBackColor = true;
-            this.flatButtonCancel.Click += new System.EventHandler(this.flatButtonCancel_Click);
+            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHuy.AutoSize = true;
+            this.btnHuy.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnHuy.Depth = 0;
+            this.btnHuy.Location = new System.Drawing.Point(410, 413);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 20, 4, 6);
+            this.btnHuy.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Primary = false;
+            this.btnHuy.Size = new System.Drawing.Size(39, 36);
+            this.btnHuy.TabIndex = 40;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // flatButtonAddEdit
+            // btnYes
             // 
-            this.flatButtonAddEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flatButtonAddEdit.AutoSize = true;
-            this.flatButtonAddEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flatButtonAddEdit.Depth = 0;
-            this.flatButtonAddEdit.Location = new System.Drawing.Point(333, 415);
-            this.flatButtonAddEdit.Margin = new System.Windows.Forms.Padding(4, 20, 4, 6);
-            this.flatButtonAddEdit.MouseState = MaterialSkin.MouseState.HOVER;
-            this.flatButtonAddEdit.Name = "flatButtonAddEdit";
-            this.flatButtonAddEdit.Primary = false;
-            this.flatButtonAddEdit.Size = new System.Drawing.Size(50, 36);
-            this.flatButtonAddEdit.TabIndex = 39;
-            this.flatButtonAddEdit.Text = "Thêm";
-            this.flatButtonAddEdit.UseVisualStyleBackColor = true;
-            this.flatButtonAddEdit.Click += new System.EventHandler(this.flatButtonAddEdit_Click);
+            this.btnYes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnYes.AutoSize = true;
+            this.btnYes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnYes.Depth = 0;
+            this.btnYes.Location = new System.Drawing.Point(352, 413);
+            this.btnYes.Margin = new System.Windows.Forms.Padding(4, 20, 4, 6);
+            this.btnYes.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnYes.Name = "btnYes";
+            this.btnYes.Primary = false;
+            this.btnYes.Size = new System.Drawing.Size(50, 36);
+            this.btnYes.TabIndex = 39;
+            this.btnYes.Text = "Thêm";
+            this.btnYes.UseVisualStyleBackColor = true;
+            this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
-            // textBoxFullName
+            // txtTenNV
             // 
-            this.textBoxFullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtTenNV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxFullName.Depth = 0;
-            this.textBoxFullName.Hint = "Họ tên";
-            this.textBoxFullName.Location = new System.Drawing.Point(7, 101);
-            this.textBoxFullName.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.textBoxFullName.MaxLength = 50;
-            this.textBoxFullName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBoxFullName.Name = "textBoxFullName";
-            this.textBoxFullName.PasswordChar = '\0';
-            this.textBoxFullName.SelectedText = "";
-            this.textBoxFullName.SelectionLength = 0;
-            this.textBoxFullName.SelectionStart = 0;
-            this.textBoxFullName.Size = new System.Drawing.Size(423, 23);
-            this.textBoxFullName.TabIndex = 2;
-            this.textBoxFullName.TabStop = false;
-            this.textBoxFullName.UseSystemPasswordChar = false;
-            this.textBoxFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxFullName_KeyPress);
+            this.txtTenNV.Depth = 0;
+            this.txtTenNV.Hint = "Họ tên";
+            this.txtTenNV.Location = new System.Drawing.Point(15, 101);
+            this.txtTenNV.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.txtTenNV.MaxLength = 50;
+            this.txtTenNV.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtTenNV.Name = "txtTenNV";
+            this.txtTenNV.PasswordChar = '\0';
+            this.txtTenNV.SelectedText = "";
+            this.txtTenNV.SelectionLength = 0;
+            this.txtTenNV.SelectionStart = 0;
+            this.txtTenNV.Size = new System.Drawing.Size(434, 23);
+            this.txtTenNV.TabIndex = 2;
+            this.txtTenNV.TabStop = false;
+            this.txtTenNV.UseSystemPasswordChar = false;
+            this.txtTenNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDangNhap_KeyPress);
             // 
-            // timePickerWorkSince
+            // dtpNgayVaoLam
             // 
-            this.timePickerWorkSince.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dtpNgayVaoLam.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.timePickerWorkSince.CustomFormat = "dd/MM/yyyy";
-            this.timePickerWorkSince.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePickerWorkSince.Location = new System.Drawing.Point(113, 334);
-            this.timePickerWorkSince.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.timePickerWorkSince.Name = "timePickerWorkSince";
-            this.timePickerWorkSince.Size = new System.Drawing.Size(317, 20);
-            this.timePickerWorkSince.TabIndex = 8;
+            this.dtpNgayVaoLam.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayVaoLam.Location = new System.Drawing.Point(121, 334);
+            this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
+            this.dtpNgayVaoLam.Size = new System.Drawing.Size(328, 20);
+            this.dtpNgayVaoLam.TabIndex = 8;
             // 
             // materialLabel3
             // 
@@ -450,7 +418,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(3, 334);
+            this.materialLabel3.Location = new System.Drawing.Point(11, 334);
             this.materialLabel3.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
@@ -458,46 +426,46 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel3.TabIndex = 37;
             this.materialLabel3.Text = "Ngày vào làm:";
             // 
-            // textBoxPhone
+            // txtSoDienThoai
             // 
-            this.textBoxPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtSoDienThoai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPhone.Depth = 0;
-            this.textBoxPhone.Hint = "Số điện thoại";
-            this.textBoxPhone.Location = new System.Drawing.Point(7, 293);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.textBoxPhone.MaxLength = 12;
-            this.textBoxPhone.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.PasswordChar = '\0';
-            this.textBoxPhone.SelectedText = "";
-            this.textBoxPhone.SelectionLength = 0;
-            this.textBoxPhone.SelectionStart = 0;
-            this.textBoxPhone.Size = new System.Drawing.Size(423, 23);
-            this.textBoxPhone.TabIndex = 7;
-            this.textBoxPhone.TabStop = false;
-            this.textBoxPhone.UseSystemPasswordChar = false;
-            this.textBoxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxIDCardNumber_KeyPress);
+            this.txtSoDienThoai.Depth = 0;
+            this.txtSoDienThoai.Hint = "Số điện thoại";
+            this.txtSoDienThoai.Location = new System.Drawing.Point(15, 293);
+            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.txtSoDienThoai.MaxLength = 12;
+            this.txtSoDienThoai.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSoDienThoai.Name = "txtSoDienThoai";
+            this.txtSoDienThoai.PasswordChar = '\0';
+            this.txtSoDienThoai.SelectedText = "";
+            this.txtSoDienThoai.SelectionLength = 0;
+            this.txtSoDienThoai.SelectionStart = 0;
+            this.txtSoDienThoai.Size = new System.Drawing.Size(434, 23);
+            this.txtSoDienThoai.TabIndex = 7;
+            this.txtSoDienThoai.TabStop = false;
+            this.txtSoDienThoai.UseSystemPasswordChar = false;
+            this.txtSoDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
             // 
-            // textBoxAddress
+            // txtDiaChi
             // 
-            this.textBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtDiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAddress.Depth = 0;
-            this.textBoxAddress.Hint = "Địa chỉ";
-            this.textBoxAddress.Location = new System.Drawing.Point(7, 252);
-            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.textBoxAddress.MaxLength = 100;
-            this.textBoxAddress.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.PasswordChar = '\0';
-            this.textBoxAddress.SelectedText = "";
-            this.textBoxAddress.SelectionLength = 0;
-            this.textBoxAddress.SelectionStart = 0;
-            this.textBoxAddress.Size = new System.Drawing.Size(423, 23);
-            this.textBoxAddress.TabIndex = 5;
-            this.textBoxAddress.TabStop = false;
-            this.textBoxAddress.UseSystemPasswordChar = false;
+            this.txtDiaChi.Depth = 0;
+            this.txtDiaChi.Hint = "Địa chỉ";
+            this.txtDiaChi.Location = new System.Drawing.Point(15, 252);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.txtDiaChi.MaxLength = 100;
+            this.txtDiaChi.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.PasswordChar = '\0';
+            this.txtDiaChi.SelectedText = "";
+            this.txtDiaChi.SelectionLength = 0;
+            this.txtDiaChi.SelectionStart = 0;
+            this.txtDiaChi.Size = new System.Drawing.Size(434, 23);
+            this.txtDiaChi.TabIndex = 5;
+            this.txtDiaChi.TabStop = false;
+            this.txtDiaChi.UseSystemPasswordChar = false;
             // 
             // materialLabel1
             // 
@@ -507,7 +475,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(3, 177);
+            this.materialLabel1.Location = new System.Drawing.Point(11, 177);
             this.materialLabel1.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
@@ -515,107 +483,107 @@ namespace QuanLyQuanCafe.QuanLy
             this.materialLabel1.TabIndex = 29;
             this.materialLabel1.Text = "Ngày sinh:";
             // 
-            // timePickerBirthday
+            // dtpNgaySinh
             // 
-            this.timePickerBirthday.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dtpNgaySinh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.timePickerBirthday.CustomFormat = "dd/MM/yyyy";
-            this.timePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePickerBirthday.Location = new System.Drawing.Point(113, 177);
-            this.timePickerBirthday.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.timePickerBirthday.Name = "timePickerBirthday";
-            this.timePickerBirthday.Size = new System.Drawing.Size(317, 20);
-            this.timePickerBirthday.TabIndex = 3;
+            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(121, 177);
+            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(328, 20);
+            this.dtpNgaySinh.TabIndex = 3;
             // 
-            // textBoxCMND
+            // txtCmnd
             // 
-            this.textBoxCMND.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCmnd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCMND.Depth = 0;
-            this.textBoxCMND.Hint = "Số CMND";
-            this.textBoxCMND.Location = new System.Drawing.Point(7, 211);
-            this.textBoxCMND.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.textBoxCMND.MaxLength = 12;
-            this.textBoxCMND.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBoxCMND.Name = "textBoxCMND";
-            this.textBoxCMND.PasswordChar = '\0';
-            this.textBoxCMND.SelectedText = "";
-            this.textBoxCMND.SelectionLength = 0;
-            this.textBoxCMND.SelectionStart = 0;
-            this.textBoxCMND.Size = new System.Drawing.Size(423, 23);
-            this.textBoxCMND.TabIndex = 4;
-            this.textBoxCMND.TabStop = false;
-            this.textBoxCMND.UseSystemPasswordChar = false;
-            this.textBoxCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxIDCardNumber_KeyPress);
+            this.txtCmnd.Depth = 0;
+            this.txtCmnd.Hint = "Số CMND";
+            this.txtCmnd.Location = new System.Drawing.Point(15, 211);
+            this.txtCmnd.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.txtCmnd.MaxLength = 12;
+            this.txtCmnd.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtCmnd.Name = "txtCmnd";
+            this.txtCmnd.PasswordChar = '\0';
+            this.txtCmnd.SelectedText = "";
+            this.txtCmnd.SelectionLength = 0;
+            this.txtCmnd.SelectionStart = 0;
+            this.txtCmnd.Size = new System.Drawing.Size(434, 23);
+            this.txtCmnd.TabIndex = 4;
+            this.txtCmnd.TabStop = false;
+            this.txtCmnd.UseSystemPasswordChar = false;
+            this.txtCmnd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
             // 
-            // textBoxPassword
+            // txtMatKhau
             // 
-            this.textBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPassword.Depth = 0;
-            this.textBoxPassword.Hint = "Mật khẩu";
-            this.textBoxPassword.Location = new System.Drawing.Point(7, 60);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.textBoxPassword.MaxLength = 20;
-            this.textBoxPassword.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '\0';
-            this.textBoxPassword.SelectedText = "";
-            this.textBoxPassword.SelectionLength = 0;
-            this.textBoxPassword.SelectionStart = 0;
-            this.textBoxPassword.Size = new System.Drawing.Size(423, 23);
-            this.textBoxPassword.TabIndex = 1;
-            this.textBoxPassword.TabStop = false;
-            this.textBoxPassword.UseSystemPasswordChar = true;
+            this.txtMatKhau.Depth = 0;
+            this.txtMatKhau.Hint = "Mật khẩu";
+            this.txtMatKhau.Location = new System.Drawing.Point(15, 60);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(15, 15, 20, 3);
+            this.txtMatKhau.MaxLength = 20;
+            this.txtMatKhau.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '\0';
+            this.txtMatKhau.SelectedText = "";
+            this.txtMatKhau.SelectionLength = 0;
+            this.txtMatKhau.SelectionStart = 0;
+            this.txtMatKhau.Size = new System.Drawing.Size(434, 23);
+            this.txtMatKhau.TabIndex = 1;
+            this.txtMatKhau.TabStop = false;
+            this.txtMatKhau.UseSystemPasswordChar = true;
             // 
-            // textBoxUserName
+            // txtTenDangNhap
             // 
-            this.textBoxUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtTenDangNhap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxUserName.Depth = 0;
-            this.textBoxUserName.Hint = "Tên đăng nhập";
-            this.textBoxUserName.Location = new System.Drawing.Point(7, 19);
-            this.textBoxUserName.MaxLength = 20;
-            this.textBoxUserName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.textBoxUserName.Name = "textBoxUserName";
-            this.textBoxUserName.PasswordChar = '\0';
-            this.textBoxUserName.SelectedText = "";
-            this.textBoxUserName.SelectionLength = 0;
-            this.textBoxUserName.SelectionStart = 0;
-            this.textBoxUserName.Size = new System.Drawing.Size(423, 23);
-            this.textBoxUserName.TabIndex = 0;
-            this.textBoxUserName.TabStop = false;
-            this.textBoxUserName.UseSystemPasswordChar = false;
+            this.txtTenDangNhap.Depth = 0;
+            this.txtTenDangNhap.Hint = "Tên đăng nhập";
+            this.txtTenDangNhap.Location = new System.Drawing.Point(15, 19);
+            this.txtTenDangNhap.MaxLength = 20;
+            this.txtTenDangNhap.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.PasswordChar = '\0';
+            this.txtTenDangNhap.SelectedText = "";
+            this.txtTenDangNhap.SelectionLength = 0;
+            this.txtTenDangNhap.SelectionStart = 0;
+            this.txtTenDangNhap.Size = new System.Drawing.Size(434, 23);
+            this.txtTenDangNhap.TabIndex = 0;
+            this.txtTenDangNhap.TabStop = false;
+            this.txtTenDangNhap.UseSystemPasswordChar = false;
             // 
-            // raisedButtonAdd
+            // btnThem
             // 
-            this.raisedButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.raisedButtonAdd.Depth = 0;
-            this.raisedButtonAdd.Location = new System.Drawing.Point(259, 15);
-            this.raisedButtonAdd.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.raisedButtonAdd.MouseState = MaterialSkin.MouseState.HOVER;
-            this.raisedButtonAdd.Name = "raisedButtonAdd";
-            this.raisedButtonAdd.Primary = true;
-            this.raisedButtonAdd.Size = new System.Drawing.Size(75, 35);
-            this.raisedButtonAdd.TabIndex = 5;
-            this.raisedButtonAdd.Text = "Thêm";
-            this.raisedButtonAdd.UseVisualStyleBackColor = true;
-            this.raisedButtonAdd.Click += new System.EventHandler(this.raisedButtonAdd_Click);
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThem.Depth = 0;
+            this.btnThem.Location = new System.Drawing.Point(276, 15);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.btnThem.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Primary = true;
+            this.btnThem.Size = new System.Drawing.Size(75, 35);
+            this.btnThem.TabIndex = 5;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // raisedButtonDelete
+            // btnXoa
             // 
-            this.raisedButtonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.raisedButtonDelete.Depth = 0;
-            this.raisedButtonDelete.Location = new System.Drawing.Point(357, 15);
-            this.raisedButtonDelete.Margin = new System.Windows.Forms.Padding(20, 15, 15, 3);
-            this.raisedButtonDelete.MouseState = MaterialSkin.MouseState.HOVER;
-            this.raisedButtonDelete.Name = "raisedButtonDelete";
-            this.raisedButtonDelete.Primary = true;
-            this.raisedButtonDelete.Size = new System.Drawing.Size(75, 35);
-            this.raisedButtonDelete.TabIndex = 2;
-            this.raisedButtonDelete.Text = "Xóa";
-            this.raisedButtonDelete.UseVisualStyleBackColor = true;
-            this.raisedButtonDelete.Click += new System.EventHandler(this.raisedButtonDelete_Click);
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.Depth = 0;
+            this.btnXoa.Location = new System.Drawing.Point(374, 15);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(20, 15, 20, 3);
+            this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Primary = true;
+            this.btnXoa.Size = new System.Drawing.Size(75, 35);
+            this.btnXoa.TabIndex = 2;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // errorProvider1
             // 
@@ -652,29 +620,27 @@ namespace QuanLyQuanCafe.QuanLy
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialRadioButton radioButtonManager;
-        private MaterialSkin.Controls.MaterialRadioButton radioButtonCashier;
+        private MaterialSkin.Controls.MaterialRadioButton rbtnQuanLy;
+        private MaterialSkin.Controls.MaterialRadioButton rbtnThuNgan;
         private System.Windows.Forms.Panel panel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialRadioButton radioButtonMale;
-        private MaterialSkin.Controls.MaterialRadioButton radioButtonFemale;
-        private MaterialSkin.Controls.MaterialFlatButton flatButtonCancel;
-        private MaterialSkin.Controls.MaterialFlatButton flatButtonAddEdit;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxFullName;
-        private System.Windows.Forms.DateTimePicker timePickerWorkSince;
+        private MaterialSkin.Controls.MaterialRadioButton rbtnNam;
+        private MaterialSkin.Controls.MaterialRadioButton rbtnNu;
+        private MaterialSkin.Controls.MaterialFlatButton btnHuy;
+        private MaterialSkin.Controls.MaterialFlatButton btnYes;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtTenNV;
+        private System.Windows.Forms.DateTimePicker dtpNgayVaoLam;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxPhone;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxAddress;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSoDienThoai;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtDiaChi;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.DateTimePicker timePickerBirthday;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxCMND;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxPassword;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxUserName;
-        private MaterialSkin.Controls.MaterialRaisedButton raisedButtonAdd;
-        private MaterialSkin.Controls.MaterialRaisedButton raisedButtonDelete;
-        private MaterialSkin.Controls.MaterialSingleLineTextField textFieldSearch;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtCmnd;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtMatKhau;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtTenDangNhap;
+        private MaterialSkin.Controls.MaterialRaisedButton btnThem;
+        private MaterialSkin.Controls.MaterialRaisedButton btnXoa;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtTimKiem;
         private ErrorProvider errorProvider1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
