@@ -3,3 +3,8 @@ C:\Users\Q\Desktop\QLCF\APP\bin\Debug\APP.pdb
 C:\Users\Q\Desktop\QLCF\APP\obj\Debug\APP.csprojResolveAssemblyReference.cache
 C:\Users\Q\Desktop\QLCF\APP\obj\Debug\APP.dll
 C:\Users\Q\Desktop\QLCF\APP\obj\Debug\APP.pdb
+C:\Users\Q\Desktop\QLCF - Copy\APP\bin\Debug\APP.dll
+C:\Users\Q\Desktop\QLCF - Copy\APP\bin\Debug\APP.pdb
+C:\Users\Q\Desktop\QLCF - Copy\APP\obj\Debug\APP.csprojResolveAssemblyReference.cache
+C:\Users\Q\Desktop\QLCF - Copy\APP\obj\Debug\APP.dll
+C:\Users\Q\Desktop\QLCF - Copy\APP\obj\Debug\APP.pdb
