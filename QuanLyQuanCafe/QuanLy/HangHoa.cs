@@ -98,10 +98,9 @@ namespace QuanLyQuanCafe.QuanLy
                     errorProvider1.SetError(txtTenHangHoa, "Hàng hóa đã tồn tại");
                 else throw;
             }
+
             RefreshHangHoa();
         }
-
-
 
         private void btnXoa_Click(object sender, EventArgs e)
         {

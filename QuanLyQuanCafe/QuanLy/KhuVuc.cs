@@ -48,7 +48,7 @@ namespace QuanLyQuanCafe.QuanLy
         {
             using (KhuVucBUS bus = new KhuVucBUS())
             {
-                if (new XacNhan {Text = @"Bạn có chắc chắn muốn xóa " + treeView1.SelectedNode.Text }.ShowDialog() == DialogResult.Yes)
+                if (new XacNhan {Text = @"Bạn có chắc chắn muốn xóa khu vực " + treeView1.SelectedNode.Text }.ShowDialog() == DialogResult.Yes)
                     bus.DeleteKhuVuc(treeView1.SelectedNode.Text);
             }
 
@@ -111,7 +111,7 @@ namespace QuanLyQuanCafe.QuanLy
 
             using (KhuVucBUS bus = new KhuVucBUS())
             {
-                if (new XacNhan { Text = @"Bạn có chắc chắn muốn xóa " + listView1.SelectedItems[0].Text }.ShowDialog() == DialogResult.Yes)
+                if (new XacNhan { Text = @"Bạn có chắc chắn muốn xóa bàn " + listView1.SelectedItems[0].Text }.ShowDialog() == DialogResult.Yes)
                     bus.DeleteBan(listView1.SelectedItems[0].Tag.ToString());
             }
 
