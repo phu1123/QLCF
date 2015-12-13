@@ -1,6 +1,4 @@
-﻿
-
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace QuanLyQuanCafe.QuanLy
 {
@@ -94,9 +92,8 @@ namespace QuanLyQuanCafe.QuanLy
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Panel2.Controls.Add(this.btnThem);
             this.splitContainer1.Panel2.Controls.Add(this.btnXoa);
-            this.splitContainer1.Panel2MinSize = 320;
-            this.splitContainer1.Size = new System.Drawing.Size(1075, 536);
-            this.splitContainer1.SplitterDistance = 600;
+            this.splitContainer1.Size = new System.Drawing.Size(1200, 700);
+            this.splitContainer1.SplitterDistance = 700;
             this.splitContainer1.TabIndex = 2;
             // 
             // txtTimKiem
@@ -104,7 +101,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTimKiem.Depth = 0;
             this.txtTimKiem.Hint = "Tìm kiếm";
-            this.txtTimKiem.Location = new System.Drawing.Point(349, 14);
+            this.txtTimKiem.Location = new System.Drawing.Point(449, 14);
             this.txtTimKiem.MaxLength = 32767;
             this.txtTimKiem.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTimKiem.Name = "txtTimKiem";
@@ -146,10 +143,11 @@ namespace QuanLyQuanCafe.QuanLy
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(598, 491);
+            this.dataGridView1.Size = new System.Drawing.Size(698, 655);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridView1.Sorted += new System.EventHandler(this.btnHuy_Click);
             // 
             // Column1
             // 
@@ -204,7 +202,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.panel1.Location = new System.Drawing.Point(0, 73);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(469, 461);
+            this.panel1.Size = new System.Drawing.Size(494, 626);
             this.panel1.TabIndex = 6;
             this.panel1.Visible = false;
             // 
@@ -217,7 +215,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.panel3.Controls.Add(this.rbtnThuNgan);
             this.panel3.Location = new System.Drawing.Point(0, 366);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(449, 24);
+            this.panel3.Size = new System.Drawing.Size(474, 24);
             this.panel3.TabIndex = 42;
             // 
             // materialLabel4
@@ -283,7 +281,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.panel2.Controls.Add(this.rbtnNu);
             this.panel2.Location = new System.Drawing.Point(0, 138);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(449, 24);
+            this.panel2.Size = new System.Drawing.Size(474, 24);
             this.panel2.TabIndex = 41;
             // 
             // materialLabel2
@@ -349,7 +347,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.btnHuy.AutoSize = true;
             this.btnHuy.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnHuy.Depth = 0;
-            this.btnHuy.Location = new System.Drawing.Point(410, 413);
+            this.btnHuy.Location = new System.Drawing.Point(435, 413);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 20, 4, 6);
             this.btnHuy.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnHuy.Name = "btnHuy";
@@ -366,7 +364,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.btnYes.AutoSize = true;
             this.btnYes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnYes.Depth = 0;
-            this.btnYes.Location = new System.Drawing.Point(352, 413);
+            this.btnYes.Location = new System.Drawing.Point(377, 413);
             this.btnYes.Margin = new System.Windows.Forms.Padding(4, 20, 4, 6);
             this.btnYes.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnYes.Name = "btnYes";
@@ -392,7 +390,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtTenNV.SelectedText = "";
             this.txtTenNV.SelectionLength = 0;
             this.txtTenNV.SelectionStart = 0;
-            this.txtTenNV.Size = new System.Drawing.Size(434, 23);
+            this.txtTenNV.Size = new System.Drawing.Size(459, 23);
             this.txtTenNV.TabIndex = 2;
             this.txtTenNV.TabStop = false;
             this.txtTenNV.UseSystemPasswordChar = false;
@@ -407,7 +405,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.dtpNgayVaoLam.Location = new System.Drawing.Point(121, 334);
             this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
-            this.dtpNgayVaoLam.Size = new System.Drawing.Size(328, 20);
+            this.dtpNgayVaoLam.Size = new System.Drawing.Size(353, 20);
             this.dtpNgayVaoLam.TabIndex = 8;
             // 
             // materialLabel3
@@ -441,7 +439,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtSoDienThoai.SelectedText = "";
             this.txtSoDienThoai.SelectionLength = 0;
             this.txtSoDienThoai.SelectionStart = 0;
-            this.txtSoDienThoai.Size = new System.Drawing.Size(434, 23);
+            this.txtSoDienThoai.Size = new System.Drawing.Size(459, 23);
             this.txtSoDienThoai.TabIndex = 7;
             this.txtSoDienThoai.TabStop = false;
             this.txtSoDienThoai.UseSystemPasswordChar = false;
@@ -462,7 +460,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtDiaChi.SelectedText = "";
             this.txtDiaChi.SelectionLength = 0;
             this.txtDiaChi.SelectionStart = 0;
-            this.txtDiaChi.Size = new System.Drawing.Size(434, 23);
+            this.txtDiaChi.Size = new System.Drawing.Size(459, 23);
             this.txtDiaChi.TabIndex = 5;
             this.txtDiaChi.TabStop = false;
             this.txtDiaChi.UseSystemPasswordChar = false;
@@ -492,7 +490,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.dtpNgaySinh.Location = new System.Drawing.Point(121, 177);
             this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(328, 20);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(353, 20);
             this.dtpNgaySinh.TabIndex = 3;
             // 
             // txtCmnd
@@ -510,7 +508,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtCmnd.SelectedText = "";
             this.txtCmnd.SelectionLength = 0;
             this.txtCmnd.SelectionStart = 0;
-            this.txtCmnd.Size = new System.Drawing.Size(434, 23);
+            this.txtCmnd.Size = new System.Drawing.Size(459, 23);
             this.txtCmnd.TabIndex = 4;
             this.txtCmnd.TabStop = false;
             this.txtCmnd.UseSystemPasswordChar = false;
@@ -531,7 +529,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtMatKhau.SelectedText = "";
             this.txtMatKhau.SelectionLength = 0;
             this.txtMatKhau.SelectionStart = 0;
-            this.txtMatKhau.Size = new System.Drawing.Size(434, 23);
+            this.txtMatKhau.Size = new System.Drawing.Size(459, 23);
             this.txtMatKhau.TabIndex = 1;
             this.txtMatKhau.TabStop = false;
             this.txtMatKhau.UseSystemPasswordChar = true;
@@ -550,7 +548,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.txtTenDangNhap.SelectedText = "";
             this.txtTenDangNhap.SelectionLength = 0;
             this.txtTenDangNhap.SelectionStart = 0;
-            this.txtTenDangNhap.Size = new System.Drawing.Size(434, 23);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(459, 23);
             this.txtTenDangNhap.TabIndex = 0;
             this.txtTenDangNhap.TabStop = false;
             this.txtTenDangNhap.UseSystemPasswordChar = false;
@@ -559,7 +557,7 @@ namespace QuanLyQuanCafe.QuanLy
             // 
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.Depth = 0;
-            this.btnThem.Location = new System.Drawing.Point(276, 15);
+            this.btnThem.Location = new System.Drawing.Point(301, 15);
             this.btnThem.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnThem.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnThem.Name = "btnThem";
@@ -574,7 +572,7 @@ namespace QuanLyQuanCafe.QuanLy
             // 
             this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.Depth = 0;
-            this.btnXoa.Location = new System.Drawing.Point(374, 15);
+            this.btnXoa.Location = new System.Drawing.Point(399, 15);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(20, 15, 20, 3);
             this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnXoa.Name = "btnXoa";
@@ -587,7 +585,6 @@ namespace QuanLyQuanCafe.QuanLy
             // 
             // errorProvider1
             // 
-            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
             // NhanVien
@@ -596,7 +593,7 @@ namespace QuanLyQuanCafe.QuanLy
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
             this.Name = "NhanVien";
-            this.Size = new System.Drawing.Size(1075, 536);
+            this.Size = new System.Drawing.Size(1200, 700);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

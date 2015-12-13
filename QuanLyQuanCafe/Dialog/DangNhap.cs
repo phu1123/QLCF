@@ -2,12 +2,12 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using APP;
+using BUS;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using BUS;
-using APP;
 
-namespace QuanLyQuanCafe
+namespace QuanLyQuanCafe.Dialog
 {
     public partial class DangNhap : MaterialForm
     {

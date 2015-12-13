@@ -7,6 +7,7 @@ using APP;
 using MaterialSkin.Controls;
 using BUS;
 using DTO;
+using QuanLyQuanCafe.Dialog;
 
 namespace QuanLyQuanCafe.QuanLy
 {
@@ -20,8 +21,8 @@ namespace QuanLyQuanCafe.QuanLy
 
         private void RefreshNhanVien()
         {
-            using (NhanVienBUS nhanvienBUS = new NhanVienBUS())
-                dataGridView1.DataSource = nhanvienBUS.ListNhanVien();
+            using (NhanVienBUS bus = new NhanVienBUS())
+                dataGridView1.DataSource = bus.ListNhanVien();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -44,10 +45,13 @@ namespace QuanLyQuanCafe.QuanLy
         {
             if (dataGridView1.CurrentRow == null) return;
 
-            using (NhanVienBUS nhanvienBUS = new NhanVienBUS())
+            using (NhanVienBUS bus = new NhanVienBUS())
             {
-                string msnv = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                nhanvienBUS.DeleteNhanVien(msnv);
+                if (new XacNhan { Text = @"Bạn có chắc chắn muốn xóa nhân viên " + dataGridView1.CurrentRow.Cells[1].Value }.ShowDialog() == DialogResult.Yes)
+                {
+                    string msnv = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    bus.DeleteNhanVien(msnv);
+                }
             }
 
             RefreshNhanVien();
@@ -68,7 +72,7 @@ namespace QuanLyQuanCafe.QuanLy
 
             try
             {
-                using (NhanVienBUS nhanvienBUS = new NhanVienBUS())
+                using (NhanVienBUS bus = new NhanVienBUS())
                 {
                     NhanVienDTO info = new NhanVienDTO
                     {
@@ -85,11 +89,11 @@ namespace QuanLyQuanCafe.QuanLy
                     };
 
                     if (dataGridView1.SelectedRows.Count == 0)
-                        nhanvienBUS.InsertNhanVien(info);
+                        bus.InsertNhanVien(info);
                     else
                     {
                         string msnv = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                        nhanvienBUS.EditNhanVien(info, msnv);
+                        bus.EditNhanVien(info, msnv);
                     }
                 }
             }
@@ -130,12 +134,12 @@ namespace QuanLyQuanCafe.QuanLy
             panel1.Visible = true;
             btnYes.Text = @"Sửa";
 
-            using (NhanVienBUS nhanvienBUS = new NhanVienBUS())
+            using (NhanVienBUS bus = new NhanVienBUS())
             {
                 if (dataGridView1.CurrentRow == null) return;
 
                 string msnv = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                NhanVienDTO info = nhanvienBUS.LoadNhanVien(msnv);
+                NhanVienDTO info = bus.LoadNhanVien(msnv);
                 txtTenDangNhap.Text = info.TenDangNhap;
                 txtMatKhau.Text = info.MatKhau;
                 txtTenNV.Text = info.TenNv;
@@ -153,8 +157,8 @@ namespace QuanLyQuanCafe.QuanLy
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
             dataGridView1.ClearSelection();
+            panel1.Visible = false;  
         }
 
         private void txtTenDangNhap_KeyPress(object sender, KeyPressEventArgs e)
@@ -166,6 +170,5 @@ namespace QuanLyQuanCafe.QuanLy
         {
             e.Handled = !(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
-
     }
 }

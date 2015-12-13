@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HangHoaBUS.cs" />
+    <Compile Include="KhuVucBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="NhapHangBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

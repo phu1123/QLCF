@@ -2,9 +2,9 @@
 
 namespace QuanLyQuanCafe.ThuNgan
 {
-    public partial class LichLamViec : UserControl
+    public partial class ThongTinCaNhan : UserControl
     {
-        public LichLamViec()
+        public ThongTinCaNhan()
         {
             InitializeComponent();
         }

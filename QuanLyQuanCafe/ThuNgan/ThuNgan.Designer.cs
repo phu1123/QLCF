@@ -30,100 +30,77 @@ namespace QuanLyQuanCafe.ThuNgan
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.hoaDon1 = new QuanLyQuanCafe.ThuNgan.HoaDon();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.lichLamViec1 = new QuanLyQuanCafe.ThuNgan.LichLamViec();
+            this.tabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabQuanLyBan = new System.Windows.Forms.TabPage();
+            this.tabHoaDon = new System.Windows.Forms.TabPage();
+            this.tabBaoCao = new System.Windows.Forms.TabPage();
+            this.tabThongTinCaNhan = new System.Windows.Forms.TabPage();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.materialTabControl1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // materialTabControl1
+            // tabControl1
             // 
-            this.materialTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTabControl1.Controls.Add(this.tabPage1);
-            this.materialTabControl1.Controls.Add(this.tabPage2);
-            this.materialTabControl1.Controls.Add(this.tabPage3);
-            this.materialTabControl1.Controls.Add(this.tabPage4);
-            this.materialTabControl1.Depth = 0;
-            this.materialTabControl1.Location = new System.Drawing.Point(0, 104);
-            this.materialTabControl1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabControl1.Name = "materialTabControl1";
-            this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1266, 546);
-            this.materialTabControl1.TabIndex = 0;
+            this.tabControl1.Controls.Add(this.tabQuanLyBan);
+            this.tabControl1.Controls.Add(this.tabHoaDon);
+            this.tabControl1.Controls.Add(this.tabBaoCao);
+            this.tabControl1.Controls.Add(this.tabThongTinCaNhan);
+            this.tabControl1.Depth = 0;
+            this.tabControl1.Location = new System.Drawing.Point(0, 104);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.tabControl1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1266, 546);
+            this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // tabQuanLyBan
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1258, 520);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Quản lý bàn";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabQuanLyBan.Location = new System.Drawing.Point(4, 22);
+            this.tabQuanLyBan.Name = "tabQuanLyBan";
+            this.tabQuanLyBan.Padding = new System.Windows.Forms.Padding(3);
+            this.tabQuanLyBan.Size = new System.Drawing.Size(1258, 520);
+            this.tabQuanLyBan.TabIndex = 0;
+            this.tabQuanLyBan.Text = "Quản lý bàn";
+            this.tabQuanLyBan.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabHoaDon
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.hoaDon1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1258, 520);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Hóa đơn";
+            this.tabHoaDon.Location = new System.Drawing.Point(4, 22);
+            this.tabHoaDon.Name = "tabHoaDon";
+            this.tabHoaDon.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHoaDon.Size = new System.Drawing.Size(1258, 520);
+            this.tabHoaDon.TabIndex = 1;
+            this.tabHoaDon.Text = "Hóa đơn";
             // 
-            // hoaDon1
+            // tabBaoCao
             // 
-            this.hoaDon1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hoaDon1.Location = new System.Drawing.Point(3, 3);
-            this.hoaDon1.Name = "hoaDon1";
-            this.hoaDon1.Size = new System.Drawing.Size(1252, 514);
-            this.hoaDon1.TabIndex = 0;
+            this.tabBaoCao.Location = new System.Drawing.Point(4, 22);
+            this.tabBaoCao.Name = "tabBaoCao";
+            this.tabBaoCao.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBaoCao.Size = new System.Drawing.Size(1258, 520);
+            this.tabBaoCao.TabIndex = 2;
+            this.tabBaoCao.Text = "Báo cáo hàng ngày";
+            this.tabBaoCao.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // tabThongTinCaNhan
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1258, 520);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Báo cáo hàng ngày";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.Color.White;
-            this.tabPage4.Controls.Add(this.lichLamViec1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1258, 520);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Lịch làm việc";
-            // 
-            // lichLamViec1
-            // 
-            this.lichLamViec1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lichLamViec1.Location = new System.Drawing.Point(3, 3);
-            this.lichLamViec1.Name = "lichLamViec1";
-            this.lichLamViec1.Size = new System.Drawing.Size(1252, 514);
-            this.lichLamViec1.TabIndex = 0;
+            this.tabThongTinCaNhan.BackColor = System.Drawing.Color.White;
+            this.tabThongTinCaNhan.Location = new System.Drawing.Point(4, 22);
+            this.tabThongTinCaNhan.Name = "tabThongTinCaNhan";
+            this.tabThongTinCaNhan.Padding = new System.Windows.Forms.Padding(3);
+            this.tabThongTinCaNhan.Size = new System.Drawing.Size(1258, 520);
+            this.tabThongTinCaNhan.TabIndex = 3;
+            this.tabThongTinCaNhan.Text = "Thông tin cá nhân";
             // 
             // materialTabSelector1
             // 
             this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
+            this.materialTabSelector1.BaseTabControl = this.tabControl1;
             this.materialTabSelector1.Depth = 0;
             this.materialTabSelector1.Location = new System.Drawing.Point(0, 64);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -138,27 +115,24 @@ namespace QuanLyQuanCafe.ThuNgan
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1266, 650);
             this.Controls.Add(this.materialTabSelector1);
-            this.Controls.Add(this.materialTabControl1);
+            this.Controls.Add(this.tabControl1);
             this.Name = "ThuNgan";
             this.Text = "Quản lý quán cafe";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.materialTabControl1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.ThuNgan_Load);
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
+        private MaterialSkin.Controls.MaterialTabControl tabControl1;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage4;
-        private HoaDon hoaDon1;
-        private LichLamViec lichLamViec1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabBaoCao;
+        private System.Windows.Forms.TabPage tabHoaDon;
+        private System.Windows.Forms.TabPage tabThongTinCaNhan;
+        private System.Windows.Forms.TabPage tabQuanLyBan;
     }
 }

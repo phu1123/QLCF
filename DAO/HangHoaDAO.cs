@@ -25,6 +25,12 @@ namespace DAO
             return _dbconnection.ExcuteReader(sql);
         }
 
+        public DataTable ListHangHoa2()
+        {
+            const string sql = "SELECT TenHangHoa, GiaBan, SoLuongTon FROM HangHoa";
+            return _dbconnection.ExcuteReader(sql);
+        }
+
         public void DeleteHangHoa(string tenhanghoa)
         {
             string sql = $"DELETE FROM HangHoa WHERE TenHangHoa=N'{tenhanghoa}'";

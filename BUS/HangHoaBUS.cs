@@ -19,6 +19,11 @@ namespace BUS
             return _hanghoaDAO.ListHangHoa();
         }
 
+        public DataTable ListHangHoa2()
+        {
+            return _hanghoaDAO.ListHangHoa2();
+        }
+
         public void DeleteHangHoa(string tenhanghoa)
         {
             _hanghoaDAO.DeleteHangHoa(tenhanghoa);
