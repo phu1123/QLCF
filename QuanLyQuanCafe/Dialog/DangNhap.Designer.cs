@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace QuanLyQuanCafe
+﻿namespace QuanLyQuanCafe.Dialog
 {
     partial class DangNhap
     {

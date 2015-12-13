@@ -58,12 +58,6 @@ namespace DAO
             _dbconnection.ExcuteNonQuery(sql);
         }
 
-        public bool IsUserNameExist(string username)
-        {
-            string sql = $"SELECT TenDangNhap FROM TaiKhoan WHERE TenDangNhap=N'{username}'";
-            return _dbconnection.ExecuteScalar(sql) != null;
-        }
-
         public void InsertNhanVien(NhanVienDTO info)
         {
             string sql = "INSERT INTO NhanVien(TenNV, GioiTinh, NgaySinh, DiaChi, SoDienThoai, CMND, NgayVaoLam) " +

@@ -34,11 +34,6 @@ namespace BUS
             _nhanvienDAO.DeleteNhanVien(msnv);
         }
 
-        public bool IsUserNameExist(string username)
-        {
-            return _nhanvienDAO.IsUserNameExist(username);
-        }
-
         public void InsertNhanVien(NhanVienDTO info)
         {
             _nhanvienDAO.InsertNhanVien(info);

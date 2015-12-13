@@ -23,12 +23,11 @@ namespace QuanLyQuanCafe.QuanLy
         private void QuanLy_Load(object sender, EventArgs e)
         {
             NhanVien nhanvien = new NhanVien { Dock = DockStyle.Fill };
-            KhuVuc khuvuc = new KhuVuc { Dock = DockStyle.Fill };
             HangHoa hanghoa = new HangHoa { Dock = DockStyle.Fill };
+            KhuVuc khuvuc = new KhuVuc() { Dock = DockStyle.Fill };
             tabNhanVien.Controls.Add(nhanvien);
-            tabKhuVuc.Controls.Add(khuvuc);
             tabHangHoa.Controls.Add(hanghoa);
-
+            tabKhuVuc.Controls.Add(khuvuc);
         }
 
         private void QuanLy_FormClosing(object sender, FormClosingEventArgs e)

@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialog\XacNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\XacNhan.Designer.cs">
+      <DependentUpon>XacNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLy\BaoCao.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,11 +106,11 @@
     <Compile Include="ThuNgan\HoaDon.Designer.cs">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThuNgan\LichLamViec.cs">
+    <Compile Include="ThuNgan\ThongTinCaNhan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ThuNgan\LichLamViec.Designer.cs">
-      <DependentUpon>LichLamViec.cs</DependentUpon>
+    <Compile Include="ThuNgan\ThongTinCaNhan.Designer.cs">
+      <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="ThuNgan\QuanLyBan.cs">
       <SubType>UserControl</SubType>
@@ -112,10 +118,10 @@
     <Compile Include="ThuNgan\QuanLyBan.Designer.cs">
       <DependentUpon>QuanLyBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="DangNhap.cs">
+    <Compile Include="Dialog\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
+    <Compile Include="Dialog\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="ThuNgan\ThuNgan.cs">
@@ -132,6 +138,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialog\XacNhan.resx">
+      <DependentUpon>XacNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\BaoCao.resx">
       <DependentUpon>BaoCao.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,13 +159,13 @@
     <EmbeddedResource Include="ThuNgan\HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThuNgan\LichLamViec.resx">
-      <DependentUpon>LichLamViec.cs</DependentUpon>
+    <EmbeddedResource Include="ThuNgan\ThongTinCaNhan.resx">
+      <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThuNgan\QuanLyBan.resx">
       <DependentUpon>QuanLyBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DangNhap.resx">
+    <EmbeddedResource Include="Dialog\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThuNgan\ThuNgan.resx">

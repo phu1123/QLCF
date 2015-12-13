@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using BUS;
 
 namespace QuanLyQuanCafe.ThuNgan
 {
@@ -9,37 +11,25 @@ namespace QuanLyQuanCafe.ThuNgan
         public QuanLyBan()
         {
             InitializeComponent();
-
         }
 
         private void QuanLyBan_Load(object sender, EventArgs e)
-        {           
-            using (var conn = new SqlConnection(@"Server = .\SQLEXPRESS; Database = QLCF; Trusted_Connection = True"))
-            {
-                conn.Open();
-                var cmd = new SqlCommand("SELECT * FROM KhuVuc", conn);
-                var reader = cmd.ExecuteReader();
+        {
+            using (HangHoaBUS bus = new HangHoaBUS())
+                dataGridView2.DataSource = bus.ListHangHoa2();
+        }
 
-                while (reader.Read())
-                {
-                    var group = new ListViewGroup(reader["TenKhuVuc"].ToString());
-                    listView1.Groups.Add(group);
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = $"TenHangHoa LIKE '%{txtTimKiem.Text}%'";
+        }
 
-                    for (var i = 1; i <= Convert.ToInt32(reader["SoBan"]); i = i + 1)
-                    {
-                        listView1.Items.Add(new ListViewItem("Bàn" + i, 0, group));
-                    }
-                }
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null) return;
 
-                reader.Close();
-                cmd = new SqlCommand("SELECT * FROM HangHoa", conn);
-                reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    dataGridViewMenu.Rows.Add(reader["TenHH"], reader["DonViTinh"], reader["GiaBan"]);
-                }
-            }
+            string tenhanghoa = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            //dtChiTiet.Rows.Add(tenhanghoa);
         }
     }
 }

@@ -17,10 +17,17 @@ namespace QuanLyQuanCafe.ThuNgan
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Teal500, Primary.Teal700, Primary.Teal500, Accent.Red700, TextShade.WHITE);
         }
 
+        private void ThuNgan_Load(object sender, System.EventArgs e)
+        {
+            QuanLyBan quanlyban = new QuanLyBan { Dock = DockStyle.Fill };
+            HoaDon nhanvien = new HoaDon { Dock = DockStyle.Fill };
+            tabQuanLyBan.Controls.Add(quanlyban);
+            tabHoaDon.Controls.Add(nhanvien);
+        }
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
- 
     }
 }

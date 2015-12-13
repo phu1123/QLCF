@@ -36,10 +36,6 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txtTimKiem = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnNhapHang = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnThemMenu = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnXoa = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabNoHeader1 = new QuanLyQuanCafe.TabNoHeader();
             this.tabThem = new System.Windows.Forms.TabPage();
             this.txtSoLuongTon = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -67,23 +63,36 @@
             this.btnHuy2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnNhap = new MaterialSkin.Controls.MaterialFlatButton();
             this.txtSoHoaDon = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnNhapHang = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnThemMenu = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnXoa = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataSet1 = new System.Data.DataSet();
+            this.dtChiTiet = new System.Data.DataTable();
+            this.dataColumn1 = new System.Data.DataColumn();
+            this.dataColumn2 = new System.Data.DataColumn();
+            this.dataColumn3 = new System.Data.DataColumn();
+            this.dataColumn4 = new System.Data.DataColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabNoHeader1.SuspendLayout();
             this.tabThem.SuspendLayout();
             this.tabNhapHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudThue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtChiTiet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -100,7 +109,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(651, 626);
+            this.dataGridView1.Size = new System.Drawing.Size(698, 655);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -156,8 +165,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.btnThemMenu);
             this.splitContainer1.Panel2.Controls.Add(this.btnXoa);
             this.splitContainer1.Panel2MinSize = 350;
-            this.splitContainer1.Size = new System.Drawing.Size(1120, 671);
-            this.splitContainer1.SplitterDistance = 653;
+            this.splitContainer1.Size = new System.Drawing.Size(1200, 700);
+            this.splitContainer1.SplitterDistance = 700;
             this.splitContainer1.TabIndex = 1;
             // 
             // txtTimKiem
@@ -165,7 +174,7 @@
             this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTimKiem.Depth = 0;
             this.txtTimKiem.Hint = "Tìm kiếm";
-            this.txtTimKiem.Location = new System.Drawing.Point(402, 15);
+            this.txtTimKiem.Location = new System.Drawing.Point(449, 14);
             this.txtTimKiem.MaxLength = 32767;
             this.txtTimKiem.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTimKiem.Name = "txtTimKiem";
@@ -179,56 +188,6 @@
             this.txtTimKiem.UseSystemPasswordChar = false;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
-            // btnNhapHang
-            // 
-            this.btnNhapHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNhapHang.Depth = 0;
-            this.btnNhapHang.Location = new System.Drawing.Point(140, 15);
-            this.btnNhapHang.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.btnNhapHang.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnNhapHang.Name = "btnNhapHang";
-            this.btnNhapHang.Primary = true;
-            this.btnNhapHang.Size = new System.Drawing.Size(105, 35);
-            this.btnNhapHang.TabIndex = 44;
-            this.btnNhapHang.Text = "Nhập hàng";
-            this.btnNhapHang.UseVisualStyleBackColor = true;
-            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
-            // 
-            // btnThemMenu
-            // 
-            this.btnThemMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemMenu.Depth = 0;
-            this.btnThemMenu.Location = new System.Drawing.Point(268, 15);
-            this.btnThemMenu.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.btnThemMenu.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnThemMenu.Name = "btnThemMenu";
-            this.btnThemMenu.Primary = true;
-            this.btnThemMenu.Size = new System.Drawing.Size(75, 35);
-            this.btnThemMenu.TabIndex = 43;
-            this.btnThemMenu.Text = "Thêm";
-            this.btnThemMenu.UseVisualStyleBackColor = true;
-            this.btnThemMenu.Click += new System.EventHandler(this.btnThemMenu_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.Depth = 0;
-            this.btnXoa.Location = new System.Drawing.Point(366, 15);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(20, 15, 20, 3);
-            this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Primary = true;
-            this.btnXoa.Size = new System.Drawing.Size(75, 35);
-            this.btnXoa.TabIndex = 7;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider1.ContainerControl = this;
-            // 
             // tabNoHeader1
             // 
             this.tabNoHeader1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -238,7 +197,7 @@
             this.tabNoHeader1.Location = new System.Drawing.Point(0, 56);
             this.tabNoHeader1.Name = "tabNoHeader1";
             this.tabNoHeader1.SelectedIndex = 0;
-            this.tabNoHeader1.Size = new System.Drawing.Size(461, 614);
+            this.tabNoHeader1.Size = new System.Drawing.Size(494, 643);
             this.tabNoHeader1.TabIndex = 50;
             // 
             // tabThem
@@ -255,7 +214,7 @@
             this.tabThem.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.tabThem.Name = "tabThem";
             this.tabThem.Padding = new System.Windows.Forms.Padding(3);
-            this.tabThem.Size = new System.Drawing.Size(453, 588);
+            this.tabThem.Size = new System.Drawing.Size(486, 617);
             this.tabThem.TabIndex = 0;
             this.tabThem.Text = "tabThem";
             // 
@@ -274,7 +233,7 @@
             this.txtSoLuongTon.SelectedText = "";
             this.txtSoLuongTon.SelectionLength = 0;
             this.txtSoLuongTon.SelectionStart = 0;
-            this.txtSoLuongTon.Size = new System.Drawing.Size(419, 23);
+            this.txtSoLuongTon.Size = new System.Drawing.Size(452, 23);
             this.txtSoLuongTon.TabIndex = 44;
             this.txtSoLuongTon.TabStop = false;
             this.txtSoLuongTon.UseSystemPasswordChar = false;
@@ -286,7 +245,7 @@
             this.btnHuy.AutoSize = true;
             this.btnHuy.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnHuy.Depth = 0;
-            this.btnHuy.Location = new System.Drawing.Point(398, 245);
+            this.btnHuy.Location = new System.Drawing.Point(431, 245);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 20, 4, 6);
             this.btnHuy.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnHuy.Name = "btnHuy";
@@ -303,7 +262,7 @@
             this.btnThem.AutoSize = true;
             this.btnThem.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnThem.Depth = 0;
-            this.btnThem.Location = new System.Drawing.Point(339, 245);
+            this.btnThem.Location = new System.Drawing.Point(372, 245);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 20, 4, 6);
             this.btnThem.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnThem.Name = "btnThem";
@@ -329,7 +288,7 @@
             this.txtGhiChu.SelectedText = "";
             this.txtGhiChu.SelectionLength = 0;
             this.txtGhiChu.SelectionStart = 0;
-            this.txtGhiChu.Size = new System.Drawing.Size(419, 23);
+            this.txtGhiChu.Size = new System.Drawing.Size(452, 23);
             this.txtGhiChu.TabIndex = 43;
             this.txtGhiChu.TabStop = false;
             this.txtGhiChu.UseSystemPasswordChar = false;
@@ -349,7 +308,7 @@
             this.txtTenHangHoa.SelectedText = "";
             this.txtTenHangHoa.SelectionLength = 0;
             this.txtTenHangHoa.SelectionStart = 0;
-            this.txtTenHangHoa.Size = new System.Drawing.Size(419, 23);
+            this.txtTenHangHoa.Size = new System.Drawing.Size(452, 23);
             this.txtTenHangHoa.TabIndex = 9;
             this.txtTenHangHoa.TabStop = false;
             this.txtTenHangHoa.UseSystemPasswordChar = false;
@@ -369,7 +328,7 @@
             this.txtDonViTinh.SelectedText = "";
             this.txtDonViTinh.SelectionLength = 0;
             this.txtDonViTinh.SelectionStart = 0;
-            this.txtDonViTinh.Size = new System.Drawing.Size(419, 23);
+            this.txtDonViTinh.Size = new System.Drawing.Size(452, 23);
             this.txtDonViTinh.TabIndex = 42;
             this.txtDonViTinh.TabStop = false;
             this.txtDonViTinh.UseSystemPasswordChar = false;
@@ -379,7 +338,7 @@
             this.txtGiaBan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGiaBan.Depth = 0;
-            this.txtGiaBan.Hint = "Giá bán (VND)";
+            this.txtGiaBan.Hint = "Giá bán (VNĐ)";
             this.txtGiaBan.Location = new System.Drawing.Point(18, 66);
             this.txtGiaBan.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.txtGiaBan.MaxLength = 10;
@@ -389,7 +348,7 @@
             this.txtGiaBan.SelectedText = "";
             this.txtGiaBan.SelectionLength = 0;
             this.txtGiaBan.SelectionStart = 0;
-            this.txtGiaBan.Size = new System.Drawing.Size(419, 23);
+            this.txtGiaBan.Size = new System.Drawing.Size(452, 23);
             this.txtGiaBan.TabIndex = 10;
             this.txtGiaBan.TabStop = false;
             this.txtGiaBan.UseSystemPasswordChar = false;
@@ -414,7 +373,7 @@
             this.tabNhapHang.Location = new System.Drawing.Point(4, 22);
             this.tabNhapHang.Name = "tabNhapHang";
             this.tabNhapHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNhapHang.Size = new System.Drawing.Size(453, 588);
+            this.tabNhapHang.Size = new System.Drawing.Size(486, 588);
             this.tabNhapHang.TabIndex = 1;
             this.tabNhapHang.Text = "tabNhapHang";
             // 
@@ -429,7 +388,7 @@
             this.lblTongTien.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTongTien.Size = new System.Drawing.Size(296, 19);
+            this.lblTongTien.Size = new System.Drawing.Size(329, 19);
             this.lblTongTien.TabIndex = 62;
             this.lblTongTien.Text = "0";
             // 
@@ -440,7 +399,7 @@
             this.nudThue.DecimalPlaces = 1;
             this.nudThue.Location = new System.Drawing.Point(132, 444);
             this.nudThue.Name = "nudThue";
-            this.nudThue.Size = new System.Drawing.Size(305, 20);
+            this.nudThue.Size = new System.Drawing.Size(338, 20);
             this.nudThue.TabIndex = 61;
             this.nudThue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudThue.Value = new decimal(new int[] {
@@ -480,6 +439,7 @@
             // 
             this.dataGridView2.AllowDrop = true;
             this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -490,10 +450,12 @@
             this.Column7,
             this.Column8});
             this.dataGridView2.Location = new System.Drawing.Point(18, 238);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.Size = new System.Drawing.Size(419, 178);
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(452, 178);
             this.dataGridView2.TabIndex = 58;
             this.dataGridView2.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellValueChanged);
             this.dataGridView2.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView2_EditingControlShowing);
@@ -505,13 +467,12 @@
             this.Column5.DataPropertyName = "TenHangHoa";
             this.Column5.HeaderText = "Tên hàng hóa";
             this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column6.DataPropertyName = "GiaMua";
-            this.Column6.HeaderText = "Giá mua";
+            this.Column6.HeaderText = "Giá mua (VNĐ)";
             this.Column6.Name = "Column6";
             // 
             // Column7
@@ -525,9 +486,8 @@
             // 
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column8.DataPropertyName = "ThanhTien";
-            this.Column8.HeaderText = "Thành tiền";
+            this.Column8.HeaderText = "Thành tiền (VNĐ)";
             this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
             // 
             // materialLabel4
             // 
@@ -554,7 +514,7 @@
             this.dtpNgayNhap.Location = new System.Drawing.Point(132, 69);
             this.dtpNgayNhap.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
-            this.dtpNgayNhap.Size = new System.Drawing.Size(305, 20);
+            this.dtpNgayNhap.Size = new System.Drawing.Size(338, 20);
             this.dtpNgayNhap.TabIndex = 56;
             // 
             // txtDiaChi
@@ -572,7 +532,7 @@
             this.txtDiaChi.SelectedText = "";
             this.txtDiaChi.SelectionLength = 0;
             this.txtDiaChi.SelectionStart = 0;
-            this.txtDiaChi.Size = new System.Drawing.Size(419, 23);
+            this.txtDiaChi.Size = new System.Drawing.Size(452, 23);
             this.txtDiaChi.TabIndex = 55;
             this.txtDiaChi.TabStop = false;
             this.txtDiaChi.UseSystemPasswordChar = false;
@@ -592,7 +552,7 @@
             this.txtGhiChuHoaDon.SelectedText = "";
             this.txtGhiChuHoaDon.SelectionLength = 0;
             this.txtGhiChuHoaDon.SelectionStart = 0;
-            this.txtGhiChuHoaDon.Size = new System.Drawing.Size(419, 23);
+            this.txtGhiChuHoaDon.Size = new System.Drawing.Size(452, 23);
             this.txtGhiChuHoaDon.TabIndex = 54;
             this.txtGhiChuHoaDon.TabStop = false;
             this.txtGhiChuHoaDon.UseSystemPasswordChar = false;
@@ -612,7 +572,7 @@
             this.txtNhaCungCap.SelectedText = "";
             this.txtNhaCungCap.SelectionLength = 0;
             this.txtNhaCungCap.SelectionStart = 0;
-            this.txtNhaCungCap.Size = new System.Drawing.Size(419, 23);
+            this.txtNhaCungCap.Size = new System.Drawing.Size(452, 23);
             this.txtNhaCungCap.TabIndex = 53;
             this.txtNhaCungCap.TabStop = false;
             this.txtNhaCungCap.UseSystemPasswordChar = false;
@@ -623,7 +583,7 @@
             this.btnHuy2.AutoSize = true;
             this.btnHuy2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnHuy2.Depth = 0;
-            this.btnHuy2.Location = new System.Drawing.Point(398, 543);
+            this.btnHuy2.Location = new System.Drawing.Point(431, 543);
             this.btnHuy2.Margin = new System.Windows.Forms.Padding(4, 20, 4, 6);
             this.btnHuy2.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnHuy2.Name = "btnHuy2";
@@ -640,7 +600,7 @@
             this.btnNhap.AutoSize = true;
             this.btnNhap.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnNhap.Depth = 0;
-            this.btnNhap.Location = new System.Drawing.Point(339, 543);
+            this.btnNhap.Location = new System.Drawing.Point(372, 543);
             this.btnNhap.Margin = new System.Windows.Forms.Padding(4, 20, 4, 6);
             this.btnNhap.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNhap.Name = "btnNhap";
@@ -666,10 +626,91 @@
             this.txtSoHoaDon.SelectedText = "";
             this.txtSoHoaDon.SelectionLength = 0;
             this.txtSoHoaDon.SelectionStart = 0;
-            this.txtSoHoaDon.Size = new System.Drawing.Size(419, 23);
+            this.txtSoHoaDon.Size = new System.Drawing.Size(452, 23);
             this.txtSoHoaDon.TabIndex = 50;
             this.txtSoHoaDon.TabStop = false;
             this.txtSoHoaDon.UseSystemPasswordChar = false;
+            // 
+            // btnNhapHang
+            // 
+            this.btnNhapHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNhapHang.Depth = 0;
+            this.btnNhapHang.Location = new System.Drawing.Point(173, 15);
+            this.btnNhapHang.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.btnNhapHang.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNhapHang.Name = "btnNhapHang";
+            this.btnNhapHang.Primary = true;
+            this.btnNhapHang.Size = new System.Drawing.Size(105, 35);
+            this.btnNhapHang.TabIndex = 44;
+            this.btnNhapHang.Text = "Nhập hàng";
+            this.btnNhapHang.UseVisualStyleBackColor = true;
+            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
+            // 
+            // btnThemMenu
+            // 
+            this.btnThemMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemMenu.Depth = 0;
+            this.btnThemMenu.Location = new System.Drawing.Point(301, 15);
+            this.btnThemMenu.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.btnThemMenu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnThemMenu.Name = "btnThemMenu";
+            this.btnThemMenu.Primary = true;
+            this.btnThemMenu.Size = new System.Drawing.Size(75, 35);
+            this.btnThemMenu.TabIndex = 43;
+            this.btnThemMenu.Text = "Thêm";
+            this.btnThemMenu.UseVisualStyleBackColor = true;
+            this.btnThemMenu.Click += new System.EventHandler(this.btnThemMenu_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.Depth = 0;
+            this.btnXoa.Location = new System.Drawing.Point(399, 15);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(20, 15, 20, 3);
+            this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Primary = true;
+            this.btnXoa.Size = new System.Drawing.Size(75, 35);
+            this.btnXoa.TabIndex = 7;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "NewDataSet";
+            this.dataSet1.Tables.AddRange(new System.Data.DataTable[] {
+            this.dtChiTiet});
+            // 
+            // dtChiTiet
+            // 
+            this.dtChiTiet.Columns.AddRange(new System.Data.DataColumn[] {
+            this.dataColumn1,
+            this.dataColumn2,
+            this.dataColumn3,
+            this.dataColumn4});
+            this.dtChiTiet.TableName = "Table1";
+            // 
+            // dataColumn1
+            // 
+            this.dataColumn1.ColumnName = "TenHangHoa";
+            // 
+            // dataColumn2
+            // 
+            this.dataColumn2.ColumnName = "GiaMua";
+            // 
+            // dataColumn3
+            // 
+            this.dataColumn3.ColumnName = "SoLuong";
+            // 
+            // dataColumn4
+            // 
+            this.dataColumn4.ColumnName = "ThanhTien";
             // 
             // HangHoa
             // 
@@ -677,13 +718,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
             this.Name = "HangHoa";
-            this.Size = new System.Drawing.Size(1120, 671);
+            this.Size = new System.Drawing.Size(1200, 700);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tabNoHeader1.ResumeLayout(false);
             this.tabThem.ResumeLayout(false);
             this.tabThem.PerformLayout();
@@ -691,6 +731,9 @@
             this.tabNhapHang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudThue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtChiTiet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -735,5 +778,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Data.DataSet dataSet1;
+        private System.Data.DataTable dtChiTiet;
+        private System.Data.DataColumn dataColumn1;
+        private System.Data.DataColumn dataColumn2;
+        private System.Data.DataColumn dataColumn3;
+        private System.Data.DataColumn dataColumn4;
     }
 }

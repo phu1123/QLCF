@@ -37,9 +37,7 @@ C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.QuanLy.KhuVuc.re
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.QuanLy.QuanLy.resources
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.ThuNgan.BaoCaoHangNgay.resources
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.ThuNgan.HoaDon.resources
-C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.ThuNgan.LichLamViec.resources
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.ThuNgan.QuanLyBan.resources
-C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.LoginForm.resources
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.ThuNgan.ThuNgan.resources
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.QuanLy.NhanVien.resources
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.Properties.Resources.resources
@@ -98,3 +96,6 @@ C:\Users\Q\Desktop\QLCF - Copy - Copy\QuanLyQuanCafe\bin\Debug\QuanLyQuanCafe.ex
 C:\Users\Q\Desktop\QLCF - Copy - Copy\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.csproj.ResolveComReference.cache
 C:\Users\Q\Desktop\QLCF - Copy - Copy\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.exe
 C:\Users\Q\Desktop\QLCF - Copy - Copy\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.pdb
+C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.ThuNgan.ThongTinCaNhan.resources
+C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.Dialog.XacNhan.resources
+C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.Dialog.DangNhap.resources

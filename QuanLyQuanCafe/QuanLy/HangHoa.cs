@@ -12,35 +12,24 @@ using MaterialSkin.Controls;
 namespace QuanLyQuanCafe.QuanLy
 {
     public partial class HangHoa : UserControl
-    {
-        private readonly DataTable _ctTable = new DataTable();
-        
+    {      
         public HangHoa()
         {
             InitializeComponent();
             RefreshHangHoa();
-
-            _ctTable.Columns.AddRange(new[]
-            {
-                new DataColumn("TenHangHoa"),
-                new DataColumn("GiaMua"),
-                new DataColumn("SoLuong"),
-                new DataColumn("ThanhTien")
-            });
-
-            dataGridView2.DataSource = _ctTable;
+            dataGridView2.DataSource = dtChiTiet;
         }
 
         private void RefreshHangHoa()
         {
-            using (HangHoaBUS hanghoaBUS = new HangHoaBUS())
-                dataGridView1.DataSource = hanghoaBUS.ListHangHoa();
+            using (HangHoaBUS bus = new HangHoaBUS())
+                dataGridView1.DataSource = bus.ListHangHoa();
         }
 
         private void UpdateTongTien()
         {
-            int excluded = _ctTable.Rows.Cast<DataRow>().Sum(row => Convert.ToInt32(row.Field<string>("ThanhTien")));
-                lblTongTien.Text = (excluded + (excluded*nudThue.Value*0.01m)).ToString("N0", CultureInfo.CreateSpecificCulture("vi-VN"));
+            int exclTax = dtChiTiet.Rows.Cast<DataRow>().Sum(row => Convert.ToInt32(row.Field<string>("ThanhTien")));
+            lblTongTien.Text = (exclTax + (exclTax * nudThue.Value*0.01m)).ToString("N0", CultureInfo.CreateSpecificCulture("vi-VN"));
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -82,7 +71,7 @@ namespace QuanLyQuanCafe.QuanLy
 
             try
             {
-                using (HangHoaBUS hanghoaBUS = new HangHoaBUS())
+                using (HangHoaBUS bus = new HangHoaBUS())
                 {
                     HangHoaDTO info = new HangHoaDTO
                     {
@@ -94,11 +83,11 @@ namespace QuanLyQuanCafe.QuanLy
                     };
 
                     if (dataGridView1.SelectedRows.Count == 0)
-                        hanghoaBUS.InsertHangHoa(info);
+                        bus.InsertHangHoa(info);
                     else
                     {
                         string tenhanghoa = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                        hanghoaBUS.EditHangHoa(info, tenhanghoa);
+                        bus.EditHangHoa(info, tenhanghoa);
                     }
                 }
             }
@@ -108,7 +97,6 @@ namespace QuanLyQuanCafe.QuanLy
                     errorProvider1.SetError(txtTenHangHoa, "Hàng hóa đã tồn tại");
                 else throw;
             }
-
             RefreshHangHoa();
         }
 
@@ -118,10 +106,10 @@ namespace QuanLyQuanCafe.QuanLy
         {
             if (dataGridView1.CurrentRow == null) return;
 
-            using (HangHoaBUS hanghoaBUS = new HangHoaBUS())
+            using (HangHoaBUS bus = new HangHoaBUS())
             {
                 string tenhanghoa = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                hanghoaBUS.DeleteHangHoa(tenhanghoa);
+                bus.DeleteHangHoa(tenhanghoa);
             }
 
             RefreshHangHoa();
@@ -145,10 +133,10 @@ namespace QuanLyQuanCafe.QuanLy
             tabNoHeader1.Visible = true;
             btnThem.Text = @"Sửa";
 
-            using (HangHoaBUS hanghoaBUS = new HangHoaBUS())
+            using (HangHoaBUS bus = new HangHoaBUS())
             {
                 string tennhanghoa = dataGridView1.CurrentRow?.Cells[0].Value.ToString();
-                HangHoaDTO info = hanghoaBUS.LoadHangHoa(tennhanghoa);
+                HangHoaDTO info = bus.LoadHangHoa(tennhanghoa);
                 txtTenHangHoa.Text = info.TenHangHoa;
                 txtGiaBan.Text = info.GiaBan.ToString();
                 txtDonViTinh.Text = info.DonViTinh;
@@ -160,12 +148,12 @@ namespace QuanLyQuanCafe.QuanLy
         private void btnNhapHang_Click(object sender, EventArgs e)
         {
             dataGridView1.ClearSelection();
-            _ctTable.Rows.Clear();
+            dtChiTiet.Rows.Clear();
             UpdateTongTien();
             tabNoHeader1.SelectedIndex = 1;
             tabNoHeader1.Visible = true;
 
-            foreach (MaterialSingleLineTextField c in tabNhapHang.Controls.OfType<MaterialSingleLineTextField>())
+            foreach (var c in tabNhapHang.Controls.OfType<MaterialSingleLineTextField>())
             {
                 errorProvider1.SetError(c, string.Empty);
                 c.Clear();
@@ -175,9 +163,7 @@ namespace QuanLyQuanCafe.QuanLy
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.CurrentRow == null) return;
-
-            string tenhanghoa = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            _ctTable.Rows.Add(tenhanghoa);
+            dtChiTiet.Rows.Add(dataGridView1.CurrentRow.Cells[0].Value.ToString());
         }
 
         private void dataGridView2_KeyPress(object sender, KeyPressEventArgs e)
@@ -192,11 +178,11 @@ namespace QuanLyQuanCafe.QuanLy
 
         private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (_ctTable.Rows.Count == 0) return;
+            if (dtChiTiet.Rows.Count == 0) return;
 
-            _ctTable.Rows[e.RowIndex].SetField("ThanhTien",
-                Convert.ToInt32(_ctTable.Rows[e.RowIndex].Field<string>("GiaMua"))*
-                Convert.ToInt32(_ctTable.Rows[e.RowIndex].Field<string>("SoLuong")));
+            dtChiTiet.Rows[e.RowIndex].SetField("ThanhTien",
+                Convert.ToInt32(dtChiTiet.Rows[e.RowIndex].Field<string>("GiaMua"))*
+                Convert.ToInt32(dtChiTiet.Rows[e.RowIndex].Field<string>("SoLuong")));
 
             UpdateTongTien();
         }
@@ -205,8 +191,8 @@ namespace QuanLyQuanCafe.QuanLy
         {
             foreach (DataGridViewRow row in dataGridView2.Rows)
             {
-                row.Cells[1].ErrorText = row.Cells[1].Value == null ? "Nhập thông tin" : string.Empty;
-                row.Cells[2].ErrorText = row.Cells[2].Value == null ? "Nhập thông tin" : string.Empty;
+                row.Cells[1].ErrorText = row.Cells[1].Value == DBNull.Value ? "Nhập thông tin" : string.Empty;
+                row.Cells[2].ErrorText = row.Cells[2].Value == DBNull.Value ? "Nhập thông tin" : string.Empty;
             }
 
             foreach (var c in from MaterialSingleLineTextField c in tabNhapHang.Controls.OfType<MaterialSingleLineTextField>() where c != txtGhiChuHoaDon select c)
@@ -223,7 +209,7 @@ namespace QuanLyQuanCafe.QuanLy
                     NgayNhap = dtpNgayNhap.Value,
                     NhaCungCap = txtNhaCungCap.Text,
                     DiaChi = txtDiaChi.Text,
-                    ChiTiet = _ctTable,
+                    ChiTiet = dtChiTiet,
                     Thue = nudThue.Value,
                     TongTien = int.Parse(lblTongTien.Text, NumberStyles.AllowThousands, CultureInfo.CreateSpecificCulture("vi-VN")),
                     GhiChu = txtGhiChuHoaDon.Text
