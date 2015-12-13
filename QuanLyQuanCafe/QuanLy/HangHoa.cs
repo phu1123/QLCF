@@ -8,6 +8,7 @@ using APP;
 using BUS;
 using DTO;
 using MaterialSkin.Controls;
+using QuanLyQuanCafe.Dialog;
 
 namespace QuanLyQuanCafe.QuanLy
 {
@@ -97,10 +98,9 @@ namespace QuanLyQuanCafe.QuanLy
                     errorProvider1.SetError(txtTenHangHoa, "Hàng hóa đã tồn tại");
                 else throw;
             }
+
             RefreshHangHoa();
         }
-
-
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -108,8 +108,11 @@ namespace QuanLyQuanCafe.QuanLy
 
             using (HangHoaBUS bus = new HangHoaBUS())
             {
-                string tenhanghoa = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                bus.DeleteHangHoa(tenhanghoa);
+                if (new XacNhan { Text = @"Bạn có chắc chắn muốn xóa hàng hóa " + dataGridView1.CurrentRow.Cells[0].Value }.ShowDialog() == DialogResult.Yes)
+                {
+                    string tenhanghoa = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    bus.DeleteHangHoa(tenhanghoa);
+                }
             }
 
             RefreshHangHoa();

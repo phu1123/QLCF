@@ -7,6 +7,7 @@ using APP;
 using MaterialSkin.Controls;
 using BUS;
 using DTO;
+using QuanLyQuanCafe.Dialog;
 
 namespace QuanLyQuanCafe.QuanLy
 {
@@ -46,8 +47,11 @@ namespace QuanLyQuanCafe.QuanLy
 
             using (NhanVienBUS bus = new NhanVienBUS())
             {
-                string msnv = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                bus.DeleteNhanVien(msnv);
+                if (new XacNhan { Text = @"Bạn có chắc chắn muốn xóa nhân viên " + dataGridView1.CurrentRow.Cells[1].Value }.ShowDialog() == DialogResult.Yes)
+                {
+                    string msnv = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    bus.DeleteNhanVien(msnv);
+                }
             }
 
             RefreshNhanVien();
