@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyBan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             this.listView1 = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -44,15 +44,13 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTimKiem = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.raisedButtonPay = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.raisedButtonPrint = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnThanhToan = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnIn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.raisedButtonCancel = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnHuyBan = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.nudThue = new System.Windows.Forms.NumericUpDown();
             this.dataSet1 = new System.Data.DataSet();
             this.dtChiTiet = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -63,9 +61,11 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblExclTax = new MaterialSkin.Controls.MaterialLabel();
+            this.lblTongTien = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudThue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtChiTiet)).BeginInit();
             this.SuspendLayout();
@@ -96,39 +96,39 @@
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column6});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle38;
             this.dataGridView2.Location = new System.Drawing.Point(953, 47);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(338, 500);
@@ -185,39 +185,39 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.Column4,
             this.Column3,
             this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle41;
             this.dataGridView1.Location = new System.Drawing.Point(312, 47);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle42;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(635, 329);
@@ -226,31 +226,31 @@
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
-            // raisedButtonPay
+            // btnThanhToan
             // 
-            this.raisedButtonPay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.raisedButtonPay.Depth = 0;
-            this.raisedButtonPay.Location = new System.Drawing.Point(786, 400);
-            this.raisedButtonPay.MouseState = MaterialSkin.MouseState.HOVER;
-            this.raisedButtonPay.Name = "raisedButtonPay";
-            this.raisedButtonPay.Primary = true;
-            this.raisedButtonPay.Size = new System.Drawing.Size(148, 28);
-            this.raisedButtonPay.TabIndex = 4;
-            this.raisedButtonPay.Text = "Thanh toán";
-            this.raisedButtonPay.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThanhToan.Depth = 0;
+            this.btnThanhToan.Location = new System.Drawing.Point(781, 450);
+            this.btnThanhToan.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Primary = true;
+            this.btnThanhToan.Size = new System.Drawing.Size(148, 28);
+            this.btnThanhToan.TabIndex = 4;
+            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.UseVisualStyleBackColor = true;
             // 
-            // raisedButtonPrint
+            // btnIn
             // 
-            this.raisedButtonPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.raisedButtonPrint.Depth = 0;
-            this.raisedButtonPrint.Location = new System.Drawing.Point(786, 449);
-            this.raisedButtonPrint.MouseState = MaterialSkin.MouseState.HOVER;
-            this.raisedButtonPrint.Name = "raisedButtonPrint";
-            this.raisedButtonPrint.Primary = true;
-            this.raisedButtonPrint.Size = new System.Drawing.Size(148, 28);
-            this.raisedButtonPrint.TabIndex = 5;
-            this.raisedButtonPrint.Text = "In hóa đơn";
-            this.raisedButtonPrint.UseVisualStyleBackColor = true;
+            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIn.Depth = 0;
+            this.btnIn.Location = new System.Drawing.Point(781, 401);
+            this.btnIn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Primary = true;
+            this.btnIn.Size = new System.Drawing.Size(148, 28);
+            this.btnIn.TabIndex = 5;
+            this.btnIn.Text = "In hóa đơn";
+            this.btnIn.UseVisualStyleBackColor = true;
             // 
             // materialLabel1
             // 
@@ -266,38 +266,18 @@
             this.materialLabel1.TabIndex = 6;
             this.materialLabel1.Text = "Khuyến mãi (%):";
             // 
-            // raisedButtonCancel
+            // btnHuyBan
             // 
-            this.raisedButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.raisedButtonCancel.Depth = 0;
-            this.raisedButtonCancel.Location = new System.Drawing.Point(786, 498);
-            this.raisedButtonCancel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.raisedButtonCancel.Name = "raisedButtonCancel";
-            this.raisedButtonCancel.Primary = true;
-            this.raisedButtonCancel.Size = new System.Drawing.Size(148, 28);
-            this.raisedButtonCancel.TabIndex = 7;
-            this.raisedButtonCancel.Text = "Hủy bàn";
-            this.raisedButtonCancel.UseVisualStyleBackColor = true;
-            // 
-            // materialSingleLineTextField2
-            // 
-            this.materialSingleLineTextField2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Hint = "";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(512, 403);
-            this.materialSingleLineTextField2.MaxLength = 32767;
-            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.PasswordChar = '\0';
-            this.materialSingleLineTextField2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.materialSingleLineTextField2.SelectedText = "";
-            this.materialSingleLineTextField2.SelectionLength = 0;
-            this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(189, 23);
-            this.materialSingleLineTextField2.TabIndex = 8;
-            this.materialSingleLineTextField2.TabStop = false;
-            this.materialSingleLineTextField2.Text = "40000";
-            this.materialSingleLineTextField2.UseSystemPasswordChar = false;
+            this.btnHuyBan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHuyBan.Depth = 0;
+            this.btnHuyBan.Location = new System.Drawing.Point(781, 499);
+            this.btnHuyBan.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnHuyBan.Name = "btnHuyBan";
+            this.btnHuyBan.Primary = true;
+            this.btnHuyBan.Size = new System.Drawing.Size(148, 28);
+            this.btnHuyBan.TabIndex = 7;
+            this.btnHuyBan.Text = "Hủy bàn";
+            this.btnHuyBan.UseVisualStyleBackColor = true;
             // 
             // materialLabel2
             // 
@@ -327,35 +307,16 @@
             this.materialLabel3.TabIndex = 10;
             this.materialLabel3.Text = "Số tiền thanh toán (VND):";
             // 
-            // numericUpDown1
+            // nudThue
             // 
-            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.numericUpDown1.DecimalPlaces = 1;
-            this.numericUpDown1.Location = new System.Drawing.Point(512, 455);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(189, 20);
-            this.numericUpDown1.TabIndex = 11;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // materialSingleLineTextField3
-            // 
-            this.materialSingleLineTextField3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.materialSingleLineTextField3.Depth = 0;
-            this.materialSingleLineTextField3.Hint = "";
-            this.materialSingleLineTextField3.Location = new System.Drawing.Point(512, 501);
-            this.materialSingleLineTextField3.MaxLength = 32767;
-            this.materialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField3.Name = "materialSingleLineTextField3";
-            this.materialSingleLineTextField3.PasswordChar = '\0';
-            this.materialSingleLineTextField3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.materialSingleLineTextField3.SelectedText = "";
-            this.materialSingleLineTextField3.SelectionLength = 0;
-            this.materialSingleLineTextField3.SelectionStart = 0;
-            this.materialSingleLineTextField3.Size = new System.Drawing.Size(189, 23);
-            this.materialSingleLineTextField3.TabIndex = 12;
-            this.materialSingleLineTextField3.TabStop = false;
-            this.materialSingleLineTextField3.Text = "40000";
-            this.materialSingleLineTextField3.UseSystemPasswordChar = false;
+            this.nudThue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nudThue.DecimalPlaces = 1;
+            this.nudThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudThue.Location = new System.Drawing.Point(527, 454);
+            this.nudThue.Name = "nudThue";
+            this.nudThue.Size = new System.Drawing.Size(196, 22);
+            this.nudThue.TabIndex = 11;
+            this.nudThue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dataSet1
             // 
@@ -422,19 +383,47 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 150;
             // 
+            // lblExclTax
+            // 
+            this.lblExclTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblExclTax.Depth = 0;
+            this.lblExclTax.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblExclTax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblExclTax.Location = new System.Drawing.Point(527, 407);
+            this.lblExclTax.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblExclTax.Name = "lblExclTax";
+            this.lblExclTax.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblExclTax.Size = new System.Drawing.Size(197, 19);
+            this.lblExclTax.TabIndex = 12;
+            this.lblExclTax.Text = "0";
+            // 
+            // lblTongTien
+            // 
+            this.lblTongTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTongTien.Depth = 0;
+            this.lblTongTien.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblTongTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTongTien.Location = new System.Drawing.Point(527, 505);
+            this.lblTongTien.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblTongTien.Name = "lblTongTien";
+            this.lblTongTien.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblTongTien.Size = new System.Drawing.Size(197, 19);
+            this.lblTongTien.TabIndex = 13;
+            this.lblTongTien.Text = "0";
+            // 
             // QuanLyBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.materialSingleLineTextField3);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.lblTongTien);
+            this.Controls.Add(this.lblExclTax);
+            this.Controls.Add(this.nudThue);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialSingleLineTextField2);
-            this.Controls.Add(this.raisedButtonCancel);
+            this.Controls.Add(this.btnHuyBan);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.raisedButtonPrint);
-            this.Controls.Add(this.raisedButtonPay);
+            this.Controls.Add(this.btnIn);
+            this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.dataGridView2);
@@ -444,7 +433,7 @@
             this.Load += new System.EventHandler(this.QuanLyBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudThue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtChiTiet)).EndInit();
             this.ResumeLayout(false);
@@ -458,15 +447,13 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTimKiem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private MaterialSkin.Controls.MaterialRaisedButton raisedButtonPay;
-        private MaterialSkin.Controls.MaterialRaisedButton raisedButtonPrint;
+        private MaterialSkin.Controls.MaterialRaisedButton btnThanhToan;
+        private MaterialSkin.Controls.MaterialRaisedButton btnIn;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialRaisedButton raisedButtonCancel;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
+        private MaterialSkin.Controls.MaterialRaisedButton btnHuyBan;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField3;
+        private System.Windows.Forms.NumericUpDown nudThue;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -481,5 +468,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private MaterialSkin.Controls.MaterialLabel lblExclTax;
+        private MaterialSkin.Controls.MaterialLabel lblTongTien;
     }
 }

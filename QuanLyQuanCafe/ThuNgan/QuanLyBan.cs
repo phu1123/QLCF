@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 using BUS;
 
@@ -33,7 +35,9 @@ namespace QuanLyQuanCafe.ThuNgan
 
         private void UpdateTongTien()
         {
-
+            int exclTax = dtChiTiet.Rows.Cast<DataRow>().Where(row => !row.IsNull("DonGia") && !row.IsNull("SoLuong")).Sum(row => row.Field<int>("ThanhTien"));
+            lblExclTax.Text = exclTax.ToString();
+            lblTongTien.Text = (exclTax + (exclTax * nudThue.Value * 0.01m)).ToString("N0", CultureInfo.CreateSpecificCulture("vi-VN"));
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -46,7 +50,8 @@ namespace QuanLyQuanCafe.ThuNgan
             if (dataGridView2.CurrentRow == null) return;
 
             string hanghoa = dataGridView2.CurrentRow.Cells[0].Value.ToString();
-            dtChiTiet.Rows.Add(hanghoa);
+            int soluong = Convert.ToInt32(dataGridView2.CurrentRow.Cells[1].Value);
+            dtChiTiet.Rows.Add(hanghoa, soluong);
         }
 
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -61,11 +66,10 @@ namespace QuanLyQuanCafe.ThuNgan
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (dtChiTiet.Rows.Count == 0) return;
+            if (dtChiTiet.Rows.Count == 0 || dtChiTiet.Rows[e.RowIndex].IsNull("DonGia") || dtChiTiet.Rows[e.RowIndex].IsNull("SoLuong")) return;
 
             dtChiTiet.Rows[e.RowIndex].SetField("ThanhTien",
-                Convert.ToInt32(dtChiTiet.Rows[e.RowIndex].Field<string>("DonGia")) *
-                Convert.ToInt32(dtChiTiet.Rows[e.RowIndex].Field<string>("SoLuong")));
+                dtChiTiet.Rows[e.RowIndex].Field<int>("DonGia")*dtChiTiet.Rows[e.RowIndex].Field<int>("SoLuong"));
 
             UpdateTongTien();
         }
