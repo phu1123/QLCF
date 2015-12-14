@@ -25,7 +25,7 @@ namespace DAO
 
         public DataTable ListBan(string khuvuc)
         {
-            string sql = $"SELECT MaSoBan, TenBan FROM Ban WHERE TenKhuVuc=N'{khuvuc}'";
+            string sql = $"SELECT MaSoBan, TenBan, DangSuDung FROM Ban WHERE TenKhuVuc=N'{khuvuc}'";
             return _dbconnection.ExcuteReader(sql);
         }
 

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Globalization;
-using System.Linq;
 using System.Windows.Forms;
+using APP;
 using BUS;
 
 namespace QuanLyQuanCafe.ThuNgan
@@ -12,7 +13,6 @@ namespace QuanLyQuanCafe.ThuNgan
         public QuanLyBan()
         {
             InitializeComponent();
-            dataGridView1.DataSource = dtChiTiet;
         }
 
         private void QuanLyBan_Load(object sender, EventArgs e)
@@ -28,30 +28,47 @@ namespace QuanLyQuanCafe.ThuNgan
                     listView1.Groups.Add(group);
 
                     foreach (DataRow r in bus.ListBan(row["TenKhuVuc"].ToString()).Rows)
-                        listView1.Items.Add(new ListViewItem(r["TenBan"].ToString(), 0, group));
+                        listView1.Items.Add(new ListViewItem(r["TenBan"].ToString(), (bool)r["DangSuDung"] ? 1 : 0, group)).Tag = r["MaSoBan"];
+
+                    listView1.Items[0].Selected = true;
                 }
             }
         }
 
-        private void UpdateTongTien()
+        private void RefreshHangHoa()
         {
-            int exclTax = dtChiTiet.Rows.Cast<DataRow>().Where(row => !row.IsNull("DonGia") && !row.IsNull("SoLuong")).Sum(row => row.Field<int>("ThanhTien"));
-            lblExclTax.Text = exclTax.ToString();
-            lblTongTien.Text = (exclTax + (exclTax * nudThue.Value * 0.01m)).ToString("N0", CultureInfo.CreateSpecificCulture("vi-VN"));
+            using (QuanLyBanBUS bus = new QuanLyBanBUS())
+                dataGridView1.DataSource = bus.LoadHangHoa();
+
+            using (QuanLyBanBUS bus = new QuanLyBanBUS())
+            {
+                int exclTax = bus.ExclTax();
+                lblExclTax.Text = exclTax.ToString("N0", CultureInfo.CreateSpecificCulture("vi-VN"));
+                lblTongTien.Text = (exclTax - (exclTax * nudThue.Value * 0.01m)).ToString("N0", CultureInfo.CreateSpecificCulture("vi-VN"));
+            }
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = $"TenHangHoa LIKE '%{txtTimKiem.Text}%'";
+            ((DataTable)dataGridView2.DataSource).DefaultView.RowFilter = $"TenHangHoa LIKE '%{txtTimKiem.Text}%'";
         }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView2.CurrentRow == null) return;
+            try
+            {
+                string hanghoa = dataGridView2.CurrentRow?.Cells[0].Value.ToString();
+                string dongia = dataGridView2.CurrentRow?.Cells[1].Value.ToString();
 
-            string hanghoa = dataGridView2.CurrentRow.Cells[0].Value.ToString();
-            int soluong = Convert.ToInt32(dataGridView2.CurrentRow.Cells[1].Value);
-            dtChiTiet.Rows.Add(hanghoa, soluong);
+                using (QuanLyBanBUS bus = new QuanLyBanBUS())
+                    bus.InsertHangHoa(hanghoa, dongia);
+
+                RefreshHangHoa();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number != DbConnection.MssqlEng002627) throw;
+            }  
         }
 
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -66,12 +83,37 @@ namespace QuanLyQuanCafe.ThuNgan
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (dtChiTiet.Rows.Count == 0 || dtChiTiet.Rows[e.RowIndex].IsNull("DonGia") || dtChiTiet.Rows[e.RowIndex].IsNull("SoLuong")) return;
+            if (dataGridView1.Rows.Count == 0) return;
 
-            dtChiTiet.Rows[e.RowIndex].SetField("ThanhTien",
-                dtChiTiet.Rows[e.RowIndex].Field<int>("DonGia")*dtChiTiet.Rows[e.RowIndex].Field<int>("SoLuong"));
+            string tenhanghoa = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            string soluong = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
 
-            UpdateTongTien();
+            using (QuanLyBanBUS bus = new QuanLyBanBUS())
+                bus.UpdateSoLuong(tenhanghoa, soluong);
+
+            RefreshHangHoa();
+        }
+
+        private void nudThue_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshHangHoa();
+        }
+
+        private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (!e.IsSelected) return;
+
+            lblBan.Text = (listView1.SelectedItems[0].Group.Header + @" - " + listView1.SelectedItems[0].Text).ToUpper();
+            QuanLyBanBUS.Masoban = listView1.SelectedItems[0].Tag.ToString();
+            RefreshHangHoa();
+        }
+
+        private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            using (QuanLyBanBUS bus = new QuanLyBanBUS())
+                bus.DeleteHangHoa(e.Row.Cells[0].Value.ToString());
+
+            RefreshHangHoa();
         }
     }
 }
