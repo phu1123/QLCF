@@ -85,7 +85,7 @@ namespace QuanLyQuanCafe.ThuNgan
         {
             if (dataGridView1.Rows.Count == 0) return;
 
-            string tenhanghoa = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            string tenhanghoa = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             string soluong = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
 
             using (QuanLyBanBUS bus = new QuanLyBanBUS())
@@ -112,7 +112,7 @@ namespace QuanLyQuanCafe.ThuNgan
         {
             using (QuanLyBanBUS bus = new QuanLyBanBUS())
                 bus.DeleteHangHoa(e.Row.Cells[0].Value.ToString());
-
+            e.Cancel = true;
             RefreshHangHoa();
         }
     }
