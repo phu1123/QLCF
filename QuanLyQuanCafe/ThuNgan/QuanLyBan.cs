@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 using APP;
 using BUS;
@@ -28,7 +29,8 @@ namespace QuanLyQuanCafe.ThuNgan
                     listView1.Groups.Add(group);
 
                     foreach (DataRow r in bus.ListBan(row["TenKhuVuc"].ToString()).Rows)
-                        listView1.Items.Add(new ListViewItem(r["TenBan"].ToString(), (bool)r["DangSuDung"] ? 1 : 0, group)).Tag = r["MaSoBan"];
+                        listView1.Items.Add(new ListViewItem(r["TenBan"].ToString(),
+                            bus.IsAvailable(r["MaSoBan"].ToString()) ? 0 : 1, group)).Tag = r["MaSoBan"];
 
                     listView1.Items[0].Selected = true;
                 }
@@ -46,6 +48,8 @@ namespace QuanLyQuanCafe.ThuNgan
                 lblExclTax.Text = exclTax.ToString("N0", CultureInfo.CreateSpecificCulture("vi-VN"));
                 lblTongTien.Text = (exclTax - (exclTax * nudThue.Value * 0.01m)).ToString("N0", CultureInfo.CreateSpecificCulture("vi-VN"));
             }
+
+            listView1.Items.OfType<ListViewItem>().Single(i => i.Tag.ToString() == QuanLyBanBUS.Masoban).ImageIndex = dataGridView1.Rows.Count == 0 ? 0 : 1;
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -102,7 +106,6 @@ namespace QuanLyQuanCafe.ThuNgan
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             if (!e.IsSelected) return;
-
             lblBan.Text = (listView1.SelectedItems[0].Group.Header + @" - " + listView1.SelectedItems[0].Text).ToUpper();
             QuanLyBanBUS.Masoban = listView1.SelectedItems[0].Tag.ToString();
             RefreshHangHoa();
@@ -115,5 +118,7 @@ namespace QuanLyQuanCafe.ThuNgan
             e.Cancel = true;
             RefreshHangHoa();
         }
+
+        
     }
 }

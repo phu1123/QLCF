@@ -25,7 +25,7 @@ namespace DAO
 
         public DataTable ListBan(string khuvuc)
         {
-            string sql = $"SELECT MaSoBan, TenBan, DangSuDung FROM Ban WHERE TenKhuVuc=N'{khuvuc}'";
+            string sql = $"SELECT MaSoBan, TenBan FROM Ban WHERE TenKhuVuc=N'{khuvuc}'";
             return _dbconnection.ExcuteReader(sql);
         }
 
@@ -53,5 +53,10 @@ namespace DAO
             _dbconnection.ExcuteNonQuery(sql);
         }
 
+        public bool IsAvailable(string masoban)
+        {
+            string sql = $"SELECT COUNT(*) FROM BanDangDung WHERE MaSoBan=N'{masoban}'";
+            return (int)_dbconnection.ExecuteScalar(sql) == 0;
+        }
     }
 }

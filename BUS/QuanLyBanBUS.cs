@@ -38,5 +38,7 @@ namespace BUS
         {
             _quanlybanDAO.DeleteHangHoa(Masoban, tenhanghoa);
         }
+
+        
     }
 }

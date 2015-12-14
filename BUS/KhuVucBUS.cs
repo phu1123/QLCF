@@ -42,5 +42,10 @@ namespace BUS
         {
             _khuvucDAO.DeleteBan(masoban);
         }
+
+        public bool IsAvailable(string masoban)
+        {
+            return _khuvucDAO.IsAvailable(masoban);
+        }
     }
 }
