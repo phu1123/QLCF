@@ -99,3 +99,4 @@ C:\Users\Q\Desktop\QLCF - Copy - Copy\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.pd
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.ThuNgan.ThongTinCaNhan.resources
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.Dialog.XacNhan.resources
 C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.Dialog.DangNhap.resources
+C:\Users\Q\Desktop\QLCF\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.Dialog.BanHangReport.resources

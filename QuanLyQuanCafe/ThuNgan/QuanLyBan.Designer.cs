@@ -49,7 +49,6 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThanhToan = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnIn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnHuyBan = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -58,9 +57,15 @@
             this.lblExclTax = new MaterialSkin.Controls.MaterialLabel();
             this.lblTongTien = new MaterialSkin.Controls.MaterialLabel();
             this.lblBan = new System.Windows.Forms.Label();
+            this.txtGhiChu = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnInHoaDon = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtSoHoaDon = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudThue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // listView1
@@ -215,7 +220,7 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(635, 329);
+            this.dataGridView1.Size = new System.Drawing.Size(635, 281);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
@@ -257,7 +262,8 @@
             // 
             this.btnThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThanhToan.Depth = 0;
-            this.btnThanhToan.Location = new System.Drawing.Point(781, 450);
+            this.btnThanhToan.Location = new System.Drawing.Point(786, 507);
+            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(15);
             this.btnThanhToan.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Primary = true;
@@ -265,19 +271,7 @@
             this.btnThanhToan.TabIndex = 4;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
-            // 
-            // btnIn
-            // 
-            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIn.Depth = 0;
-            this.btnIn.Location = new System.Drawing.Point(781, 401);
-            this.btnIn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Primary = true;
-            this.btnIn.Size = new System.Drawing.Size(148, 28);
-            this.btnIn.TabIndex = 5;
-            this.btnIn.Text = "In hóa đơn";
-            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // materialLabel1
             // 
@@ -286,7 +280,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(325, 456);
+            this.materialLabel1.Location = new System.Drawing.Point(325, 397);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(115, 19);
@@ -295,9 +289,10 @@
             // 
             // btnHuyBan
             // 
-            this.btnHuyBan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHuyBan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnHuyBan.Depth = 0;
-            this.btnHuyBan.Location = new System.Drawing.Point(781, 499);
+            this.btnHuyBan.Location = new System.Drawing.Point(324, 507);
+            this.btnHuyBan.Margin = new System.Windows.Forms.Padding(15);
             this.btnHuyBan.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnHuyBan.Name = "btnHuyBan";
             this.btnHuyBan.Primary = true;
@@ -305,6 +300,7 @@
             this.btnHuyBan.TabIndex = 7;
             this.btnHuyBan.Text = "Hủy bàn";
             this.btnHuyBan.UseVisualStyleBackColor = true;
+            this.btnHuyBan.Click += new System.EventHandler(this.btnHuyBan_Click);
             // 
             // materialLabel2
             // 
@@ -313,7 +309,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(325, 407);
+            this.materialLabel2.Location = new System.Drawing.Point(325, 356);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(121, 19);
@@ -327,50 +323,53 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(325, 505);
+            this.materialLabel3.Location = new System.Drawing.Point(325, 438);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(180, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(133, 19);
             this.materialLabel3.TabIndex = 10;
-            this.materialLabel3.Text = "Số tiền thanh toán (VND):";
+            this.materialLabel3.Text = "Thanh toán (VND):";
             // 
             // nudThue
             // 
-            this.nudThue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.nudThue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nudThue.DecimalPlaces = 1;
             this.nudThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudThue.Location = new System.Drawing.Point(527, 454);
+            this.nudThue.Location = new System.Drawing.Point(464, 397);
             this.nudThue.Name = "nudThue";
-            this.nudThue.Size = new System.Drawing.Size(196, 22);
+            this.nudThue.Size = new System.Drawing.Size(134, 22);
             this.nudThue.TabIndex = 11;
             this.nudThue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudThue.ValueChanged += new System.EventHandler(this.nudThue_ValueChanged);
             // 
             // lblExclTax
             // 
-            this.lblExclTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblExclTax.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExclTax.Depth = 0;
             this.lblExclTax.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblExclTax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblExclTax.Location = new System.Drawing.Point(527, 407);
+            this.lblExclTax.Location = new System.Drawing.Point(464, 356);
             this.lblExclTax.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblExclTax.Name = "lblExclTax";
             this.lblExclTax.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblExclTax.Size = new System.Drawing.Size(197, 19);
+            this.lblExclTax.Size = new System.Drawing.Size(137, 19);
             this.lblExclTax.TabIndex = 12;
             this.lblExclTax.Text = "0";
             // 
             // lblTongTien
             // 
-            this.lblTongTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTongTien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTongTien.Depth = 0;
             this.lblTongTien.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblTongTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTongTien.Location = new System.Drawing.Point(527, 505);
+            this.lblTongTien.Location = new System.Drawing.Point(464, 438);
             this.lblTongTien.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTongTien.Size = new System.Drawing.Size(197, 19);
+            this.lblTongTien.Size = new System.Drawing.Size(134, 19);
             this.lblTongTien.TabIndex = 13;
             this.lblTongTien.Text = "0";
             // 
@@ -385,10 +384,85 @@
             this.lblBan.TabIndex = 14;
             this.lblBan.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtGhiChu.Depth = 0;
+            this.txtGhiChu.Hint = "Ghi Chú";
+            this.txtGhiChu.Location = new System.Drawing.Point(630, 397);
+            this.txtGhiChu.MaxLength = 32767;
+            this.txtGhiChu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.PasswordChar = '\0';
+            this.txtGhiChu.SelectedText = "";
+            this.txtGhiChu.SelectionLength = 0;
+            this.txtGhiChu.SelectionStart = 0;
+            this.txtGhiChu.Size = new System.Drawing.Size(304, 23);
+            this.txtGhiChu.TabIndex = 15;
+            this.txtGhiChu.TabStop = false;
+            this.txtGhiChu.UseSystemPasswordChar = false;
+            // 
+            // btnInHoaDon
+            // 
+            this.btnInHoaDon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnInHoaDon.Depth = 0;
+            this.btnInHoaDon.Location = new System.Drawing.Point(555, 507);
+            this.btnInHoaDon.Margin = new System.Windows.Forms.Padding(15);
+            this.btnInHoaDon.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Primary = true;
+            this.btnInHoaDon.Size = new System.Drawing.Size(148, 28);
+            this.btnInHoaDon.TabIndex = 16;
+            this.btnInHoaDon.Text = "In Hóa Đơn";
+            this.btnInHoaDon.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnIn_Click);
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(626, 356);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(90, 19);
+            this.materialLabel4.TabIndex = 17;
+            this.materialLabel4.Text = "Số hóa đơn:";
+            // 
+            // txtSoHoaDon
+            // 
+            this.txtSoHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSoHoaDon.Depth = 0;
+            this.txtSoHoaDon.Hint = "";
+            this.txtSoHoaDon.Location = new System.Drawing.Point(722, 356);
+            this.txtSoHoaDon.MaxLength = 32767;
+            this.txtSoHoaDon.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSoHoaDon.Name = "txtSoHoaDon";
+            this.txtSoHoaDon.PasswordChar = '\0';
+            this.txtSoHoaDon.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtSoHoaDon.SelectedText = "";
+            this.txtSoHoaDon.SelectionLength = 0;
+            this.txtSoHoaDon.SelectionStart = 0;
+            this.txtSoHoaDon.Size = new System.Drawing.Size(212, 23);
+            this.txtSoHoaDon.TabIndex = 18;
+            this.txtSoHoaDon.TabStop = false;
+            this.txtSoHoaDon.UseSystemPasswordChar = false;
+            this.txtSoHoaDon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoHoaDon_KeyPress);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // QuanLyBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtSoHoaDon);
+            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.btnInHoaDon);
+            this.Controls.Add(this.txtGhiChu);
             this.Controls.Add(this.lblBan);
             this.Controls.Add(this.lblTongTien);
             this.Controls.Add(this.lblExclTax);
@@ -397,7 +471,6 @@
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.btnHuyBan);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.btnIn);
             this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtTimKiem);
@@ -409,6 +482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudThue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,7 +495,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTimKiem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MaterialSkin.Controls.MaterialRaisedButton btnThanhToan;
-        private MaterialSkin.Controls.MaterialRaisedButton btnIn;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialRaisedButton btnHuyBan;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
@@ -438,5 +511,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtGhiChu;
+        private MaterialSkin.Controls.MaterialRaisedButton btnInHoaDon;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSoHoaDon;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

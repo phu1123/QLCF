@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Data;
 using DAO;
+using DTO;
 
 namespace BUS
 {
     public class QuanLyBanBUS : IDisposable
     {
         private readonly QuanLyBanDAO _quanlybanDAO = new QuanLyBanDAO();
-        public static string Masoban { get; set; }
+        public static int Masoban { get; set; }
 
         public void Dispose()
         {
@@ -39,6 +40,19 @@ namespace BUS
             _quanlybanDAO.DeleteHangHoa(Masoban, tenhanghoa);
         }
 
-        
+        public void ClearHangHoa()
+        {
+            _quanlybanDAO.ClearHangHoa(Masoban);
+        }
+
+        public int GetSoHoaDon()
+        {
+            return _quanlybanDAO.GetSoHoaDon();
+        }
+
+        public void BanHang(BanHangDTO info)
+        {
+            _quanlybanDAO.BanHang(info);
+        }
     }
 }

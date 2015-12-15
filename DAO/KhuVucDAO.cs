@@ -58,5 +58,11 @@ namespace DAO
             string sql = $"SELECT COUNT(*) FROM BanDangDung WHERE MaSoBan=N'{masoban}'";
             return (int)_dbconnection.ExecuteScalar(sql) == 0;
         }
+
+        public DataTable GetChiTiet(int masoban)
+        {
+            string sql = $"SELECT TenBan, TenKhuVuc FROM Ban WHERE MaSoBan=N'{masoban}'";
+            return _dbconnection.ExcuteReader(sql);
+        }
     }
 }

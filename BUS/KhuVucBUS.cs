@@ -47,5 +47,10 @@ namespace BUS
         {
             return _khuvucDAO.IsAvailable(masoban);
         }
+
+        public DataTable GetChiTiet(int masoban)
+        {
+            return _khuvucDAO.GetChiTiet(masoban);
+        }
     }
 }
