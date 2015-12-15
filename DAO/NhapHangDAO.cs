@@ -26,7 +26,7 @@ namespace DAO
 
             foreach (DataRow row in info.ChiTiet.Rows)
             {
-                _dbconnection.ExcuteNonQuery($"INSERT INTO ChiTietDonNhapHang VALUES(N'{info.SoHoaDon}', N'{row.Field<string>("TenHangHoa")}', N'{row.Field<string>("GiaMua")}', N'{row.Field<string>("SoLuong")}')");
+                _dbconnection.ExcuteNonQuery($"INSERT INTO ChiTietDonNhapHang VALUES(N'{info.SoHoaDon}', N'{row.Field<string>("TenHangHoa")}', N'{row.Field<string>("GiaMua")}', N'{row.Field<string>("SoLuong")}', N'{row.Field<string>("ThanhTien")}')");
                 _dbconnection.ExcuteNonQuery($"UPDATE HangHoa SET SoLuongTon=SoLuongTon + {row.Field<string>("SoLuong")} WHERE TenHangHoa=N'{row.Field<string>("TenHangHoa")}'");
             }
 
