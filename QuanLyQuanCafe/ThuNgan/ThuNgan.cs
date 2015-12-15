@@ -8,13 +8,16 @@ namespace QuanLyQuanCafe.ThuNgan
 {
     public partial class ThuNgan : MaterialForm
     {
-        public ThuNgan()
+        public static int MsnvLogin;
+
+        public ThuNgan(int msnv)
         {       
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Teal500, Primary.Teal700, Primary.Teal500, Accent.Red700, TextShade.WHITE);
+            MsnvLogin = msnv;
         }
 
         private void ThuNgan_Load(object sender, System.EventArgs e)

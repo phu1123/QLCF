@@ -29,7 +29,7 @@ namespace QuanLyQuanCafe.QuanLy
 
         private void UpdateTongTien()
         {
-            int exclTax = dtChiTiet.Rows.Cast<DataRow>().Sum(row => Convert.ToInt32(row.Field<string>("ThanhTien")));
+            int exclTax = dtChiTiet.Rows.Cast<DataRow>().Where(row => !row.IsNull("GiaMua") && !row.IsNull("SoLuong")).Sum(row => row.Field<int>("ThanhTien"));
             lblTongTien.Text = (exclTax + (exclTax * nudThue.Value*0.01m)).ToString("N0", CultureInfo.CreateSpecificCulture("vi-VN"));
         }
 
@@ -181,11 +181,10 @@ namespace QuanLyQuanCafe.QuanLy
 
         private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (dtChiTiet.Rows.Count == 0) return;
+            if (dtChiTiet.Rows.Count == 0 || dtChiTiet.Rows[e.RowIndex].IsNull("GiaMua") || dtChiTiet.Rows[e.RowIndex].IsNull("SoLuong")) return;
 
             dtChiTiet.Rows[e.RowIndex].SetField("ThanhTien",
-                Convert.ToInt32(dtChiTiet.Rows[e.RowIndex].Field<string>("GiaMua"))*
-                Convert.ToInt32(dtChiTiet.Rows[e.RowIndex].Field<string>("SoLuong")));
+                dtChiTiet.Rows[e.RowIndex].Field<int>("GiaMua")*dtChiTiet.Rows[e.RowIndex].Field<int>("SoLuong"));
 
             UpdateTongTien();
         }

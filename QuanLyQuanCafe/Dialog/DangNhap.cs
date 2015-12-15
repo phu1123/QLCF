@@ -41,7 +41,7 @@ namespace QuanLyQuanCafe.Dialog
                 {
                     if (row.Field<bool>("PhanQuyen") == false)
                         new QuanLy.QuanLy(row.Field<int>("MSNV")).Show();
-                    else new ThuNgan.ThuNgan().Show();
+                    else new ThuNgan.ThuNgan(row.Field<int>("MSNV")).Show();
                     Close();
                 }
                 else

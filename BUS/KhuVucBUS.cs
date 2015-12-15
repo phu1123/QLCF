@@ -42,5 +42,15 @@ namespace BUS
         {
             _khuvucDAO.DeleteBan(masoban);
         }
+
+        public bool IsAvailable(string masoban)
+        {
+            return _khuvucDAO.IsAvailable(masoban);
+        }
+
+        public DataTable GetChiTiet(int masoban)
+        {
+            return _khuvucDAO.GetChiTiet(masoban);
+        }
     }
 }

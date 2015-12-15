@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialog\BanHangReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BanHangReport.Designer.cs">
+      <DependentUpon>BanHangReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialog\XacNhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="QuanLy\QuanLy.Designer.cs">
       <DependentUpon>QuanLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HoaDonBanHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDonBanHang.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TabNoHeader.cs">
       <SubType>Component</SubType>
@@ -138,6 +150,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialog\BanHangReport.resx">
+      <DependentUpon>BanHangReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\XacNhan.resx">
       <DependentUpon>XacNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +167,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\QuanLy.resx">
       <DependentUpon>QuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HoaDonBanHang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HoaDonBanHang.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ThuNgan\BaoCaoHangNgay.resx">
       <DependentUpon>BaoCaoHangNgay.cs</DependentUpon>
