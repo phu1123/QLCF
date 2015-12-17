@@ -43,5 +43,10 @@ namespace BUS
         {
             _nhanvienDAO.EditNhanVien(info, msnv);
         }
+
+        public void DoiMatKhau(int msnv, string matkhaumoi)
+        {
+            _nhanvienDAO.DoiMatKhau(msnv, matkhaumoi);
+        }
     }
 }

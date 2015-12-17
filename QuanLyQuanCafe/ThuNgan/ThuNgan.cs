@@ -24,8 +24,10 @@ namespace QuanLyQuanCafe.ThuNgan
         {
             QuanLyBan quanlyban = new QuanLyBan { Dock = DockStyle.Fill };
             HoaDon nhanvien = new HoaDon { Dock = DockStyle.Fill };
+            ThongTinCaNhan thongtincanhan = new ThongTinCaNhan { Dock = DockStyle.Fill };
             tabQuanLyBan.Controls.Add(quanlyban);
             tabHoaDon.Controls.Add(nhanvien);
+            tabThongTinCaNhan.Controls.Add(thongtincanhan);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

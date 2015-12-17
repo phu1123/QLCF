@@ -73,5 +73,11 @@ namespace DAO
             _dbconnection.ExcuteNonQuery(sql);
             _dbconnection.ExcuteNonQuery($"UPDATE TaiKhoan SET TenDangNhap=N'{info.TenDangNhap}', MatKhau=N'{info.MatKhau}', PhanQuyen=N'{info.PhanQuyen}' WHERE MSNV=N'{msnv}'");
         }
+
+        public void DoiMatKhau(int msnv, string matkhaumoi)
+        {
+            string sql = $"UPDATE TaiKhoan SET MatKhau=N'{matkhaumoi}' WHERE MSNV=N'{msnv}'";
+            _dbconnection.ExcuteNonQuery(sql);
+        }
     }
 }

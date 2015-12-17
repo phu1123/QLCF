@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txtTimBanHang = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnLocBanHang = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -213,9 +213,9 @@
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column4.DataPropertyName = "GioRa";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column4.HeaderText = "Ngày bán";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -381,8 +381,8 @@
             // 
             this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column9.DataPropertyName = "NgayNhap";
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column9.HeaderText = "Ngày nhập";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
@@ -419,6 +419,7 @@
             this.txtChiTietMuaHang.TabIndex = 21;
             this.txtChiTietMuaHang.Text = "Xem Chi Tiết";
             this.txtChiTietMuaHang.UseVisualStyleBackColor = true;
+            this.txtChiTietMuaHang.Click += new System.EventHandler(this.txtChiTietMuaHang_Click);
             // 
             // HoaDon
             // 

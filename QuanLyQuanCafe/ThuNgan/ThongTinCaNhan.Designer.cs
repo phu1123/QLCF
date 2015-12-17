@@ -28,217 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtHoTen = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtSoDienThoai = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtDiaChi = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.timePickerBirthday = new System.Windows.Forms.DateTimePicker();
-            this.txtCMND = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.rbtnNu = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rbtnNam = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.components = new System.ComponentModel.Container();
+            this.lblNgayVaoLam = new MaterialSkin.Controls.MaterialLabel();
+            this.lblNgaySinh = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtMaSo = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.panel2.SuspendLayout();
+            this.txtLuu = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtXacNhan = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtMatKhauCu = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtMatKhauMoi = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lblMaSo = new MaterialSkin.Controls.MaterialLabel();
+            this.lblHoTen = new MaterialSkin.Controls.MaterialLabel();
+            this.lblGioiTinh = new MaterialSkin.Controls.MaterialLabel();
+            this.lblCMND = new MaterialSkin.Controls.MaterialLabel();
+            this.lblDiaChi = new MaterialSkin.Controls.MaterialLabel();
+            this.lblSoDienThoai = new MaterialSkin.Controls.MaterialLabel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtHoTen
+            // lblNgayVaoLam
             // 
-            this.txtHoTen.Depth = 0;
-            this.txtHoTen.Hint = "Họ tên";
-            this.txtHoTen.Location = new System.Drawing.Point(103, 129);
-            this.txtHoTen.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.txtHoTen.MaxLength = 50;
-            this.txtHoTen.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.PasswordChar = '\0';
-            this.txtHoTen.SelectedText = "";
-            this.txtHoTen.SelectionLength = 0;
-            this.txtHoTen.SelectionStart = 0;
-            this.txtHoTen.Size = new System.Drawing.Size(335, 23);
-            this.txtHoTen.TabIndex = 52;
-            this.txtHoTen.TabStop = false;
-            this.txtHoTen.UseSystemPasswordChar = false;
+            this.lblNgayVaoLam.AutoSize = true;
+            this.lblNgayVaoLam.Depth = 0;
+            this.lblNgayVaoLam.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblNgayVaoLam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblNgayVaoLam.Location = new System.Drawing.Point(99, 426);
+            this.lblNgayVaoLam.Margin = new System.Windows.Forms.Padding(3, 30, 3, 0);
+            this.lblNgayVaoLam.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblNgayVaoLam.Name = "lblNgayVaoLam";
+            this.lblNgayVaoLam.Size = new System.Drawing.Size(108, 19);
+            this.lblNgayVaoLam.TabIndex = 51;
+            this.lblNgayVaoLam.Text = "Ngày vào làm: ";
             // 
-            // dtpNgayVaoLam
+            // lblNgaySinh
             // 
-            this.dtpNgayVaoLam.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayVaoLam.Location = new System.Drawing.Point(209, 403);
-            this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
-            this.dtpNgayVaoLam.Size = new System.Drawing.Size(229, 20);
-            this.dtpNgayVaoLam.TabIndex = 50;
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(99, 403);
-            this.materialLabel3.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(104, 19);
-            this.materialLabel3.TabIndex = 51;
-            this.materialLabel3.Text = "Ngày vào làm:";
-            // 
-            // txtSoDienThoai
-            // 
-            this.txtSoDienThoai.Depth = 0;
-            this.txtSoDienThoai.Hint = "Số điện thoại";
-            this.txtSoDienThoai.Location = new System.Drawing.Point(103, 357);
-            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.txtSoDienThoai.MaxLength = 12;
-            this.txtSoDienThoai.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.PasswordChar = '\0';
-            this.txtSoDienThoai.SelectedText = "";
-            this.txtSoDienThoai.SelectionLength = 0;
-            this.txtSoDienThoai.SelectionStart = 0;
-            this.txtSoDienThoai.Size = new System.Drawing.Size(335, 23);
-            this.txtSoDienThoai.TabIndex = 49;
-            this.txtSoDienThoai.TabStop = false;
-            this.txtSoDienThoai.UseSystemPasswordChar = false;
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Depth = 0;
-            this.txtDiaChi.Hint = "Địa chỉ";
-            this.txtDiaChi.Location = new System.Drawing.Point(103, 311);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.txtDiaChi.MaxLength = 100;
-            this.txtDiaChi.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.PasswordChar = '\0';
-            this.txtDiaChi.SelectedText = "";
-            this.txtDiaChi.SelectionLength = 0;
-            this.txtDiaChi.SelectionStart = 0;
-            this.txtDiaChi.Size = new System.Drawing.Size(335, 23);
-            this.txtDiaChi.TabIndex = 48;
-            this.txtDiaChi.TabStop = false;
-            this.txtDiaChi.UseSystemPasswordChar = false;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(99, 222);
-            this.materialLabel1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(79, 19);
-            this.materialLabel1.TabIndex = 47;
-            this.materialLabel1.Text = "Ngày sinh:";
-            // 
-            // timePickerBirthday
-            // 
-            this.timePickerBirthday.CustomFormat = "dd/MM/yyyy";
-            this.timePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePickerBirthday.Location = new System.Drawing.Point(209, 222);
-            this.timePickerBirthday.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.timePickerBirthday.Name = "timePickerBirthday";
-            this.timePickerBirthday.Size = new System.Drawing.Size(229, 20);
-            this.timePickerBirthday.TabIndex = 46;
-            // 
-            // txtCMND
-            // 
-            this.txtCMND.Depth = 0;
-            this.txtCMND.Hint = "Số CMND";
-            this.txtCMND.Location = new System.Drawing.Point(103, 265);
-            this.txtCMND.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.txtCMND.MaxLength = 12;
-            this.txtCMND.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtCMND.Name = "txtCMND";
-            this.txtCMND.PasswordChar = '\0';
-            this.txtCMND.SelectedText = "";
-            this.txtCMND.SelectionLength = 0;
-            this.txtCMND.SelectionStart = 0;
-            this.txtCMND.Size = new System.Drawing.Size(335, 23);
-            this.txtCMND.TabIndex = 45;
-            this.txtCMND.TabStop = false;
-            this.txtCMND.UseSystemPasswordChar = false;
-            // 
-            // rbtnNu
-            // 
-            this.rbtnNu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbtnNu.AutoSize = true;
-            this.rbtnNu.Depth = 0;
-            this.rbtnNu.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnNu.Location = new System.Drawing.Point(220, -1);
-            this.rbtnNu.Margin = new System.Windows.Forms.Padding(0);
-            this.rbtnNu.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbtnNu.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbtnNu.Name = "rbtnNu";
-            this.rbtnNu.Ripple = true;
-            this.rbtnNu.Size = new System.Drawing.Size(47, 30);
-            this.rbtnNu.TabIndex = 27;
-            this.rbtnNu.TabStop = true;
-            this.rbtnNu.Text = "Nữ";
-            this.rbtnNu.UseVisualStyleBackColor = true;
-            // 
-            // rbtnNam
-            // 
-            this.rbtnNam.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbtnNam.AutoSize = true;
-            this.rbtnNam.Depth = 0;
-            this.rbtnNam.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbtnNam.Location = new System.Drawing.Point(108, -1);
-            this.rbtnNam.Margin = new System.Windows.Forms.Padding(0);
-            this.rbtnNam.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbtnNam.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbtnNam.Name = "rbtnNam";
-            this.rbtnNam.Ripple = true;
-            this.rbtnNam.Size = new System.Drawing.Size(58, 30);
-            this.rbtnNam.TabIndex = 26;
-            this.rbtnNam.TabStop = true;
-            this.rbtnNam.Text = "Nam";
-            this.rbtnNam.UseVisualStyleBackColor = true;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.BackColor = System.Drawing.Color.White;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(3, 4);
-            this.materialLabel2.Margin = new System.Windows.Forms.Padding(3, 15, 3, 0);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(69, 19);
-            this.materialLabel2.TabIndex = 32;
-            this.materialLabel2.Text = "Giới tính:";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.materialLabel2);
-            this.panel2.Controls.Add(this.rbtnNam);
-            this.panel2.Controls.Add(this.rbtnNu);
-            this.panel2.Location = new System.Drawing.Point(96, 175);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(342, 24);
-            this.panel2.TabIndex = 53;
+            this.lblNgaySinh.AutoSize = true;
+            this.lblNgaySinh.Depth = 0;
+            this.lblNgaySinh.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblNgaySinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblNgaySinh.Location = new System.Drawing.Point(99, 230);
+            this.lblNgaySinh.Margin = new System.Windows.Forms.Padding(3, 30, 3, 0);
+            this.lblNgaySinh.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblNgaySinh.Name = "lblNgaySinh";
+            this.lblNgaySinh.Size = new System.Drawing.Size(83, 19);
+            this.lblNgaySinh.TabIndex = 47;
+            this.lblNgaySinh.Text = "Ngày sinh: ";
             // 
             // materialLabel4
             // 
@@ -266,136 +101,204 @@
             this.materialLabel5.TabIndex = 56;
             this.materialLabel5.Text = "ĐỔI MẬT KHẨU";
             // 
-            // materialRaisedButton1
+            // txtLuu
             // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(701, 230);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(75, 23);
-            this.materialRaisedButton1.TabIndex = 0;
-            this.materialRaisedButton1.Text = "LƯU";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.txtLuu.Depth = 0;
+            this.txtLuu.Location = new System.Drawing.Point(701, 238);
+            this.txtLuu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtLuu.Name = "txtLuu";
+            this.txtLuu.Primary = true;
+            this.txtLuu.Size = new System.Drawing.Size(75, 23);
+            this.txtLuu.TabIndex = 0;
+            this.txtLuu.Text = "LƯU";
+            this.txtLuu.UseVisualStyleBackColor = true;
+            this.txtLuu.Click += new System.EventHandler(this.txtLuu_Click);
             // 
-            // materialSingleLineTextField1
+            // txtXacNhan
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "Xác nhận mật khẩu";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(571, 175);
-            this.materialSingleLineTextField1.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.materialSingleLineTextField1.MaxLength = 20;
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(335, 23);
-            this.materialSingleLineTextField1.TabIndex = 58;
-            this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = true;
+            this.txtXacNhan.Depth = 0;
+            this.txtXacNhan.Hint = "Xác nhận mật khẩu";
+            this.txtXacNhan.Location = new System.Drawing.Point(571, 181);
+            this.txtXacNhan.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.txtXacNhan.MaxLength = 20;
+            this.txtXacNhan.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtXacNhan.Name = "txtXacNhan";
+            this.txtXacNhan.PasswordChar = '\0';
+            this.txtXacNhan.SelectedText = "";
+            this.txtXacNhan.SelectionLength = 0;
+            this.txtXacNhan.SelectionStart = 0;
+            this.txtXacNhan.Size = new System.Drawing.Size(335, 23);
+            this.txtXacNhan.TabIndex = 58;
+            this.txtXacNhan.TabStop = false;
+            this.txtXacNhan.UseSystemPasswordChar = true;
             // 
-            // materialSingleLineTextField2
+            // txtMatKhauCu
             // 
-            this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Hint = "Mật khẩu cũ";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(571, 83);
-            this.materialSingleLineTextField2.MaxLength = 20;
-            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.PasswordChar = '\0';
-            this.materialSingleLineTextField2.SelectedText = "";
-            this.materialSingleLineTextField2.SelectionLength = 0;
-            this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(335, 23);
-            this.materialSingleLineTextField2.TabIndex = 59;
-            this.materialSingleLineTextField2.TabStop = false;
-            this.materialSingleLineTextField2.UseSystemPasswordChar = false;
+            this.txtMatKhauCu.Depth = 0;
+            this.txtMatKhauCu.Hint = "Mật khẩu cũ";
+            this.txtMatKhauCu.Location = new System.Drawing.Point(571, 83);
+            this.txtMatKhauCu.MaxLength = 20;
+            this.txtMatKhauCu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtMatKhauCu.Name = "txtMatKhauCu";
+            this.txtMatKhauCu.PasswordChar = '\0';
+            this.txtMatKhauCu.SelectedText = "";
+            this.txtMatKhauCu.SelectionLength = 0;
+            this.txtMatKhauCu.SelectionStart = 0;
+            this.txtMatKhauCu.Size = new System.Drawing.Size(335, 23);
+            this.txtMatKhauCu.TabIndex = 59;
+            this.txtMatKhauCu.TabStop = false;
+            this.txtMatKhauCu.UseSystemPasswordChar = true;
             // 
-            // materialSingleLineTextField3
+            // txtMatKhauMoi
             // 
-            this.materialSingleLineTextField3.Depth = 0;
-            this.materialSingleLineTextField3.Hint = "Mật khẩu mới";
-            this.materialSingleLineTextField3.Location = new System.Drawing.Point(571, 129);
-            this.materialSingleLineTextField3.MaxLength = 20;
-            this.materialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField3.Name = "materialSingleLineTextField3";
-            this.materialSingleLineTextField3.PasswordChar = '\0';
-            this.materialSingleLineTextField3.SelectedText = "";
-            this.materialSingleLineTextField3.SelectionLength = 0;
-            this.materialSingleLineTextField3.SelectionStart = 0;
-            this.materialSingleLineTextField3.Size = new System.Drawing.Size(335, 23);
-            this.materialSingleLineTextField3.TabIndex = 60;
-            this.materialSingleLineTextField3.TabStop = false;
-            this.materialSingleLineTextField3.UseSystemPasswordChar = false;
+            this.txtMatKhauMoi.Depth = 0;
+            this.txtMatKhauMoi.Hint = "Mật khẩu mới";
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(571, 132);
+            this.txtMatKhauMoi.MaxLength = 20;
+            this.txtMatKhauMoi.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtMatKhauMoi.Name = "txtMatKhauMoi";
+            this.txtMatKhauMoi.PasswordChar = '\0';
+            this.txtMatKhauMoi.SelectedText = "";
+            this.txtMatKhauMoi.SelectionLength = 0;
+            this.txtMatKhauMoi.SelectionStart = 0;
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(335, 23);
+            this.txtMatKhauMoi.TabIndex = 60;
+            this.txtMatKhauMoi.TabStop = false;
+            this.txtMatKhauMoi.UseSystemPasswordChar = true;
             // 
-            // txtMaSo
+            // lblMaSo
             // 
-            this.txtMaSo.Depth = 0;
-            this.txtMaSo.Hint = "Mã số";
-            this.txtMaSo.Location = new System.Drawing.Point(103, 83);
-            this.txtMaSo.MaxLength = 20;
-            this.txtMaSo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtMaSo.Name = "txtMaSo";
-            this.txtMaSo.PasswordChar = '\0';
-            this.txtMaSo.SelectedText = "";
-            this.txtMaSo.SelectionLength = 0;
-            this.txtMaSo.SelectionStart = 0;
-            this.txtMaSo.Size = new System.Drawing.Size(335, 23);
-            this.txtMaSo.TabIndex = 43;
-            this.txtMaSo.TabStop = false;
-            this.txtMaSo.UseSystemPasswordChar = false;
+            this.lblMaSo.AutoSize = true;
+            this.lblMaSo.Depth = 0;
+            this.lblMaSo.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblMaSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblMaSo.Location = new System.Drawing.Point(99, 83);
+            this.lblMaSo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblMaSo.Name = "lblMaSo";
+            this.lblMaSo.Size = new System.Drawing.Size(59, 19);
+            this.lblMaSo.TabIndex = 61;
+            this.lblMaSo.Text = "Mã số: ";
+            // 
+            // lblHoTen
+            // 
+            this.lblHoTen.AutoSize = true;
+            this.lblHoTen.Depth = 0;
+            this.lblHoTen.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblHoTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblHoTen.Location = new System.Drawing.Point(99, 132);
+            this.lblHoTen.Margin = new System.Windows.Forms.Padding(3, 30, 3, 0);
+            this.lblHoTen.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblHoTen.Name = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(62, 19);
+            this.lblHoTen.TabIndex = 62;
+            this.lblHoTen.Text = "Họ tên: ";
+            // 
+            // lblGioiTinh
+            // 
+            this.lblGioiTinh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblGioiTinh.AutoSize = true;
+            this.lblGioiTinh.BackColor = System.Drawing.Color.White;
+            this.lblGioiTinh.Depth = 0;
+            this.lblGioiTinh.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblGioiTinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblGioiTinh.Location = new System.Drawing.Point(99, 181);
+            this.lblGioiTinh.Margin = new System.Windows.Forms.Padding(3, 30, 3, 0);
+            this.lblGioiTinh.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblGioiTinh.Name = "lblGioiTinh";
+            this.lblGioiTinh.Size = new System.Drawing.Size(73, 19);
+            this.lblGioiTinh.TabIndex = 33;
+            this.lblGioiTinh.Text = "Giới tính: ";
+            // 
+            // lblCMND
+            // 
+            this.lblCMND.AutoSize = true;
+            this.lblCMND.Depth = 0;
+            this.lblCMND.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblCMND.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblCMND.Location = new System.Drawing.Point(99, 279);
+            this.lblCMND.Margin = new System.Windows.Forms.Padding(3, 30, 3, 0);
+            this.lblCMND.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblCMND.Name = "lblCMND";
+            this.lblCMND.Size = new System.Drawing.Size(83, 19);
+            this.lblCMND.TabIndex = 63;
+            this.lblCMND.Text = "Số CMND: ";
+            // 
+            // lblDiaChi
+            // 
+            this.lblDiaChi.AutoSize = true;
+            this.lblDiaChi.Depth = 0;
+            this.lblDiaChi.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblDiaChi.Location = new System.Drawing.Point(99, 328);
+            this.lblDiaChi.Margin = new System.Windows.Forms.Padding(3, 30, 3, 0);
+            this.lblDiaChi.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblDiaChi.Name = "lblDiaChi";
+            this.lblDiaChi.Size = new System.Drawing.Size(63, 19);
+            this.lblDiaChi.TabIndex = 64;
+            this.lblDiaChi.Text = "Địa chỉ: ";
+            // 
+            // lblSoDienThoai
+            // 
+            this.lblSoDienThoai.AutoSize = true;
+            this.lblSoDienThoai.Depth = 0;
+            this.lblSoDienThoai.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblSoDienThoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblSoDienThoai.Location = new System.Drawing.Point(99, 377);
+            this.lblSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 30, 3, 0);
+            this.lblSoDienThoai.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSoDienThoai.Name = "lblSoDienThoai";
+            this.lblSoDienThoai.Size = new System.Drawing.Size(106, 19);
+            this.lblSoDienThoai.TabIndex = 65;
+            this.lblSoDienThoai.Text = "Số điện thoại: ";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // ThongTinCaNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.materialSingleLineTextField3);
-            this.Controls.Add(this.materialSingleLineTextField2);
-            this.Controls.Add(this.materialSingleLineTextField1);
-            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.lblSoDienThoai);
+            this.Controls.Add(this.lblDiaChi);
+            this.Controls.Add(this.lblCMND);
+            this.Controls.Add(this.lblGioiTinh);
+            this.Controls.Add(this.lblHoTen);
+            this.Controls.Add(this.lblMaSo);
+            this.Controls.Add(this.txtMatKhauMoi);
+            this.Controls.Add(this.txtMatKhauCu);
+            this.Controls.Add(this.txtXacNhan);
+            this.Controls.Add(this.txtLuu);
             this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.txtHoTen);
-            this.Controls.Add(this.dtpNgayVaoLam);
-            this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.txtSoDienThoai);
-            this.Controls.Add(this.txtDiaChi);
-            this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.timePickerBirthday);
-            this.Controls.Add(this.txtCMND);
-            this.Controls.Add(this.txtMaSo);
+            this.Controls.Add(this.lblNgayVaoLam);
+            this.Controls.Add(this.lblNgaySinh);
             this.Name = "ThongTinCaNhan";
             this.Size = new System.Drawing.Size(985, 550);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.Load += new System.EventHandler(this.ThongTinCaNhan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtHoTen;
-        private System.Windows.Forms.DateTimePicker dtpNgayVaoLam;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtSoDienThoai;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtDiaChi;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.DateTimePicker timePickerBirthday;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtCMND;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnNu;
-        private MaterialSkin.Controls.MaterialRadioButton rbtnNam;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.Panel panel2;
+        private MaterialSkin.Controls.MaterialLabel lblNgayVaoLam;
+        private MaterialSkin.Controls.MaterialLabel lblNgaySinh;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtMaSo;
+        private MaterialSkin.Controls.MaterialRaisedButton txtLuu;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtXacNhan;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtMatKhauCu;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtMatKhauMoi;
+        private MaterialSkin.Controls.MaterialLabel lblMaSo;
+        private MaterialSkin.Controls.MaterialLabel lblHoTen;
+        private MaterialSkin.Controls.MaterialLabel lblGioiTinh;
+        private MaterialSkin.Controls.MaterialLabel lblCMND;
+        private MaterialSkin.Controls.MaterialLabel lblDiaChi;
+        private MaterialSkin.Controls.MaterialLabel lblSoDienThoai;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
