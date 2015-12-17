@@ -64,5 +64,16 @@ namespace DAO
             };
         }
 
+        public void NhapHang(NhapHangDTO info)
+        {
+            string sql = $"INSERT INTO HoaDonNhapHang VALUES(N'{info.SoHoaDon}', N'{info.Msnv}', N'{info.NgayNhap}', N'{info.NhaCungCap}', N'{info.DiaChi}', N'{info.Thue}', N'{info.TongTien}', N'{info.GhiChu}')";
+            _dbconnection.ExcuteNonQuery(sql);
+
+            foreach (DataRow row in info.ChiTiet.Rows)
+            {
+                _dbconnection.ExcuteNonQuery($"INSERT INTO ChiTietDonNhapHang VALUES(N'{info.SoHoaDon}', N'{row.Field<string>("TenHangHoa")}', N'{row.Field<int>("GiaMua")}', N'{row.Field<int>("SoLuong")}', N'{row.Field<int>("ThanhTien")}')");
+                _dbconnection.ExcuteNonQuery($"UPDATE HangHoa SET SoLuongTon=SoLuongTon + {row.Field<int>("SoLuong")} WHERE TenHangHoa=N'{row.Field<string>("TenHangHoa")}'");
+            }
+        }
     }
 }

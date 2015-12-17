@@ -217,7 +217,7 @@ namespace QuanLyQuanCafe.QuanLy
                     GhiChu = txtGhiChuHoaDon.Text
                 };
 
-                using (NhapHangBUS nhaphangBUS = new NhapHangBUS())
+                using (HangHoaBUS nhaphangBUS = new HangHoaBUS())
                     nhaphangBUS.NhapHang(info);
             }
             catch (SqlException ex)

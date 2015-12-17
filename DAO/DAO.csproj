@@ -43,7 +43,7 @@
     <Compile Include="HangHoaDAO.cs" />
     <Compile Include="KhuVucDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
-    <Compile Include="NhapHangDAO.cs" />
+    <Compile Include="HoaDonDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyBanDAO.cs" />
   </ItemGroup>

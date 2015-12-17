@@ -436,8 +436,8 @@
             this.txtSoHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSoHoaDon.Depth = 0;
             this.txtSoHoaDon.Hint = "";
-            this.txtSoHoaDon.Location = new System.Drawing.Point(722, 356);
-            this.txtSoHoaDon.MaxLength = 32767;
+            this.txtSoHoaDon.Location = new System.Drawing.Point(735, 356);
+            this.txtSoHoaDon.MaxLength = 20;
             this.txtSoHoaDon.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtSoHoaDon.Name = "txtSoHoaDon";
             this.txtSoHoaDon.PasswordChar = '\0';
@@ -445,7 +445,7 @@
             this.txtSoHoaDon.SelectedText = "";
             this.txtSoHoaDon.SelectionLength = 0;
             this.txtSoHoaDon.SelectionStart = 0;
-            this.txtSoHoaDon.Size = new System.Drawing.Size(212, 23);
+            this.txtSoHoaDon.Size = new System.Drawing.Size(199, 23);
             this.txtSoHoaDon.TabIndex = 18;
             this.txtSoHoaDon.TabStop = false;
             this.txtSoHoaDon.UseSystemPasswordChar = false;
@@ -453,7 +453,9 @@
             // 
             // errorProvider1
             // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
             // 
             // QuanLyBan
             // 

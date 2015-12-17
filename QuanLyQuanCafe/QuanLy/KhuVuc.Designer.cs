@@ -81,7 +81,7 @@
             this.txtTenKhuVuc.Hint = "Tên khu vực";
             this.txtTenKhuVuc.Location = new System.Drawing.Point(19, 16);
             this.txtTenKhuVuc.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.txtTenKhuVuc.MaxLength = 32767;
+            this.txtTenKhuVuc.MaxLength = 20;
             this.txtTenKhuVuc.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTenKhuVuc.Name = "txtTenKhuVuc";
             this.txtTenKhuVuc.PasswordChar = '\0';
@@ -170,7 +170,7 @@
             this.txtTenBan.Hint = "Tên bàn";
             this.txtTenBan.Location = new System.Drawing.Point(20, 16);
             this.txtTenBan.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.txtTenBan.MaxLength = 32767;
+            this.txtTenBan.MaxLength = 20;
             this.txtTenBan.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTenBan.Name = "txtTenBan";
             this.txtTenBan.PasswordChar = '\0';

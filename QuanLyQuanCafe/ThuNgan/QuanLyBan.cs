@@ -152,27 +152,34 @@ namespace QuanLyQuanCafe.ThuNgan
         {
             if (IsInputErr()) return;
 
-            using (QuanLyBanBUS bus = new QuanLyBanBUS())
+            try
             {
-                BanHangDTO info = new BanHangDTO
+                using (QuanLyBanBUS bus = new QuanLyBanBUS())
                 {
-                    Msnv = ThuNgan.MsnvLogin,
-                    MaSoBan = QuanLyBanBUS.Masoban,
-                    SoHoaDon = Convert.ToInt32(txtSoHoaDon.Text),
-                    GioRa = DateTime.Now,
-                    GhiChu = txtGhiChu.Text,
-                    KhuyenMai = nudThue.Value,
-                    TongTien = int.Parse(lblTongTien.Text, NumberStyles.AllowThousands,
+                    BanHangDTO info = new BanHangDTO
+                    {
+                        Msnv = ThuNgan.MsnvLogin,
+                        MaSoBan = QuanLyBanBUS.Masoban,
+                        SoHoaDon = Convert.ToInt32(txtSoHoaDon.Text),
+                        GioRa = DateTime.Now,
+                        GhiChu = txtGhiChu.Text,
+                        KhuyenMai = nudThue.Value,
+                        TongTien = int.Parse(lblTongTien.Text, NumberStyles.AllowThousands,
                             CultureInfo.CreateSpecificCulture("vi-VN")),
-                    ChiTiet = bus.LoadHangHoa()
-                };
+                        ChiTiet = bus.LoadHangHoa()
+                    };
 
-                bus.BanHang(info);
+                    bus.BanHang(info);
+                    bus.ClearHangHoa();
+                    RefreshHangHoa();
+                }
             }
-
-            using (QuanLyBanBUS bus = new QuanLyBanBUS())
-                bus.ClearHangHoa();
-            RefreshHangHoa();
+            catch (SqlException ex)
+            {
+                if (ex.Number == DbConnection.MssqlEng002627)
+                    errorProvider1.SetError(txtSoHoaDon, "Hóa đơn đã tồn tại");
+                else throw;
+            }
         }
 
         private void btnIn_Click(object sender, EventArgs e)
@@ -187,16 +194,17 @@ namespace QuanLyQuanCafe.ThuNgan
                     SoHoaDon = Convert.ToInt32(txtSoHoaDon.Text),
                     GioRa = DateTime.Now,
                     GhiChu = txtGhiChu.Text,
-                    ChuaThue = int.Parse(lblExclTax.Text, NumberStyles.AllowThousands, CultureInfo.CreateSpecificCulture("vi-VN")),
                     KhuyenMai = nudThue.Value,
-                    TongTien = int.Parse(lblTongTien.Text, NumberStyles.AllowThousands, CultureInfo.CreateSpecificCulture("vi-VN")),
+                    TongTien =
+                        int.Parse(lblTongTien.Text, NumberStyles.AllowThousands,
+                            CultureInfo.CreateSpecificCulture("vi-VN")),
                     ChiTiet = bus.LoadHangHoa()
                 };
 
                 new BanHangReport(info).ShowDialog();
             }
-        }
 
-        
+        }
+    
     }
 }

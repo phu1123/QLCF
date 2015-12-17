@@ -43,5 +43,10 @@ namespace BUS
         {
             return _hanghoaDAO.LoadHangHoa(tenhanghoa);
         }
+
+        public void NhapHang(NhapHangDTO info)
+        {
+            _hanghoaDAO.NhapHang(info);
+        }
     }
 }
