@@ -45,7 +45,7 @@ namespace DAO
 
         public DataTable HoaDonBanHang(int sohoadon)
         {
-            string sql = $"SELECT SoHoaDon, MaSoBan, GioRa, GhiChu, KhuyenMai, TongTien FROM HoaDonBanHang WHERE SoHoaDon='{sohoadon}'";
+            string sql = $"SELECT SoHoaDon, MaSoBan, GioRa, GhiChu, KhuyenMai, TongTien FROM HoaDonBanHang WHERE SoHoaDon=N'{sohoadon}'";
             return _dbconnection.ExcuteReader(sql);
         }
 
