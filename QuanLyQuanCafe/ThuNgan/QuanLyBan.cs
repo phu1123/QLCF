@@ -78,8 +78,8 @@ namespace QuanLyQuanCafe.ThuNgan
         {
             try
             {
-                string hanghoa = dataGridView2.CurrentRow?.Cells[0].Value.ToString();
-                string dongia = dataGridView2.CurrentRow?.Cells[1].Value.ToString();
+                string hanghoa = dataGridView2.SelectedRows[0].Cells[0].Value.ToString();
+                string dongia = dataGridView2.SelectedRows[0].Cells[1].Value.ToString();
 
                 using (QuanLyBanBUS bus = new QuanLyBanBUS())
                     bus.InsertHangHoa(hanghoa, dongia);

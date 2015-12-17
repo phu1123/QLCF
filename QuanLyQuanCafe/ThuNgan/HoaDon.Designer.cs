@@ -38,6 +38,9 @@
             this.dtpTuNgayBanHang = new System.Windows.Forms.DateTimePicker();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.txtTimNhapHang = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnLocNhapHang = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -47,13 +50,12 @@
             this.dtpTuNgayNhapHang = new System.Windows.Forms.DateTimePicker();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtChiTietBanHang = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtChiTietMuaHang = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,6 +72,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.txtChiTietBanHang);
             this.splitContainer1.Panel1.Controls.Add(this.txtTimBanHang);
             this.splitContainer1.Panel1.Controls.Add(this.btnLocBanHang);
             this.splitContainer1.Panel1.Controls.Add(this.dtpDenNgayBanHang);
@@ -81,6 +84,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.txtChiTietMuaHang);
             this.splitContainer1.Panel2.Controls.Add(this.txtTimNhapHang);
             this.splitContainer1.Panel2.Controls.Add(this.btnLocNhapHang);
             this.splitContainer1.Panel2.Controls.Add(this.dtpDenNgayNhapHang);
@@ -189,12 +193,40 @@
             this.Column4,
             this.Column5});
             this.dataGridView1.Location = new System.Drawing.Point(3, 81);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(704, 473);
             this.dataGridView1.TabIndex = 8;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "SoHoaDon";
+            this.Column2.HeaderText = "Số HĐ";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "GioRa";
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column4.HeaderText = "Ngày bán";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "TongTien";
+            this.Column5.HeaderText = "Tổng tiền (VNĐ)";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // materialLabel1
             // 
@@ -321,39 +353,13 @@
             this.Column9,
             this.Column10});
             this.dataGridView2.Location = new System.Drawing.Point(3, 81);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(753, 473);
             this.dataGridView2.TabIndex = 5;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "SoHoaDon";
-            this.Column2.HeaderText = "Số HĐ";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "GioRa";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column4.HeaderText = "Ngày bán";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "TongTien";
-            this.Column5.HeaderText = "Tổng tiền (VNĐ)";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
             // 
             // Column7
             // 
@@ -388,6 +394,31 @@
             this.Column10.HeaderText = "Tổng tiền (VNĐ)";
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
+            // 
+            // txtChiTietBanHang
+            // 
+            this.txtChiTietBanHang.Depth = 0;
+            this.txtChiTietBanHang.Location = new System.Drawing.Point(19, 52);
+            this.txtChiTietBanHang.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtChiTietBanHang.Name = "txtChiTietBanHang";
+            this.txtChiTietBanHang.Primary = true;
+            this.txtChiTietBanHang.Size = new System.Drawing.Size(109, 23);
+            this.txtChiTietBanHang.TabIndex = 20;
+            this.txtChiTietBanHang.Text = "Xem Chi Tiết";
+            this.txtChiTietBanHang.UseVisualStyleBackColor = true;
+            this.txtChiTietBanHang.Click += new System.EventHandler(this.txtChiTietBanHang_Click);
+            // 
+            // txtChiTietMuaHang
+            // 
+            this.txtChiTietMuaHang.Depth = 0;
+            this.txtChiTietMuaHang.Location = new System.Drawing.Point(19, 52);
+            this.txtChiTietMuaHang.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtChiTietMuaHang.Name = "txtChiTietMuaHang";
+            this.txtChiTietMuaHang.Primary = true;
+            this.txtChiTietMuaHang.Size = new System.Drawing.Size(109, 23);
+            this.txtChiTietMuaHang.TabIndex = 21;
+            this.txtChiTietMuaHang.Text = "Xem Chi Tiết";
+            this.txtChiTietMuaHang.UseVisualStyleBackColor = true;
             // 
             // HoaDon
             // 
@@ -435,5 +466,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private MaterialSkin.Controls.MaterialRaisedButton txtChiTietBanHang;
+        private MaterialSkin.Controls.MaterialRaisedButton txtChiTietMuaHang;
     }
 }

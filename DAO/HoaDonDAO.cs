@@ -42,5 +42,17 @@ namespace DAO
             string sql = $"SELECT SoHoaDon, NhaCungCap, NgayNhap, TongTien FROM HoaDonNhapHang WHERE NgayNhap BETWEEN '{tungay.Date}' AND '{denngay.Date}'";
             return _dbconnection.ExcuteReader(sql);
         }
+
+        public DataTable HoaDonBanHang(int sohoadon)
+        {
+            string sql = $"SELECT SoHoaDon, MaSoBan, GioRa, GhiChu, KhuyenMai, TongTien FROM HoaDonBanHang WHERE SoHoaDon='{sohoadon}'";
+            return _dbconnection.ExcuteReader(sql);
+        }
+
+        public DataTable ChiTietBanHang(int sohoadon)
+        {
+            string sql = $"SELECT TenHangHoa, DonGia, SoLuong, ThanhTien FROM ChiTietDonBanHang WHERE SoHoaDon=N'{sohoadon}'";
+            return _dbconnection.ExcuteReader(sql);
+        }
     }
 }

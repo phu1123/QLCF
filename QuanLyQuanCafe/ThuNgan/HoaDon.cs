@@ -1,6 +1,10 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
+using System.Globalization;
 using System.Windows.Forms;
 using BUS;
+using DTO;
+using QuanLyQuanCafe.Dialog;
 
 namespace QuanLyQuanCafe.ThuNgan
 {
@@ -41,6 +45,26 @@ namespace QuanLyQuanCafe.ThuNgan
         {
             using (HoaDonBUS bus = new HoaDonBUS())
                 dataGridView2.DataSource = bus.FilterNhapHang(dtpTuNgayNhapHang.Value, dtpDenNgayNhapHang.Value);
+        }
+
+        private void txtChiTietBanHang_Click(object sender, System.EventArgs e)
+        {
+            using (HoaDonBUS bus = new HoaDonBUS())
+            {
+                DataTable hoadon = bus.HoaDonBanHang(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value));
+
+                BanHangDTO info = new BanHangDTO
+                {
+                    MaSoBan = hoadon.Rows[0].Field<int>("MaSoBan"),
+                    SoHoaDon = hoadon.Rows[0].Field<int>("SoHoaDon"),
+                    GioRa = hoadon.Rows[0].Field<DateTime>("GioRa"),
+                    KhuyenMai = hoadon.Rows[0].Field<decimal>("KhuyenMai"),
+                    TongTien = hoadon.Rows[0].Field<int>("TongTien"),
+                    ChiTiet = bus.ChiTietBanHang(hoadon.Rows[0].Field<int>("SoHoaDon"))
+                };
+
+                new BanHangReport(info).ShowDialog();
+            }
         }
     }
 }

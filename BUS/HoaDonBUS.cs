@@ -33,5 +33,14 @@ namespace BUS
             return _hoadonDAO.FilterNhapHang(tungay, denngay);
         }
 
+        public DataTable HoaDonBanHang(int sohoadon)
+        {
+            return _hoadonDAO.HoaDonBanHang(sohoadon);
+        }
+
+        public DataTable ChiTietBanHang(int sohoadon)
+        {
+            return _hoadonDAO.ChiTietBanHang(sohoadon);
+        }
     }
 }

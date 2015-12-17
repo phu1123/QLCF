@@ -43,7 +43,7 @@
             this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.crystalReportViewer1.Size = new System.Drawing.Size(857, 472);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(879, 472);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // BanHangReport
