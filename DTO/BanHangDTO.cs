@@ -14,7 +14,6 @@ namespace DTO
         public int MaSoBan { get; set; }
         public DateTime GioRa { get; set; }
         public string GhiChu { get; set; }
-        public int ChuaThue { get; set; }
         public decimal KhuyenMai { get; set; }
         public int TongTien { get; set; }
         public DataTable ChiTiet { get; set; }

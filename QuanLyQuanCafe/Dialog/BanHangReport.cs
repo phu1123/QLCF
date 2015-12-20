@@ -36,7 +36,7 @@ namespace QuanLyQuanCafe.Dialog
                 lblGioRa.Text = "Giờ ra: " + info.GioRa.ToString("dd/MM/yyyy H:mm");
 
                 var lblTongCong = hdbh.ReportDefinition.ReportObjects["lblTongCong"] as TextObject;
-                lblTongCong.Text = info.ChuaThue.ToString("N0");
+                lblTongCong.Text = (info.TongTien / (1 - info.KhuyenMai * 0.01m)).ToString("N0");
                 var lblKhuyenMai = hdbh.ReportDefinition.ReportObjects["lblKhuyenMai"] as TextObject;
                 lblKhuyenMai.Text = info.KhuyenMai + " %";
                 var lblThanhToan = hdbh.ReportDefinition.ReportObjects["lblThanhToan"] as TextObject;
